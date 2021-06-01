@@ -26,14 +26,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't available
+ * You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available
  * over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check
  * the health of resources in a VPC, the health checker must also be in the VPC.)
  * </p>
  * </li>
  * <li>
  * <p>
- * You want to use a third-party health checker regardless of where your resources are.
+ * You want to use a third-party health checker regardless of where your resources are located.
  * </p>
  * </li>
  * </ul>
@@ -54,14 +54,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ol>
  * <li>
  * <p>
- * You create a service and specify a value for <code>FailureThreshold</code>.
- * </p>
- * <p>
- * The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time
- * that your application sends an <a
- * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html"
- * >UpdateInstanceCustomHealthStatus</a> request and the time that AWS Cloud Map stops routing internet traffic to the
- * corresponding resource.
+ * You create a service.
  * </p>
  * </li>
  * <li>
@@ -71,7 +64,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * You configure a third-party health checker to monitor the resource that is associated with the new instance.
+ * You configure a third-party health checker to monitor the resource that's associated with the new instance.
  * </p>
  * <note>
  * <p>
@@ -90,7 +83,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * AWS Cloud Map waits for (<code>FailureThreshold</code> x 30) seconds.
+ * AWS Cloud Map waits for 30 seconds.
  * </p>
  * </li>
  * <li>
@@ -110,9 +103,9 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
     /**
      * <important>
      * <p>
-     * This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30 seconds after
-     * receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service
-     * instance.
+     * This parameter is no longer supported and is always set to 1. AWS Cloud Map waits for approximately 30 seconds
+     * after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the
+     * service instance.
      * </p>
      * </important>
      * <p>
@@ -131,9 +124,9 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
     /**
      * <important>
      * <p>
-     * This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30 seconds after
-     * receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service
-     * instance.
+     * This parameter is no longer supported and is always set to 1. AWS Cloud Map waits for approximately 30 seconds
+     * after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the
+     * service instance.
      * </p>
      * </important>
      * <p>
@@ -148,7 +141,7 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
      * 
      * @param failureThreshold
      *        <p>
-     *        This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30
+     *        This parameter is no longer supported and is always set to 1. AWS Cloud Map waits for approximately 30
      *        seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the
      *        status of the service instance.
      *        </p>
@@ -171,9 +164,9 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
     /**
      * <important>
      * <p>
-     * This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30 seconds after
-     * receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service
-     * instance.
+     * This parameter is no longer supported and is always set to 1. AWS Cloud Map waits for approximately 30 seconds
+     * after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the
+     * service instance.
      * </p>
      * </important>
      * <p>
@@ -187,7 +180,7 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @return <p>
-     *         This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30
+     *         This parameter is no longer supported and is always set to 1. AWS Cloud Map waits for approximately 30
      *         seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the
      *         status of the service instance.
      *         </p>
@@ -210,9 +203,9 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
     /**
      * <important>
      * <p>
-     * This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30 seconds after
-     * receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service
-     * instance.
+     * This parameter is no longer supported and is always set to 1. AWS Cloud Map waits for approximately 30 seconds
+     * after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the
+     * service instance.
      * </p>
      * </important>
      * <p>
@@ -227,7 +220,7 @@ public class HealthCheckCustomConfig implements Serializable, Cloneable, Structu
      * 
      * @param failureThreshold
      *        <p>
-     *        This parameter has been deprecated and is always set to 1. AWS Cloud Map waits for approximately 30
+     *        This parameter is no longer supported and is always set to 1. AWS Cloud Map waits for approximately 30
      *        seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the
      *        status of the service instance.
      *        </p>

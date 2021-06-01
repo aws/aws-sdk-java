@@ -1,3 +1,24 @@
+# __1.11.1031__ __2021-06-01__
+## __AWS Cloud Map__
+  - ### Features
+    - Bugfixes - The DiscoverInstances API operation now provides an option to return all instances for health-checked services when there are no healthy instances available.
+
+## __AWS IoT Wireless__
+  - ### Features
+    - Added six new public customer logging APIs to allow customers to set/get/reset log levels at resource type and resource id level. The log level set from the APIs will be used to filter log messages that can be emitted to CloudWatch in customer accounts.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Added idempotency to CreateNetworkInterface using the ClientToken parameter.
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds new Canadian French voice - Gabrielle. Gabrielle is available as Neural voice only.
+
+## __Amazon Simple Notification Service__
+  - ### Features
+    - This release adds SMS sandbox in Amazon SNS and the ability to view all configured origination numbers. The SMS sandbox provides a safe environment for sending SMS messages, without risking your reputation as an SMS sender.
+
 # __1.11.1030__ __2021-05-28__
 ## __AWS DataSync__
   - ### Features

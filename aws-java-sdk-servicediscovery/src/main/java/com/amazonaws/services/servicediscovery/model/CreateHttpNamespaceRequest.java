@@ -35,7 +35,7 @@ public class CreateHttpNamespaceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to
      * be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.
+     * string (for example, a date/time stamp).
      * </p>
      */
     private String creatorRequestId;
@@ -97,13 +97,13 @@ public class CreateHttpNamespaceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to
      * be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.
+     * string (for example, a date/time stamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code>
      *        requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
-     *        be any unique string, for example, a date/time stamp.
+     *        be any unique string (for example, a date/time stamp).
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -114,12 +114,12 @@ public class CreateHttpNamespaceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to
      * be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.
+     * string (for example, a date/time stamp).
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code>
      *         requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
-     *         be any unique string, for example, a date/time stamp.
+     *         be any unique string (for example, a date/time stamp).
      */
 
     public String getCreatorRequestId() {
@@ -130,13 +130,13 @@ public class CreateHttpNamespaceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to
      * be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.
+     * string (for example, a date/time stamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code>
      *        requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
-     *        be any unique string, for example, a date/time stamp.
+     *        be any unique string (for example, a date/time stamp).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

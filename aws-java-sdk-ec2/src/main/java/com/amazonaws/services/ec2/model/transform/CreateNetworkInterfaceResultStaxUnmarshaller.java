@@ -47,6 +47,11 @@ public class CreateNetworkInterfaceResultStaxUnmarshaller implements Unmarshalle
                     createNetworkInterfaceResult.setNetworkInterface(NetworkInterfaceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("clientToken", targetDepth)) {
+                    createNetworkInterfaceResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createNetworkInterfaceResult;

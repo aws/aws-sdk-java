@@ -104,14 +104,9 @@ public enum Jackson {
         try {
             return objectMapper.readValue(json, clazz);
         } catch (IOException e) {
-            // If underlying exception is a json parsing issue, clear out the location so that the exception message
-            // does not contain the raw json
-            if (e instanceof JsonProcessingException) {
-                log.debug("Failed to parse JSON string.", e);
-                throw new SdkClientException("Unable to parse Json string. See debug-level logs for the exact error " +
-                                             "details, which may include sensitive information.");
-            }
-            throw new SdkClientException("Unable to parse Json String.", e);
+            log.debug("Failed to parse JSON string.", e);
+            throw new SdkClientException("Unable to parse Json string. See debug-level logs for the exact error " +
+                                         "details, which may include sensitive information.");
         }
     }
 

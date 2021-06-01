@@ -834,6 +834,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Returns current default log-levels, or log levels by resource types, could be for wireless device log options or
+     * wireless gateway log options.
+     * </p>
+     * 
+     * @param getLogLevelsByResourceTypesRequest
+     * @return A Java Future containing the result of the GetLogLevelsByResourceTypes operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetLogLevelsByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLogLevelsByResourceTypesResult> getLogLevelsByResourceTypesAsync(
+            GetLogLevelsByResourceTypesRequest getLogLevelsByResourceTypesRequest);
+
+    /**
+     * <p>
+     * Returns current default log-levels, or log levels by resource types, could be for wireless device log options or
+     * wireless gateway log options.
+     * </p>
+     * 
+     * @param getLogLevelsByResourceTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLogLevelsByResourceTypes operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetLogLevelsByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLogLevelsByResourceTypesResult> getLogLevelsByResourceTypesAsync(
+            GetLogLevelsByResourceTypesRequest getLogLevelsByResourceTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLogLevelsByResourceTypesRequest, GetLogLevelsByResourceTypesResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are
      * <code>null</code>, returns all partner accounts.
      * </p>
@@ -864,6 +899,39 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<GetPartnerAccountResult> getPartnerAccountAsync(GetPartnerAccountRequest getPartnerAccountRequest,
             com.amazonaws.handlers.AsyncHandler<GetPartnerAccountRequest, GetPartnerAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Fetches the log-level override if any for a given resource-ID and resource-type, coulde be a wireless device or a
+     * wireless gateway.
+     * </p>
+     * 
+     * @param getResourceLogLevelRequest
+     * @return A Java Future containing the result of the GetResourceLogLevel operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceLogLevelResult> getResourceLogLevelAsync(GetResourceLogLevelRequest getResourceLogLevelRequest);
+
+    /**
+     * <p>
+     * Fetches the log-level override if any for a given resource-ID and resource-type, coulde be a wireless device or a
+     * wireless gateway.
+     * </p>
+     * 
+     * @param getResourceLogLevelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceLogLevel operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceLogLevelResult> getResourceLogLevelAsync(GetResourceLogLevelRequest getResourceLogLevelRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceLogLevelRequest, GetResourceLogLevelResult> asyncHandler);
 
     /**
      * <p>
@@ -1451,6 +1519,105 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
 
     /**
      * <p>
+     * Sets the log-level override for a resource-ID and resource-type, could be a wireless gateway or a wireless
+     * device.
+     * </p>
+     * 
+     * @param putResourceLogLevelRequest
+     * @return A Java Future containing the result of the PutResourceLogLevel operation returned by the service.
+     * @sample AWSIoTWirelessAsync.PutResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourceLogLevelResult> putResourceLogLevelAsync(PutResourceLogLevelRequest putResourceLogLevelRequest);
+
+    /**
+     * <p>
+     * Sets the log-level override for a resource-ID and resource-type, could be a wireless gateway or a wireless
+     * device.
+     * </p>
+     * 
+     * @param putResourceLogLevelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourceLogLevel operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.PutResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourceLogLevelResult> putResourceLogLevelAsync(PutResourceLogLevelRequest putResourceLogLevelRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourceLogLevelRequest, PutResourceLogLevelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove log-level overrides if any for all resources (both wireless devices and wireless gateways).
+     * </p>
+     * 
+     * @param resetAllResourceLogLevelsRequest
+     * @return A Java Future containing the result of the ResetAllResourceLogLevels operation returned by the service.
+     * @sample AWSIoTWirelessAsync.ResetAllResourceLogLevels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetAllResourceLogLevelsResult> resetAllResourceLogLevelsAsync(
+            ResetAllResourceLogLevelsRequest resetAllResourceLogLevelsRequest);
+
+    /**
+     * <p>
+     * Remove log-level overrides if any for all resources (both wireless devices and wireless gateways).
+     * </p>
+     * 
+     * @param resetAllResourceLogLevelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetAllResourceLogLevels operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.ResetAllResourceLogLevels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetAllResourceLogLevelsResult> resetAllResourceLogLevelsAsync(
+            ResetAllResourceLogLevelsRequest resetAllResourceLogLevelsRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetAllResourceLogLevelsRequest, ResetAllResourceLogLevelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove log-level override if any for a specific resource-ID and resource-type, could be a wireless device or a
+     * wireless gateway.
+     * </p>
+     * 
+     * @param resetResourceLogLevelRequest
+     * @return A Java Future containing the result of the ResetResourceLogLevel operation returned by the service.
+     * @sample AWSIoTWirelessAsync.ResetResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetResourceLogLevelResult> resetResourceLogLevelAsync(ResetResourceLogLevelRequest resetResourceLogLevelRequest);
+
+    /**
+     * <p>
+     * Remove log-level override if any for a specific resource-ID and resource-type, could be a wireless device or a
+     * wireless gateway.
+     * </p>
+     * 
+     * @param resetResourceLogLevelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetResourceLogLevel operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.ResetResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetResourceLogLevelResult> resetResourceLogLevelAsync(ResetResourceLogLevelRequest resetResourceLogLevelRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetResourceLogLevelRequest, ResetResourceLogLevelResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends a decrypted application data frame to a device.
      * </p>
      * 
@@ -1603,6 +1770,43 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<UpdateDestinationResult> updateDestinationAsync(UpdateDestinationRequest updateDestinationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDestinationRequest, UpdateDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Set default log level, or log levels by resource types, could be for wireless device log options or wireless
+     * gateways log options. This is to control the log messages that will be displayed in CloudWatch.
+     * </p>
+     * 
+     * @param updateLogLevelsByResourceTypesRequest
+     * @return A Java Future containing the result of the UpdateLogLevelsByResourceTypes operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsync.UpdateLogLevelsByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLogLevelsByResourceTypesResult> updateLogLevelsByResourceTypesAsync(
+            UpdateLogLevelsByResourceTypesRequest updateLogLevelsByResourceTypesRequest);
+
+    /**
+     * <p>
+     * Set default log level, or log levels by resource types, could be for wireless device log options or wireless
+     * gateways log options. This is to control the log messages that will be displayed in CloudWatch.
+     * </p>
+     * 
+     * @param updateLogLevelsByResourceTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLogLevelsByResourceTypes operation returned by the
+     *         service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdateLogLevelsByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLogLevelsByResourceTypesResult> updateLogLevelsByResourceTypesAsync(
+            UpdateLogLevelsByResourceTypesRequest updateLogLevelsByResourceTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLogLevelsByResourceTypesRequest, UpdateLogLevelsByResourceTypesResult> asyncHandler);
 
     /**
      * <p>

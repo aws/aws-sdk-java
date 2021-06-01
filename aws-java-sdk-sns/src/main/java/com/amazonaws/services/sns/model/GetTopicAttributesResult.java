@@ -124,8 +124,8 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * message).
      * </p>
      * <p>
-     * (Optional) To override the generated value, you can specify a value for the the
-     * <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
+     * (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
+     * parameter for the <code>Publish</code> action.
      * </p>
      * </li>
      * </ul>
@@ -232,8 +232,8 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * message).
      * </p>
      * <p>
-     * (Optional) To override the generated value, you can specify a value for the the
-     * <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
+     * (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
+     * parameter for the <code>Publish</code> action.
      * </p>
      * </li>
      * </ul>
@@ -337,7 +337,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *         of the message).
      *         </p>
      *         <p>
-     *         (Optional) To override the generated value, you can specify a value for the the
+     *         (Optional) To override the generated value, you can specify a value for the
      *         <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
      *         </p>
      *         </li>
@@ -450,8 +450,8 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * message).
      * </p>
      * <p>
-     * (Optional) To override the generated value, you can specify a value for the the
-     * <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
+     * (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
+     * parameter for the <code>Publish</code> action.
      * </p>
      * </li>
      * </ul>
@@ -556,7 +556,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        of the message).
      *        </p>
      *        <p>
-     *        (Optional) To override the generated value, you can specify a value for the the
+     *        (Optional) To override the generated value, you can specify a value for the
      *        <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
      *        </p>
      *        </li>
@@ -666,8 +666,8 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * message).
      * </p>
      * <p>
-     * (Optional) To override the generated value, you can specify a value for the the
-     * <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
+     * (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
+     * parameter for the <code>Publish</code> action.
      * </p>
      * </li>
      * </ul>
@@ -772,7 +772,7 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        of the message).
      *        </p>
      *        <p>
-     *        (Optional) To override the generated value, you can specify a value for the the
+     *        (Optional) To override the generated value, you can specify a value for the
      *        <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
      *        </p>
      *        </li>

@@ -42,7 +42,7 @@ public class HttpInstanceSummary implements Serializable, Cloneable, StructuredP
      * <code/> <code/> <code/>
      * </p>
      * <p>
-     * The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code> member of the
+     * The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.
      * </p>
      */
@@ -111,12 +111,12 @@ public class HttpInstanceSummary implements Serializable, Cloneable, StructuredP
      * <code/> <code/> <code/>
      * </p>
      * <p>
-     * The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code> member of the
+     * The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.
      * </p>
      * 
      * @param namespaceName
-     *        <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the namespace, found in the
+     *        <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the namespace. It's found in the
      *        <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.
      */
 
@@ -129,11 +129,11 @@ public class HttpInstanceSummary implements Serializable, Cloneable, StructuredP
      * <code/> <code/> <code/>
      * </p>
      * <p>
-     * The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code> member of the
+     * The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.
      * </p>
      * 
-     * @return <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the namespace, found in the
+     * @return <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the namespace. It's found in the
      *         <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.
      */
 
@@ -146,12 +146,12 @@ public class HttpInstanceSummary implements Serializable, Cloneable, StructuredP
      * <code/> <code/> <code/>
      * </p>
      * <p>
-     * The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code> member of the
+     * The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.
      * </p>
      * 
      * @param namespaceName
-     *        <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the namespace, found in the
+     *        <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the namespace. It's found in the
      *        <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

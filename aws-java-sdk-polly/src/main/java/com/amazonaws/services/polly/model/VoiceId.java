@@ -37,6 +37,7 @@ public enum VoiceId {
     Enrique("Enrique"),
     Ewa("Ewa"),
     Filiz("Filiz"),
+    Gabrielle("Gabrielle"),
     Geraint("Geraint"),
     Giorgio("Giorgio"),
     Gwyneth("Gwyneth"),

@@ -48,10 +48,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * <p>
      * When you register an instance, AWS Cloud Map creates an <code>SRV</code> record and assigns a name to the record
-     * by concatenating the service name and the namespace name, for example:
+     * by concatenating the service name and the namespace name (for example,
      * </p>
      * <p>
-     * <code>_exampleservice._tcp.example.com</code>
+     * <code>_exampleservice._tcp.example.com</code>).
      * </p>
      * <note>
      * <p>
@@ -73,8 +73,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string,
-     * for example, a date/timestamp.
+     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string
+     * (for example, a date/timestamp).
      * </p>
      */
     private String creatorRequestId;
@@ -134,8 +134,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
-     * API operation. No DNS records will be registered for the service instances. The only valid value is
-     * <code>HTTP</code>.
+     * API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.
      * </p>
      */
     private String type;
@@ -163,10 +162,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * <p>
      * When you register an instance, AWS Cloud Map creates an <code>SRV</code> record and assigns a name to the record
-     * by concatenating the service name and the namespace name, for example:
+     * by concatenating the service name and the namespace name (for example,
      * </p>
      * <p>
-     * <code>_exampleservice._tcp.example.com</code>
+     * <code>_exampleservice._tcp.example.com</code>).
      * </p>
      * <note>
      * <p>
@@ -198,10 +197,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </ul>
      *        <p>
      *        When you register an instance, AWS Cloud Map creates an <code>SRV</code> record and assigns a name to the
-     *        record by concatenating the service name and the namespace name, for example:
+     *        record by concatenating the service name and the namespace name (for example,
      *        </p>
      *        <p>
-     *        <code>_exampleservice._tcp.example.com</code>
+     *        <code>_exampleservice._tcp.example.com</code>).
      *        </p>
      *        <note>
      *        <p>
@@ -239,10 +238,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * <p>
      * When you register an instance, AWS Cloud Map creates an <code>SRV</code> record and assigns a name to the record
-     * by concatenating the service name and the namespace name, for example:
+     * by concatenating the service name and the namespace name (for example,
      * </p>
      * <p>
-     * <code>_exampleservice._tcp.example.com</code>
+     * <code>_exampleservice._tcp.example.com</code>).
      * </p>
      * <note>
      * <p>
@@ -273,10 +272,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </ul>
      *         <p>
      *         When you register an instance, AWS Cloud Map creates an <code>SRV</code> record and assigns a name to the
-     *         record by concatenating the service name and the namespace name, for example:
+     *         record by concatenating the service name and the namespace name (for example,
      *         </p>
      *         <p>
-     *         <code>_exampleservice._tcp.example.com</code>
+     *         <code>_exampleservice._tcp.example.com</code>).
      *         </p>
      *         <note>
      *         <p>
@@ -314,10 +313,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </ul>
      * <p>
      * When you register an instance, AWS Cloud Map creates an <code>SRV</code> record and assigns a name to the record
-     * by concatenating the service name and the namespace name, for example:
+     * by concatenating the service name and the namespace name (for example,
      * </p>
      * <p>
-     * <code>_exampleservice._tcp.example.com</code>
+     * <code>_exampleservice._tcp.example.com</code>).
      * </p>
      * <note>
      * <p>
@@ -349,10 +348,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </ul>
      *        <p>
      *        When you register an instance, AWS Cloud Map creates an <code>SRV</code> record and assigns a name to the
-     *        record by concatenating the service name and the namespace name, for example:
+     *        record by concatenating the service name and the namespace name (for example,
      *        </p>
      *        <p>
-     *        <code>_exampleservice._tcp.example.com</code>
+     *        <code>_exampleservice._tcp.example.com</code>).
      *        </p>
      *        <note>
      *        <p>
@@ -418,14 +417,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string,
-     * for example, a date/timestamp.
+     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string
+     * (for example, a date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreateService</code> requests to
      *        be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
-     *        unique string, for example, a date/timestamp.
+     *        unique string (for example, a date/timestamp).
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -435,13 +434,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string,
-     * for example, a date/timestamp.
+     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string
+     * (for example, a date/timestamp).
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed <code>CreateService</code> requests to
      *         be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
-     *         unique string, for example, a date/timestamp.
+     *         unique string (for example, a date/timestamp).
      */
 
     public String getCreatorRequestId() {
@@ -451,14 +450,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string,
-     * for example, a date/timestamp.
+     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string
+     * (for example, a date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreateService</code> requests to
      *        be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
-     *        unique string, for example, a date/timestamp.
+     *        unique string (for example, a date/timestamp).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -831,14 +830,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
-     * API operation. No DNS records will be registered for the service instances. The only valid value is
-     * <code>HTTP</code>.
+     * API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.
      * </p>
      * 
      * @param type
      *        If present, specifies that the service instances are only discoverable using the
-     *        <code>DiscoverInstances</code> API operation. No DNS records will be registered for the service instances.
-     *        The only valid value is <code>HTTP</code>.
+     *        <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The
+     *        only valid value is <code>HTTP</code>.
      * @see ServiceTypeOption
      */
 
@@ -849,13 +847,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
-     * API operation. No DNS records will be registered for the service instances. The only valid value is
-     * <code>HTTP</code>.
+     * API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.
      * </p>
      * 
      * @return If present, specifies that the service instances are only discoverable using the
-     *         <code>DiscoverInstances</code> API operation. No DNS records will be registered for the service
-     *         instances. The only valid value is <code>HTTP</code>.
+     *         <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The
+     *         only valid value is <code>HTTP</code>.
      * @see ServiceTypeOption
      */
 
@@ -866,14 +863,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
-     * API operation. No DNS records will be registered for the service instances. The only valid value is
-     * <code>HTTP</code>.
+     * API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.
      * </p>
      * 
      * @param type
      *        If present, specifies that the service instances are only discoverable using the
-     *        <code>DiscoverInstances</code> API operation. No DNS records will be registered for the service instances.
-     *        The only valid value is <code>HTTP</code>.
+     *        <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The
+     *        only valid value is <code>HTTP</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceTypeOption
      */
@@ -886,14 +882,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
-     * API operation. No DNS records will be registered for the service instances. The only valid value is
-     * <code>HTTP</code>.
+     * API operation. No DNS records is registered for the service instances. The only valid value is <code>HTTP</code>.
      * </p>
      * 
      * @param type
      *        If present, specifies that the service instances are only discoverable using the
-     *        <code>DiscoverInstances</code> API operation. No DNS records will be registered for the service instances.
-     *        The only valid value is <code>HTTP</code>.
+     *        <code>DiscoverInstances</code> API operation. No DNS records is registered for the service instances. The
+     *        only valid value is <code>HTTP</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceTypeOption
      */

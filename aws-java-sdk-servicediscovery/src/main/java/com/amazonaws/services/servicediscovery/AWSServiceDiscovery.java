@@ -47,7 +47,7 @@ public interface AWSServiceDiscovery {
 
     /**
      * <p>
-     * Creates an HTTP namespace. Service instances that you register using an HTTP namespace can be discovered using a
+     * Creates an HTTP namespace. Service instances registered using an HTTP namespace can be discovered using a
      * <code>DiscoverInstances</code> request but can't be discovered using DNS.
      * </p>
      * <p>
@@ -81,7 +81,9 @@ public interface AWSServiceDiscovery {
      * Creates a private namespace based on DNS, which is visible only inside a specified Amazon VPC. The namespace
      * defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name
      * your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>.
-     * For the current quota on the number of namespaces that you can create using the same AWS account, see <a
+     * Service instances that are registered using a private DNS namespace can be discovered using either a
+     * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
+     * can create using the same AWS account, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
      * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -110,9 +112,11 @@ public interface AWSServiceDiscovery {
      * <p>
      * Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service
      * naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
-     * <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. For the current
-     * quota on the number of namespaces that you can create using the same AWS account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
+     * <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. You can
+     * discover instances that were registered with a public DNS namespace by using either a
+     * <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you
+     * can create using the same AWS account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Quotas</a>in the
      * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
      * 
@@ -138,7 +142,7 @@ public interface AWSServiceDiscovery {
 
     /**
      * <p>
-     * Creates a service, which defines the configuration for the following entities:
+     * Creates a service. This action defines the configuration for the following entities:
      * </p>
      * <ul>
      * <li>
@@ -336,7 +340,7 @@ public interface AWSServiceDiscovery {
      * </p>
      * <note>
      * <p>
-     * There is a brief delay between when you register an instance and when the health status for the instance is
+     * There's a brief delay between when you register an instance and when the health status for the instance is
      * available.
      * </p>
      * </note>
@@ -510,8 +514,8 @@ public interface AWSServiceDiscovery {
      * <ul>
      * <li>
      * <p>
-     * For each DNS record that you define in the service that is specified by <code>ServiceId</code>, a record is
-     * created or updated in the hosted zone that is associated with the corresponding namespace.
+     * For each DNS record that you define in the service that's specified by <code>ServiceId</code>, a record is
+     * created or updated in the hosted zone that's associated with the corresponding namespace.
      * </p>
      * </li>
      * <li>

@@ -82,7 +82,7 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      */
@@ -109,14 +109,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     * You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't
      * available over the internet. For example, you can use a custom health check when the instance is in an Amazon
      * VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * You want to use a third-party health checker regardless of where your resources are.
+     * You want to use a third-party health checker regardless of where your resources are located.
      * </p>
      * </li>
      * </ul>
@@ -521,14 +521,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count. The count might not
-     *        reflect pending registrations and deregistrations.
+     *        associated with the service but that are deleted aren't included in the count. The count might not reflect
+     *        pending registrations and deregistrations.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -538,12 +538,12 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      * 
      * @return The number of instances that are currently associated with the service. Instances that were previously
-     *         associated with the service but that have been deleted are not included in the count. The count might not
+     *         associated with the service but that are deleted aren't included in the count. The count might not
      *         reflect pending registrations and deregistrations.
      */
 
@@ -554,14 +554,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count. The count might not
-     *        reflect pending registrations and deregistrations.
+     *        associated with the service but that are deleted aren't included in the count. The count might not reflect
+     *        pending registrations and deregistrations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -673,14 +673,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     * You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't
      * available over the internet. For example, you can use a custom health check when the instance is in an Amazon
      * VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * You want to use a third-party health checker regardless of where your resources are.
+     * You want to use a third-party health checker regardless of where your resources are located.
      * </p>
      * </li>
      * </ul>
@@ -698,14 +698,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     *        You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't
      *        available over the internet. For example, you can use a custom health check when the instance is in an
      *        Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        You want to use a third-party health checker regardless of where your resources are.
+     *        You want to use a third-party health checker regardless of where your resources are located.
      *        </p>
      *        </li>
      *        </ul>
@@ -728,14 +728,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     * You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't
      * available over the internet. For example, you can use a custom health check when the instance is in an Amazon
      * VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * You want to use a third-party health checker regardless of where your resources are.
+     * You want to use a third-party health checker regardless of where your resources are located.
      * </p>
      * </li>
      * </ul>
@@ -752,14 +752,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     *         You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't
      *         available over the internet. For example, you can use a custom health check when the instance is in an
      *         Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         You want to use a third-party health checker regardless of where your resources are.
+     *         You want to use a third-party health checker regardless of where your resources are located.
      *         </p>
      *         </li>
      *         </ul>
@@ -782,14 +782,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     * You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't
      * available over the internet. For example, you can use a custom health check when the instance is in an Amazon
      * VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * You want to use a third-party health checker regardless of where your resources are.
+     * You want to use a third-party health checker regardless of where your resources are located.
      * </p>
      * </li>
      * </ul>
@@ -807,14 +807,14 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     *        You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't
      *        available over the internet. For example, you can use a custom health check when the instance is in an
      *        Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        You want to use a third-party health checker regardless of where your resources are.
+     *        You want to use a third-party health checker regardless of where your resources are located.
      *        </p>
      *        </li>
      *        </ul>

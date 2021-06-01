@@ -35,7 +35,7 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests
      * to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.
+     * string (for example, a date/timestamp).
      * </p>
      */
     private String creatorRequestId;
@@ -97,13 +97,13 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests
      * to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.
+     * string (for example, a date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code>
      *        requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
-     *        be any unique string, for example, a date/timestamp.
+     *        be any unique string (for example, a date/timestamp).
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -114,12 +114,12 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests
      * to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.
+     * string (for example, a date/timestamp).
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code>
      *         requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
-     *         be any unique string, for example, a date/timestamp.
+     *         be any unique string (for example, a date/timestamp).
      */
 
     public String getCreatorRequestId() {
@@ -130,13 +130,13 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code> requests
      * to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.
+     * string (for example, a date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code>
      *        requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
-     *        be any unique string, for example, a date/timestamp.
+     *        be any unique string (for example, a date/timestamp).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

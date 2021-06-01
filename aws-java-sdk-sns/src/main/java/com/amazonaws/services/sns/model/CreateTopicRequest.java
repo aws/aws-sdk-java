@@ -75,12 +75,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * The following attribute applies only to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side encryption</a>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
      * more examples, see <a href=
@@ -118,8 +118,8 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * message).
      * </p>
      * <p>
-     * (Optional) To override the generated value, you can specify a value for the the
-     * <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
+     * (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
+     * parameter for the <code>Publish</code> action.
      * </p>
      * </li>
      * </ul>
@@ -277,12 +277,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * The following attribute applies only to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side encryption</a>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
      * more examples, see <a href=
@@ -320,8 +320,8 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * message).
      * </p>
      * <p>
-     * (Optional) To override the generated value, you can specify a value for the the
-     * <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
+     * (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
+     * parameter for the <code>Publish</code> action.
      * </p>
      * </li>
      * </ul>
@@ -359,13 +359,13 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </ul>
      *         <p>
      *         The following attribute applies only to <a
-     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
-     *         >server-side-encryption</a>:
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     *         encryption</a>:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *         <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a
      *         custom CMK. For more information, see <a
      *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      *         Terms</a>. For more examples, see <a href=
@@ -404,7 +404,7 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         of the message).
      *         </p>
      *         <p>
-     *         (Optional) To override the generated value, you can specify a value for the the
+     *         (Optional) To override the generated value, you can specify a value for the
      *         <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
      *         </p>
      *         </li>
@@ -453,12 +453,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * The following attribute applies only to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side encryption</a>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
      * more examples, see <a href=
@@ -496,8 +496,8 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * message).
      * </p>
      * <p>
-     * (Optional) To override the generated value, you can specify a value for the the
-     * <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
+     * (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
+     * parameter for the <code>Publish</code> action.
      * </p>
      * </li>
      * </ul>
@@ -536,13 +536,13 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        The following attribute applies only to <a
-     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
-     *        >server-side-encryption</a>:
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     *        encryption</a>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *        <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a
      *        custom CMK. For more information, see <a
      *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      *        Terms</a>. For more examples, see <a href=
@@ -581,7 +581,7 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        of the message).
      *        </p>
      *        <p>
-     *        (Optional) To override the generated value, you can specify a value for the the
+     *        (Optional) To override the generated value, you can specify a value for the
      *        <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
      *        </p>
      *        </li>
@@ -627,12 +627,12 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * <p>
      * The following attribute applies only to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side encryption</a>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom CMK.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
      * more examples, see <a href=
@@ -670,8 +670,8 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * message).
      * </p>
      * <p>
-     * (Optional) To override the generated value, you can specify a value for the the
-     * <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
+     * (Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code>
+     * parameter for the <code>Publish</code> action.
      * </p>
      * </li>
      * </ul>
@@ -710,13 +710,13 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        The following attribute applies only to <a
-     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
-     *        >server-side-encryption</a>:
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     *        encryption</a>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *        <code>KmsMasterKeyId</code> – The ID of an AWS managed customer master key (CMK) for Amazon SNS or a
      *        custom CMK. For more information, see <a
      *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      *        Terms</a>. For more examples, see <a href=
@@ -755,7 +755,7 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        of the message).
      *        </p>
      *        <p>
-     *        (Optional) To override the generated value, you can specify a value for the the
+     *        (Optional) To override the generated value, you can specify a value for the
      *        <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.
      *        </p>
      *        </li>

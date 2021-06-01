@@ -406,6 +406,59 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
+     * Adds a destination phone number to an AWS account in the SMS sandbox and sends a one-time password (OTP) to that
+     * phone number.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param createSMSSandboxPhoneNumberRequest
+     * @return A Java Future containing the result of the CreateSMSSandboxPhoneNumber operation returned by the service.
+     * @sample AmazonSNSAsync.CreateSMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateSMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSMSSandboxPhoneNumberResult> createSMSSandboxPhoneNumberAsync(
+            CreateSMSSandboxPhoneNumberRequest createSMSSandboxPhoneNumberRequest);
+
+    /**
+     * <p>
+     * Adds a destination phone number to an AWS account in the SMS sandbox and sends a one-time password (OTP) to that
+     * phone number.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param createSMSSandboxPhoneNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSMSSandboxPhoneNumber operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.CreateSMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateSMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSMSSandboxPhoneNumberResult> createSMSSandboxPhoneNumberAsync(
+            CreateSMSSandboxPhoneNumberRequest createSMSSandboxPhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSMSSandboxPhoneNumberRequest, CreateSMSSandboxPhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a topic to which notifications can be published. Users can create at most 100,000 standard topics (at
      * most 1,000 FIFO topics). For more information, see <a
      * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent, so if the requester
@@ -543,6 +596,57 @@ public interface AmazonSNSAsync extends AmazonSNS {
     java.util.concurrent.Future<DeletePlatformApplicationResult> deletePlatformApplicationAsync(
             DeletePlatformApplicationRequest deletePlatformApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePlatformApplicationRequest, DeletePlatformApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an AWS account's verified or pending phone number from the SMS sandbox.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteSMSSandboxPhoneNumberRequest
+     * @return A Java Future containing the result of the DeleteSMSSandboxPhoneNumber operation returned by the service.
+     * @sample AmazonSNSAsync.DeleteSMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteSMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSMSSandboxPhoneNumberResult> deleteSMSSandboxPhoneNumberAsync(
+            DeleteSMSSandboxPhoneNumberRequest deleteSMSSandboxPhoneNumberRequest);
+
+    /**
+     * <p>
+     * Deletes an AWS account's verified or pending phone number from the SMS sandbox.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteSMSSandboxPhoneNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSMSSandboxPhoneNumber operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.DeleteSMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteSMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSMSSandboxPhoneNumberResult> deleteSMSSandboxPhoneNumberAsync(
+            DeleteSMSSandboxPhoneNumberRequest deleteSMSSandboxPhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSMSSandboxPhoneNumberRequest, DeleteSMSSandboxPhoneNumberResult> asyncHandler);
 
     /**
      * <p>
@@ -717,6 +821,57 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
+     * Retrieves the SMS sandbox status for the calling AWS account in the target AWS Region.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param getSMSSandboxAccountStatusRequest
+     * @return A Java Future containing the result of the GetSMSSandboxAccountStatus operation returned by the service.
+     * @sample AmazonSNSAsync.GetSMSSandboxAccountStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSMSSandboxAccountStatusResult> getSMSSandboxAccountStatusAsync(
+            GetSMSSandboxAccountStatusRequest getSMSSandboxAccountStatusRequest);
+
+    /**
+     * <p>
+     * Retrieves the SMS sandbox status for the calling AWS account in the target AWS Region.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param getSMSSandboxAccountStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSMSSandboxAccountStatus operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.GetSMSSandboxAccountStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSMSSandboxAccountStatusResult> getSMSSandboxAccountStatusAsync(
+            GetSMSSandboxAccountStatusRequest getSMSSandboxAccountStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSMSSandboxAccountStatusRequest, GetSMSSandboxAccountStatusResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns all of the properties of a subscription.
      * </p>
      * 
@@ -874,6 +1029,43 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
+     * Lists the calling AWS account's dedicated origination numbers and their metadata. For more information about
+     * origination numbers, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html"
+     * >Origination numbers</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * 
+     * @param listOriginationNumbersRequest
+     * @return A Java Future containing the result of the ListOriginationNumbers operation returned by the service.
+     * @sample AmazonSNSAsync.ListOriginationNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOriginationNumbersResult> listOriginationNumbersAsync(ListOriginationNumbersRequest listOriginationNumbersRequest);
+
+    /**
+     * <p>
+     * Lists the calling AWS account's dedicated origination numbers and their metadata. For more information about
+     * origination numbers, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html"
+     * >Origination numbers</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * 
+     * @param listOriginationNumbersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOriginationNumbers operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.ListOriginationNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOriginationNumbersResult> listOriginationNumbersAsync(ListOriginationNumbersRequest listOriginationNumbersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOriginationNumbersRequest, ListOriginationNumbersResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of phone numbers that are opted out, meaning you cannot send SMS messages to them.
      * </p>
      * <p>
@@ -986,6 +1178,57 @@ public interface AmazonSNSAsync extends AmazonSNS {
      */
     java.util.concurrent.Future<ListPlatformApplicationsResult> listPlatformApplicationsAsync(
             com.amazonaws.handlers.AsyncHandler<ListPlatformApplicationsRequest, ListPlatformApplicationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the calling AWS account's current verified and pending destination phone numbers in the SMS sandbox.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param listSMSSandboxPhoneNumbersRequest
+     * @return A Java Future containing the result of the ListSMSSandboxPhoneNumbers operation returned by the service.
+     * @sample AmazonSNSAsync.ListSMSSandboxPhoneNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSMSSandboxPhoneNumbersResult> listSMSSandboxPhoneNumbersAsync(
+            ListSMSSandboxPhoneNumbersRequest listSMSSandboxPhoneNumbersRequest);
+
+    /**
+     * <p>
+     * Lists the calling AWS account's current verified and pending destination phone numbers in the SMS sandbox.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param listSMSSandboxPhoneNumbersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSMSSandboxPhoneNumbers operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.ListSMSSandboxPhoneNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSMSSandboxPhoneNumbersResult> listSMSSandboxPhoneNumbersAsync(
+            ListSMSSandboxPhoneNumbersRequest listSMSSandboxPhoneNumbersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSMSSandboxPhoneNumbersRequest, ListSMSSandboxPhoneNumbersResult> asyncHandler);
 
     /**
      * <p>
@@ -1943,5 +2186,56 @@ public interface AmazonSNSAsync extends AmazonSNS {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Verifies a destination phone number with a one-time password (OTP) for the calling AWS account.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param verifySMSSandboxPhoneNumberRequest
+     * @return A Java Future containing the result of the VerifySMSSandboxPhoneNumber operation returned by the service.
+     * @sample AmazonSNSAsync.VerifySMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/VerifySMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<VerifySMSSandboxPhoneNumberResult> verifySMSSandboxPhoneNumberAsync(
+            VerifySMSSandboxPhoneNumberRequest verifySMSSandboxPhoneNumberRequest);
+
+    /**
+     * <p>
+     * Verifies a destination phone number with a one-time password (OTP) for the calling AWS account.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param verifySMSSandboxPhoneNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the VerifySMSSandboxPhoneNumber operation returned by the service.
+     * @sample AmazonSNSAsyncHandler.VerifySMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/VerifySMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<VerifySMSSandboxPhoneNumberResult> verifySMSSandboxPhoneNumberAsync(
+            VerifySMSSandboxPhoneNumberRequest verifySMSSandboxPhoneNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<VerifySMSSandboxPhoneNumberRequest, VerifySMSSandboxPhoneNumberResult> asyncHandler);
 
 }

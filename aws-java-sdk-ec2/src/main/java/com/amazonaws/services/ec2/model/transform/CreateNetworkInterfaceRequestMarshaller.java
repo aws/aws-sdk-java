@@ -21,6 +21,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * CreateNetworkInterfaceRequest Marshaller
@@ -146,6 +147,8 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
                 tagSpecificationsListIndex++;
             }
         }
+
+        request.addParameter("ClientToken", IdempotentUtils.resolveString(createNetworkInterfaceRequest.getClientToken()));
 
         return request;
     }

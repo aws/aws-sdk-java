@@ -36,7 +36,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
+     * If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
      * value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
@@ -50,8 +50,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * To register a new instance, you must specify a value that is unique among instances that you register by using
-     * the same service.
+     * To register a new instance, you must specify a value that's unique among instances that you register by using the
+     * same service.
      * </p>
      * </li>
      * <li>
@@ -74,8 +74,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be
      * retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code>
      * string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances
-     * for the same namespace and service. <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/time stamp.
+     * for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/time stamp).
      * </p>
      */
     private String creatorRequestId;
@@ -103,8 +103,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
-     * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
-     * DNS name, see <a href=
+     * balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS
+     * name, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName"
      * >AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.
      * </p>
@@ -114,19 +114,19 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     * The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
      * <code>A</code> record, an <code>AAAA</code> record, or both.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the service that is specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
+     * In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
      * <code>WEIGHTED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
+     * If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
      * Cloud Map creates the health check, but it won't associate the health check with the alias record.
      * </p>
      * </li>
@@ -164,7 +164,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
-     * return in response to DNS queries, for example, <code>example.com</code>.
+     * return in response to DNS queries (for example, <code>example.com</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -175,7 +175,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
-     * in response to DNS queries, for example, <code>192.0.2.44</code>.
+     * in response to DNS queries (for example, <code>192.0.2.44</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code>
@@ -187,7 +187,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
-     * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -220,7 +220,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
+     * If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
      * value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
@@ -234,8 +234,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * To register a new instance, you must specify a value that is unique among instances that you register by using
-     * the same service.
+     * To register a new instance, you must specify a value that's unique among instances that you register by using the
+     * same service.
      * </p>
      * </li>
      * <li>
@@ -257,7 +257,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code>
+     *        If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code>
      *        record, the value of <code>InstanceId</code> is automatically included as part of the value for the
      *        <code>SRV</code> record. For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
@@ -271,7 +271,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        To register a new instance, you must specify a value that is unique among instances that you register by
+     *        To register a new instance, you must specify a value that's unique among instances that you register by
      *        using the same service.
      *        </p>
      *        </li>
@@ -300,7 +300,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
+     * If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
      * value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
@@ -314,8 +314,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * To register a new instance, you must specify a value that is unique among instances that you register by using
-     * the same service.
+     * To register a new instance, you must specify a value that's unique among instances that you register by using the
+     * same service.
      * </p>
      * </li>
      * <li>
@@ -336,7 +336,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code>
+     *         If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code>
      *         record, the value of <code>InstanceId</code> is automatically included as part of the value for the
      *         <code>SRV</code> record. For more information, see <a
      *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
@@ -350,7 +350,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         To register a new instance, you must specify a value that is unique among instances that you register by
+     *         To register a new instance, you must specify a value that's unique among instances that you register by
      *         using the same service.
      *         </p>
      *         </li>
@@ -379,7 +379,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
+     * If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
      * value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
@@ -393,8 +393,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * To register a new instance, you must specify a value that is unique among instances that you register by using
-     * the same service.
+     * To register a new instance, you must specify a value that's unique among instances that you register by using the
+     * same service.
      * </p>
      * </li>
      * <li>
@@ -416,7 +416,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code>
+     *        If the service that's specified by <code>ServiceId</code> includes settings for an <code>SRV</code>
      *        record, the value of <code>InstanceId</code> is automatically included as part of the value for the
      *        <code>SRV</code> record. For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
@@ -430,7 +430,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        To register a new instance, you must specify a value that is unique among instances that you register by
+     *        To register a new instance, you must specify a value that's unique among instances that you register by
      *        using the same service.
      *        </p>
      *        </li>
@@ -459,8 +459,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be
      * retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code>
      * string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances
-     * for the same namespace and service. <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/time stamp.
+     * for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/time stamp).
      * </p>
      * 
      * @param creatorRequestId
@@ -468,7 +468,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        to be retried without the risk of executing the operation twice. You must use a unique
      *        <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if
      *        you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code>
-     *        can be any unique string, for example, a date/time stamp.
+     *        can be any unique string (for example, a date/time stamp).
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -480,15 +480,15 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be
      * retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code>
      * string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances
-     * for the same namespace and service. <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/time stamp.
+     * for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/time stamp).
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests
      *         to be retried without the risk of executing the operation twice. You must use a unique
      *         <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if
      *         you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code>
-     *         can be any unique string, for example, a date/time stamp.
+     *         can be any unique string (for example, a date/time stamp).
      */
 
     public String getCreatorRequestId() {
@@ -500,8 +500,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be
      * retried without the risk of executing the operation twice. You must use a unique <code>CreatorRequestId</code>
      * string every time you submit a <code>RegisterInstance</code> request if you're registering additional instances
-     * for the same namespace and service. <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/time stamp.
+     * for the same namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/time stamp).
      * </p>
      * 
      * @param creatorRequestId
@@ -509,7 +509,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        to be retried without the risk of executing the operation twice. You must use a unique
      *        <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code> request if
      *        you're registering additional instances for the same namespace and service. <code>CreatorRequestId</code>
-     *        can be any unique string, for example, a date/time stamp.
+     *        can be any unique string (for example, a date/time stamp).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -542,8 +542,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
-     * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
-     * DNS name, see <a href=
+     * balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS
+     * name, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName"
      * >AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.
      * </p>
@@ -553,19 +553,19 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     * The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
      * <code>A</code> record, an <code>AAAA</code> record, or both.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the service that is specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
+     * In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
      * <code>WEIGHTED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
+     * If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
      * Cloud Map creates the health check, but it won't associate the health check with the alias record.
      * </p>
      * </li>
@@ -603,7 +603,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
-     * return in response to DNS queries, for example, <code>example.com</code>.
+     * return in response to DNS queries (for example, <code>example.com</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -614,7 +614,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
-     * in response to DNS queries, for example, <code>192.0.2.44</code>.
+     * in response to DNS queries (for example, <code>192.0.2.44</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code>
@@ -626,7 +626,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
-     * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -672,7 +672,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <dd>
      *         <p>
      *         If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
-     *         Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
+     *         Balancing load balancer, specify the DNS name that's associated with the load balancer. For information
      *         about how to get the DNS name, see <a href=
      *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName"
      *         >AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.
@@ -683,19 +683,19 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         The configuration for the service that is specified by <code>ServiceId</code> must include settings for
-     *         an <code>A</code> record, an <code>AAAA</code> record, or both.
+     *         The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
+     *         <code>A</code> record, an <code>AAAA</code> record, or both.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In the service that is specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must
+     *         In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must
      *         be <code>WEIGHTED</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
+     *         If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
      *         settings, AWS Cloud Map creates the health check, but it won't associate the health check with the alias
      *         record.
      *         </p>
@@ -734,7 +734,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <dd>
      *         <p>
      *         If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53
-     *         to return in response to DNS queries, for example, <code>example.com</code>.
+     *         to return in response to DNS queries (for example, <code>example.com</code>).
      *         </p>
      *         <p>
      *         This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -745,7 +745,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <dd>
      *         <p>
      *         If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53
-     *         to return in response to DNS queries, for example, <code>192.0.2.44</code>.
+     *         to return in response to DNS queries (for example, <code>192.0.2.44</code>).
      *         </p>
      *         <p>
      *         This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -757,8 +757,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <dd>
      *         <p>
      *         If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want
-     *         Route 53 to return in response to DNS queries, for example,
-     *         <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *         Route 53 to return in response to DNS queries (for example,
+     *         <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      *         </p>
      *         <p>
      *         This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -811,8 +811,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
-     * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
-     * DNS name, see <a href=
+     * balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS
+     * name, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName"
      * >AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.
      * </p>
@@ -822,19 +822,19 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     * The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
      * <code>A</code> record, an <code>AAAA</code> record, or both.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the service that is specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
+     * In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
      * <code>WEIGHTED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
+     * If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
      * Cloud Map creates the health check, but it won't associate the health check with the alias record.
      * </p>
      * </li>
@@ -872,7 +872,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
-     * return in response to DNS queries, for example, <code>example.com</code>.
+     * return in response to DNS queries (for example, <code>example.com</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -883,7 +883,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
-     * in response to DNS queries, for example, <code>192.0.2.44</code>.
+     * in response to DNS queries (for example, <code>192.0.2.44</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code>
@@ -895,7 +895,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
-     * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -942,7 +942,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
-     *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
+     *        Balancing load balancer, specify the DNS name that's associated with the load balancer. For information
      *        about how to get the DNS name, see <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName"
      *        >AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.
@@ -953,19 +953,19 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     *        The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
      *        <code>A</code> record, an <code>AAAA</code> record, or both.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the service that is specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must
-     *        be <code>WEIGHTED</code>.
+     *        In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
+     *        <code>WEIGHTED</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
+     *        If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
      *        settings, AWS Cloud Map creates the health check, but it won't associate the health check with the alias
      *        record.
      *        </p>
@@ -1004,7 +1004,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53
-     *        to return in response to DNS queries, for example, <code>example.com</code>.
+     *        to return in response to DNS queries (for example, <code>example.com</code>).
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -1015,7 +1015,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
-     *        return in response to DNS queries, for example, <code>192.0.2.44</code>.
+     *        return in response to DNS queries (for example, <code>192.0.2.44</code>).
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -1027,7 +1027,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53
-     *        to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -1080,8 +1080,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
-     * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
-     * DNS name, see <a href=
+     * balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS
+     * name, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName"
      * >AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.
      * </p>
@@ -1091,19 +1091,19 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     * The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
      * <code>A</code> record, an <code>AAAA</code> record, or both.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the service that is specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
+     * In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
      * <code>WEIGHTED</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
+     * If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
      * Cloud Map creates the health check, but it won't associate the health check with the alias record.
      * </p>
      * </li>
@@ -1141,7 +1141,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
-     * return in response to DNS queries, for example, <code>example.com</code>.
+     * return in response to DNS queries (for example, <code>example.com</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -1152,7 +1152,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
-     * in response to DNS queries, for example, <code>192.0.2.44</code>.
+     * in response to DNS queries (for example, <code>192.0.2.44</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code>
@@ -1164,7 +1164,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <dd>
      * <p>
      * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
-     * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -1211,7 +1211,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
-     *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
+     *        Balancing load balancer, specify the DNS name that's associated with the load balancer. For information
      *        about how to get the DNS name, see <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-DNSName"
      *        >AliasTarget-&gt;DNSName</a> in the <i>Route 53 API Reference</i>.
@@ -1222,19 +1222,19 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     *        The configuration for the service that's specified by <code>ServiceId</code> must include settings for an
      *        <code>A</code> record, an <code>AAAA</code> record, or both.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the service that is specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must
-     *        be <code>WEIGHTED</code>.
+     *        In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code> must be
+     *        <code>WEIGHTED</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
+     *        If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
      *        settings, AWS Cloud Map creates the health check, but it won't associate the health check with the alias
      *        record.
      *        </p>
@@ -1273,7 +1273,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53
-     *        to return in response to DNS queries, for example, <code>example.com</code>.
+     *        to return in response to DNS queries (for example, <code>example.com</code>).
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -1284,7 +1284,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
-     *        return in response to DNS queries, for example, <code>192.0.2.44</code>.
+     *        return in response to DNS queries (for example, <code>192.0.2.44</code>).
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
@@ -1296,7 +1296,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53
-     *        to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an

@@ -888,6 +888,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetLogLevelsByResourceTypesResult> getLogLevelsByResourceTypesAsync(GetLogLevelsByResourceTypesRequest request) {
+
+        return getLogLevelsByResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogLevelsByResourceTypesResult> getLogLevelsByResourceTypesAsync(final GetLogLevelsByResourceTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLogLevelsByResourceTypesRequest, GetLogLevelsByResourceTypesResult> asyncHandler) {
+        final GetLogLevelsByResourceTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLogLevelsByResourceTypesResult>() {
+            @Override
+            public GetLogLevelsByResourceTypesResult call() throws Exception {
+                GetLogLevelsByResourceTypesResult result = null;
+
+                try {
+                    result = executeGetLogLevelsByResourceTypes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPartnerAccountResult> getPartnerAccountAsync(GetPartnerAccountRequest request) {
 
         return getPartnerAccountAsync(request, null);
@@ -905,6 +938,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeGetPartnerAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceLogLevelResult> getResourceLogLevelAsync(GetResourceLogLevelRequest request) {
+
+        return getResourceLogLevelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceLogLevelResult> getResourceLogLevelAsync(final GetResourceLogLevelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourceLogLevelRequest, GetResourceLogLevelResult> asyncHandler) {
+        final GetResourceLogLevelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourceLogLevelResult>() {
+            @Override
+            public GetResourceLogLevelResult call() throws Exception {
+                GetResourceLogLevelResult result = null;
+
+                try {
+                    result = executeGetResourceLogLevel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1522,6 +1588,105 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<PutResourceLogLevelResult> putResourceLogLevelAsync(PutResourceLogLevelRequest request) {
+
+        return putResourceLogLevelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourceLogLevelResult> putResourceLogLevelAsync(final PutResourceLogLevelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutResourceLogLevelRequest, PutResourceLogLevelResult> asyncHandler) {
+        final PutResourceLogLevelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutResourceLogLevelResult>() {
+            @Override
+            public PutResourceLogLevelResult call() throws Exception {
+                PutResourceLogLevelResult result = null;
+
+                try {
+                    result = executePutResourceLogLevel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetAllResourceLogLevelsResult> resetAllResourceLogLevelsAsync(ResetAllResourceLogLevelsRequest request) {
+
+        return resetAllResourceLogLevelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetAllResourceLogLevelsResult> resetAllResourceLogLevelsAsync(final ResetAllResourceLogLevelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetAllResourceLogLevelsRequest, ResetAllResourceLogLevelsResult> asyncHandler) {
+        final ResetAllResourceLogLevelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetAllResourceLogLevelsResult>() {
+            @Override
+            public ResetAllResourceLogLevelsResult call() throws Exception {
+                ResetAllResourceLogLevelsResult result = null;
+
+                try {
+                    result = executeResetAllResourceLogLevels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetResourceLogLevelResult> resetResourceLogLevelAsync(ResetResourceLogLevelRequest request) {
+
+        return resetResourceLogLevelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetResourceLogLevelResult> resetResourceLogLevelAsync(final ResetResourceLogLevelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetResourceLogLevelRequest, ResetResourceLogLevelResult> asyncHandler) {
+        final ResetResourceLogLevelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetResourceLogLevelResult>() {
+            @Override
+            public ResetResourceLogLevelResult call() throws Exception {
+                ResetResourceLogLevelResult result = null;
+
+                try {
+                    result = executeResetResourceLogLevel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SendDataToWirelessDeviceResult> sendDataToWirelessDeviceAsync(SendDataToWirelessDeviceRequest request) {
 
         return sendDataToWirelessDeviceAsync(request, null);
@@ -1671,6 +1836,40 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeUpdateDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLogLevelsByResourceTypesResult> updateLogLevelsByResourceTypesAsync(UpdateLogLevelsByResourceTypesRequest request) {
+
+        return updateLogLevelsByResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLogLevelsByResourceTypesResult> updateLogLevelsByResourceTypesAsync(
+            final UpdateLogLevelsByResourceTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLogLevelsByResourceTypesRequest, UpdateLogLevelsByResourceTypesResult> asyncHandler) {
+        final UpdateLogLevelsByResourceTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLogLevelsByResourceTypesResult>() {
+            @Override
+            public UpdateLogLevelsByResourceTypesResult call() throws Exception {
+                UpdateLogLevelsByResourceTypesResult result = null;
+
+                try {
+                    result = executeUpdateLogLevelsByResourceTypes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

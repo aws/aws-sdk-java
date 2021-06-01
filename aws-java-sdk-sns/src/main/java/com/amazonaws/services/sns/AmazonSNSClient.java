@@ -286,24 +286,28 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         exceptionUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EndpointDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FilterPolicyLimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new KMSOptInRequiredExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UserErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSAccessDeniedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSInvalidStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StaleTagExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new VerificationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ThrottledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSecurityExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OptedOutExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new KMSOptInRequiredExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ValidationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TopicLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ThrottledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PlatformApplicationDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ConcurrentAccessExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidSecurityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.sns.model.AmazonSNSException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -731,6 +735,86 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
+     * Adds a destination phone number to an AWS account in the SMS sandbox and sends a one-time password (OTP) to that
+     * phone number.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param createSMSSandboxPhoneNumberRequest
+     * @return Result of the CreateSMSSandboxPhoneNumber operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws OptedOutException
+     *         Indicates that the specified phone number opted out of receiving SMS messages from your AWS account. You
+     *         can't send SMS messages to phone numbers that opt out.
+     * @throws UserErrorException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.CreateSMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateSMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSMSSandboxPhoneNumberResult createSMSSandboxPhoneNumber(CreateSMSSandboxPhoneNumberRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSMSSandboxPhoneNumber(request);
+    }
+
+    @SdkInternalApi
+    final CreateSMSSandboxPhoneNumberResult executeCreateSMSSandboxPhoneNumber(CreateSMSSandboxPhoneNumberRequest createSMSSandboxPhoneNumberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSMSSandboxPhoneNumberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSMSSandboxPhoneNumberRequest> request = null;
+        Response<CreateSMSSandboxPhoneNumberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSMSSandboxPhoneNumberRequestMarshaller().marshall(super.beforeMarshalling(createSMSSandboxPhoneNumberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSMSSandboxPhoneNumber");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateSMSSandboxPhoneNumberResult> responseHandler = new StaxResponseHandler<CreateSMSSandboxPhoneNumberResult>(
+                    new CreateSMSSandboxPhoneNumberResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a topic to which notifications can be published. Users can create at most 100,000 standard topics (at
      * most 1,000 FIFO topics). For more information, see <a
      * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent, so if the requester
@@ -937,6 +1021,84 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<DeletePlatformApplicationResult> responseHandler = new StaxResponseHandler<DeletePlatformApplicationResult>(
                     new DeletePlatformApplicationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an AWS account's verified or pending phone number from the SMS sandbox.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteSMSSandboxPhoneNumberRequest
+     * @return Result of the DeleteSMSSandboxPhoneNumber operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ResourceNotFoundException
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
+     * @throws UserErrorException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.DeleteSMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteSMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSMSSandboxPhoneNumberResult deleteSMSSandboxPhoneNumber(DeleteSMSSandboxPhoneNumberRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSMSSandboxPhoneNumber(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSMSSandboxPhoneNumberResult executeDeleteSMSSandboxPhoneNumber(DeleteSMSSandboxPhoneNumberRequest deleteSMSSandboxPhoneNumberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSMSSandboxPhoneNumberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSMSSandboxPhoneNumberRequest> request = null;
+        Response<DeleteSMSSandboxPhoneNumberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSMSSandboxPhoneNumberRequestMarshaller().marshall(super.beforeMarshalling(deleteSMSSandboxPhoneNumberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSMSSandboxPhoneNumber");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteSMSSandboxPhoneNumberResult> responseHandler = new StaxResponseHandler<DeleteSMSSandboxPhoneNumberResult>(
+                    new DeleteSMSSandboxPhoneNumberResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -1233,6 +1395,78 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
+     * Retrieves the SMS sandbox status for the calling AWS account in the target AWS Region.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param getSMSSandboxAccountStatusRequest
+     * @return Result of the GetSMSSandboxAccountStatus operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.GetSMSSandboxAccountStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSMSSandboxAccountStatusResult getSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSMSSandboxAccountStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetSMSSandboxAccountStatusResult executeGetSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest getSMSSandboxAccountStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSMSSandboxAccountStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSMSSandboxAccountStatusRequest> request = null;
+        Response<GetSMSSandboxAccountStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSMSSandboxAccountStatusRequestMarshaller().marshall(super.beforeMarshalling(getSMSSandboxAccountStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSMSSandboxAccountStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetSMSSandboxAccountStatusResult> responseHandler = new StaxResponseHandler<GetSMSSandboxAccountStatusResult>(
+                    new GetSMSSandboxAccountStatusResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns all of the properties of a subscription.
      * </p>
      * 
@@ -1454,6 +1688,76 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
+     * Lists the calling AWS account's dedicated origination numbers and their metadata. For more information about
+     * origination numbers, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html"
+     * >Origination numbers</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * 
+     * @param listOriginationNumbersRequest
+     * @return Result of the ListOriginationNumbers operation returned by the service.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ValidationException
+     *         Indicates that a parameter in the request is invalid.
+     * @sample AmazonSNS.ListOriginationNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListOriginationNumbersResult listOriginationNumbers(ListOriginationNumbersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOriginationNumbers(request);
+    }
+
+    @SdkInternalApi
+    final ListOriginationNumbersResult executeListOriginationNumbers(ListOriginationNumbersRequest listOriginationNumbersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOriginationNumbersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOriginationNumbersRequest> request = null;
+        Response<ListOriginationNumbersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOriginationNumbersRequestMarshaller().marshall(super.beforeMarshalling(listOriginationNumbersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOriginationNumbers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListOriginationNumbersResult> responseHandler = new StaxResponseHandler<ListOriginationNumbersResult>(
+                    new ListOriginationNumbersResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of phone numbers that are opted out, meaning you cannot send SMS messages to them.
      * </p>
      * <p>
@@ -1601,6 +1905,82 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     @Override
     public ListPlatformApplicationsResult listPlatformApplications() {
         return listPlatformApplications(new ListPlatformApplicationsRequest());
+    }
+
+    /**
+     * <p>
+     * Lists the calling AWS account's current verified and pending destination phone numbers in the SMS sandbox.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param listSMSSandboxPhoneNumbersRequest
+     * @return Result of the ListSMSSandboxPhoneNumbers operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ResourceNotFoundException
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.ListSMSSandboxPhoneNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListSMSSandboxPhoneNumbersResult listSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSMSSandboxPhoneNumbers(request);
+    }
+
+    @SdkInternalApi
+    final ListSMSSandboxPhoneNumbersResult executeListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest listSMSSandboxPhoneNumbersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSMSSandboxPhoneNumbersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSMSSandboxPhoneNumbersRequest> request = null;
+        Response<ListSMSSandboxPhoneNumbersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSMSSandboxPhoneNumbersRequestMarshaller().marshall(super.beforeMarshalling(listSMSSandboxPhoneNumbersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSMSSandboxPhoneNumbers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListSMSSandboxPhoneNumbersResult> responseHandler = new StaxResponseHandler<ListSMSSandboxPhoneNumbersResult>(
+                    new ListSMSSandboxPhoneNumbersResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1771,7 +2151,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Can't tag resource. Verify that the topic exists.
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
      * @throws TagPolicyException
      *         The request doesn't comply with the IAM tag policy. Correct your request and then retry it.
      * @throws InvalidParameterException
@@ -2662,7 +3042,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Can't tag resource. Verify that the topic exists.
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
      * @throws TagLimitExceededException
      *         Can't add more than 50 tags to a topic.
      * @throws StaleTagException
@@ -2813,7 +3193,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Can't tag resource. Verify that the topic exists.
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
      * @throws TagLimitExceededException
      *         Can't add more than 50 tags to a topic.
      * @throws StaleTagException
@@ -2864,6 +3244,84 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<UntagResourceResult> responseHandler = new StaxResponseHandler<UntagResourceResult>(new UntagResourceResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Verifies a destination phone number with a one-time password (OTP) for the calling AWS account.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param verifySMSSandboxPhoneNumberRequest
+     * @return Result of the VerifySMSSandboxPhoneNumber operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ResourceNotFoundException
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
+     * @throws VerificationException
+     *         Indicates that the one-time password (OTP) used for verification is invalid.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.VerifySMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/VerifySMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public VerifySMSSandboxPhoneNumberResult verifySMSSandboxPhoneNumber(VerifySMSSandboxPhoneNumberRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifySMSSandboxPhoneNumber(request);
+    }
+
+    @SdkInternalApi
+    final VerifySMSSandboxPhoneNumberResult executeVerifySMSSandboxPhoneNumber(VerifySMSSandboxPhoneNumberRequest verifySMSSandboxPhoneNumberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(verifySMSSandboxPhoneNumberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<VerifySMSSandboxPhoneNumberRequest> request = null;
+        Response<VerifySMSSandboxPhoneNumberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new VerifySMSSandboxPhoneNumberRequestMarshaller().marshall(super.beforeMarshalling(verifySMSSandboxPhoneNumberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifySMSSandboxPhoneNumber");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<VerifySMSSandboxPhoneNumberResult> responseHandler = new StaxResponseHandler<VerifySMSSandboxPhoneNumberResult>(
+                    new VerifySMSSandboxPhoneNumberResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

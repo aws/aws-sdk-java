@@ -633,6 +633,30 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Returns current default log-levels, or log levels by resource types, could be for wireless device log options or
+     * wireless gateway log options.
+     * </p>
+     * 
+     * @param getLogLevelsByResourceTypesRequest
+     * @return Result of the GetLogLevelsByResourceTypes operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.GetLogLevelsByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLogLevelsByResourceTypesResult getLogLevelsByResourceTypes(GetLogLevelsByResourceTypesRequest getLogLevelsByResourceTypesRequest);
+
+    /**
+     * <p>
      * Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are
      * <code>null</code>, returns all partner accounts.
      * </p>
@@ -652,6 +676,30 @@ public interface AWSIoTWireless {
      *      API Documentation</a>
      */
     GetPartnerAccountResult getPartnerAccount(GetPartnerAccountRequest getPartnerAccountRequest);
+
+    /**
+     * <p>
+     * Fetches the log-level override if any for a given resource-ID and resource-type, coulde be a wireless device or a
+     * wireless gateway.
+     * </p>
+     * 
+     * @param getResourceLogLevelRequest
+     * @return Result of the GetResourceLogLevel operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.GetResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourceLogLevelResult getResourceLogLevel(GetResourceLogLevelRequest getResourceLogLevelRequest);
 
     /**
      * <p>
@@ -1057,6 +1105,77 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Sets the log-level override for a resource-ID and resource-type, could be a wireless gateway or a wireless
+     * device.
+     * </p>
+     * 
+     * @param putResourceLogLevelRequest
+     * @return Result of the PutResourceLogLevel operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.PutResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutResourceLogLevelResult putResourceLogLevel(PutResourceLogLevelRequest putResourceLogLevelRequest);
+
+    /**
+     * <p>
+     * Remove log-level overrides if any for all resources (both wireless devices and wireless gateways).
+     * </p>
+     * 
+     * @param resetAllResourceLogLevelsRequest
+     * @return Result of the ResetAllResourceLogLevels operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.ResetAllResourceLogLevels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ResetAllResourceLogLevelsResult resetAllResourceLogLevels(ResetAllResourceLogLevelsRequest resetAllResourceLogLevelsRequest);
+
+    /**
+     * <p>
+     * Remove log-level override if any for a specific resource-ID and resource-type, could be a wireless device or a
+     * wireless gateway.
+     * </p>
+     * 
+     * @param resetResourceLogLevelRequest
+     * @return Result of the ResetResourceLogLevel operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.ResetResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ResetResourceLogLevelResult resetResourceLogLevel(ResetResourceLogLevelRequest resetResourceLogLevelRequest);
+
+    /**
+     * <p>
      * Sends a decrypted application data frame to a device.
      * </p>
      * 
@@ -1167,6 +1286,32 @@ public interface AWSIoTWireless {
      *      API Documentation</a>
      */
     UpdateDestinationResult updateDestination(UpdateDestinationRequest updateDestinationRequest);
+
+    /**
+     * <p>
+     * Set default log level, or log levels by resource types, could be for wireless device log options or wireless
+     * gateways log options. This is to control the log messages that will be displayed in CloudWatch.
+     * </p>
+     * 
+     * @param updateLogLevelsByResourceTypesRequest
+     * @return Result of the UpdateLogLevelsByResourceTypes operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.UpdateLogLevelsByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLogLevelsByResourceTypesResult updateLogLevelsByResourceTypes(UpdateLogLevelsByResourceTypesRequest updateLogLevelsByResourceTypesRequest);
 
     /**
      * <p>

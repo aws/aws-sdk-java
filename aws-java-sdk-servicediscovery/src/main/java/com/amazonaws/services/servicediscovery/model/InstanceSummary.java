@@ -41,7 +41,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * The attributes that are associate with the instance.
+     * The attributes that are associated with the instance.
      * </p>
      * </li>
      * <li>
@@ -57,7 +57,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_ALIAS_DNS_NAME</dt>
      * <dd>
      * <p>
-     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's
      * associated with the load balancer.
      * </p>
      * </dd>
@@ -80,22 +80,22 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_INSTANCE_CNAME</dt>
      * <dd>
      * <p>
-     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for example,
-     * <code>example.com</code>.
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+     * <code>example.com</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV4</dt>
      * <dd>
      * <p>
-     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV6</dt>
      * <dd>
      * <p>
-     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_PORT</dt>
@@ -156,7 +156,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * The attributes that are associate with the instance.
+     * The attributes that are associated with the instance.
      * </p>
      * </li>
      * <li>
@@ -172,7 +172,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_ALIAS_DNS_NAME</dt>
      * <dd>
      * <p>
-     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's
      * associated with the load balancer.
      * </p>
      * </dd>
@@ -195,22 +195,22 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_INSTANCE_CNAME</dt>
      * <dd>
      * <p>
-     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for example,
-     * <code>example.com</code>.
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+     * <code>example.com</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV4</dt>
      * <dd>
      * <p>
-     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV6</dt>
      * <dd>
      * <p>
-     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_PORT</dt>
@@ -226,7 +226,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         The attributes that are associate with the instance.
+     *         The attributes that are associated with the instance.
      *         </p>
      *         </li>
      *         <li>
@@ -242,7 +242,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *         <dt>AWS_ALIAS_DNS_NAME</dt>
      *         <dd>
      *         <p>
-     *         For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     *         For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's
      *         associated with the load balancer.
      *         </p>
      *         </dd>
@@ -265,22 +265,22 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *         <dt>AWS_INSTANCE_CNAME</dt>
      *         <dd>
      *         <p>
-     *         For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for
-     *         example, <code>example.com</code>.
+     *         For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for
+     *         example, <code>example.com</code>).
      *         </p>
      *         </dd>
      *         <dt>AWS_INSTANCE_IPV4</dt>
      *         <dd>
      *         <p>
-     *         For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for
-     *         example, <code>192.0.2.44</code>.
+     *         For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for
+     *         example, <code>192.0.2.44</code>).
      *         </p>
      *         </dd>
      *         <dt>AWS_INSTANCE_IPV6</dt>
      *         <dd>
      *         <p>
-     *         For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for
-     *         example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *         For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for
+     *         example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      *         </p>
      *         </dd>
      *         <dt>AWS_INSTANCE_PORT</dt>
@@ -303,7 +303,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * The attributes that are associate with the instance.
+     * The attributes that are associated with the instance.
      * </p>
      * </li>
      * <li>
@@ -319,7 +319,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_ALIAS_DNS_NAME</dt>
      * <dd>
      * <p>
-     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's
      * associated with the load balancer.
      * </p>
      * </dd>
@@ -342,22 +342,22 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_INSTANCE_CNAME</dt>
      * <dd>
      * <p>
-     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for example,
-     * <code>example.com</code>.
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+     * <code>example.com</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV4</dt>
      * <dd>
      * <p>
-     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV6</dt>
      * <dd>
      * <p>
-     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_PORT</dt>
@@ -374,7 +374,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        The attributes that are associate with the instance.
+     *        The attributes that are associated with the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -390,7 +390,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <dt>AWS_ALIAS_DNS_NAME</dt>
      *        <dd>
      *        <p>
-     *        For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     *        For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's
      *        associated with the load balancer.
      *        </p>
      *        </dd>
@@ -413,22 +413,22 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <dt>AWS_INSTANCE_CNAME</dt>
      *        <dd>
      *        <p>
-     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for
-     *        example, <code>example.com</code>.
+     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for
+     *        example, <code>example.com</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_IPV4</dt>
      *        <dd>
      *        <p>
-     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for
-     *        example, <code>192.0.2.44</code>.
+     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for
+     *        example, <code>192.0.2.44</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_IPV6</dt>
      *        <dd>
      *        <p>
-     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for
-     *        example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for
+     *        example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_PORT</dt>
@@ -451,7 +451,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * The attributes that are associate with the instance.
+     * The attributes that are associated with the instance.
      * </p>
      * </li>
      * <li>
@@ -467,7 +467,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_ALIAS_DNS_NAME</dt>
      * <dd>
      * <p>
-     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's
      * associated with the load balancer.
      * </p>
      * </dd>
@@ -490,22 +490,22 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <dt>AWS_INSTANCE_CNAME</dt>
      * <dd>
      * <p>
-     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for example,
-     * <code>example.com</code>.
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for example,
+     * <code>example.com</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV4</dt>
      * <dd>
      * <p>
-     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_IPV6</dt>
      * <dd>
      * <p>
-     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      * </p>
      * </dd>
      * <dt>AWS_INSTANCE_PORT</dt>
@@ -522,7 +522,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        The attributes that are associate with the instance.
+     *        The attributes that are associated with the instance.
      *        </p>
      *        </li>
      *        <li>
@@ -538,7 +538,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <dt>AWS_ALIAS_DNS_NAME</dt>
      *        <dd>
      *        <p>
-     *        For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     *        For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that's
      *        associated with the load balancer.
      *        </p>
      *        </dd>
@@ -561,22 +561,22 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <dt>AWS_INSTANCE_CNAME</dt>
      *        <dd>
      *        <p>
-     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for
-     *        example, <code>example.com</code>.
+     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries (for
+     *        example, <code>example.com</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_IPV4</dt>
      *        <dd>
      *        <p>
-     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for
-     *        example, <code>192.0.2.44</code>.
+     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries (for
+     *        example, <code>192.0.2.44</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_IPV6</dt>
      *        <dd>
      *        <p>
-     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for
-     *        example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries (for
+     *        example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
      *        </p>
      *        </dd>
      *        <dt>AWS_INSTANCE_PORT</dt>

@@ -22,7 +22,8 @@ public enum HealthStatusFilter {
 
     HEALTHY("HEALTHY"),
     UNHEALTHY("UNHEALTHY"),
-    ALL("ALL");
+    ALL("ALL"),
+    HEALTHY_OR_ELSE_ALL("HEALTHY_OR_ELSE_ALL");
 
     private String value;
 

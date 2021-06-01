@@ -25,7 +25,7 @@ public class DuplicateRequestException extends com.amazonaws.services.servicedis
 
     /**
      * <p>
-     * The ID of the operation that is already in progress.
+     * The ID of the operation that's already in progress.
      * </p>
      */
     private String duplicateOperationId;
@@ -42,11 +42,11 @@ public class DuplicateRequestException extends com.amazonaws.services.servicedis
 
     /**
      * <p>
-     * The ID of the operation that is already in progress.
+     * The ID of the operation that's already in progress.
      * </p>
      * 
      * @param duplicateOperationId
-     *        The ID of the operation that is already in progress.
+     *        The ID of the operation that's already in progress.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("DuplicateOperationId")
@@ -56,10 +56,10 @@ public class DuplicateRequestException extends com.amazonaws.services.servicedis
 
     /**
      * <p>
-     * The ID of the operation that is already in progress.
+     * The ID of the operation that's already in progress.
      * </p>
      * 
-     * @return The ID of the operation that is already in progress.
+     * @return The ID of the operation that's already in progress.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("DuplicateOperationId")
@@ -69,11 +69,11 @@ public class DuplicateRequestException extends com.amazonaws.services.servicedis
 
     /**
      * <p>
-     * The ID of the operation that is already in progress.
+     * The ID of the operation that's already in progress.
      * </p>
      * 
      * @param duplicateOperationId
-     *        The ID of the operation that is already in progress.
+     *        The ID of the operation that's already in progress.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

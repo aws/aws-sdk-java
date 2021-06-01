@@ -360,6 +360,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetLogLevelsByResourceTypesResult> getLogLevelsByResourceTypesAsync(GetLogLevelsByResourceTypesRequest request) {
+
+        return getLogLevelsByResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogLevelsByResourceTypesResult> getLogLevelsByResourceTypesAsync(GetLogLevelsByResourceTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLogLevelsByResourceTypesRequest, GetLogLevelsByResourceTypesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPartnerAccountResult> getPartnerAccountAsync(GetPartnerAccountRequest request) {
 
         return getPartnerAccountAsync(request, null);
@@ -368,6 +381,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<GetPartnerAccountResult> getPartnerAccountAsync(GetPartnerAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPartnerAccountRequest, GetPartnerAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceLogLevelResult> getResourceLogLevelAsync(GetResourceLogLevelRequest request) {
+
+        return getResourceLogLevelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceLogLevelResult> getResourceLogLevelAsync(GetResourceLogLevelRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourceLogLevelRequest, GetResourceLogLevelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -613,6 +639,45 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<PutResourceLogLevelResult> putResourceLogLevelAsync(PutResourceLogLevelRequest request) {
+
+        return putResourceLogLevelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourceLogLevelResult> putResourceLogLevelAsync(PutResourceLogLevelRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResourceLogLevelRequest, PutResourceLogLevelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetAllResourceLogLevelsResult> resetAllResourceLogLevelsAsync(ResetAllResourceLogLevelsRequest request) {
+
+        return resetAllResourceLogLevelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetAllResourceLogLevelsResult> resetAllResourceLogLevelsAsync(ResetAllResourceLogLevelsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResetAllResourceLogLevelsRequest, ResetAllResourceLogLevelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetResourceLogLevelResult> resetResourceLogLevelAsync(ResetResourceLogLevelRequest request) {
+
+        return resetResourceLogLevelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetResourceLogLevelResult> resetResourceLogLevelAsync(ResetResourceLogLevelRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResetResourceLogLevelRequest, ResetResourceLogLevelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SendDataToWirelessDeviceResult> sendDataToWirelessDeviceAsync(SendDataToWirelessDeviceRequest request) {
 
         return sendDataToWirelessDeviceAsync(request, null);
@@ -673,6 +738,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<UpdateDestinationResult> updateDestinationAsync(UpdateDestinationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDestinationRequest, UpdateDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLogLevelsByResourceTypesResult> updateLogLevelsByResourceTypesAsync(UpdateLogLevelsByResourceTypesRequest request) {
+
+        return updateLogLevelsByResourceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLogLevelsByResourceTypesResult> updateLogLevelsByResourceTypesAsync(UpdateLogLevelsByResourceTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLogLevelsByResourceTypesRequest, UpdateLogLevelsByResourceTypesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

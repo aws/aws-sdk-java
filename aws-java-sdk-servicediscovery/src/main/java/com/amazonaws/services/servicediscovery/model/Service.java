@@ -61,7 +61,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      */
@@ -135,8 +135,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).
      * </p>
      */
     private String creatorRequestId;
@@ -344,14 +344,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count. The count might not
-     *        reflect pending registrations and deregistrations.
+     *        associated with the service but that are deleted aren't included in the count. The count might not reflect
+     *        pending registrations and deregistrations.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -361,12 +361,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      * 
      * @return The number of instances that are currently associated with the service. Instances that were previously
-     *         associated with the service but that have been deleted are not included in the count. The count might not
+     *         associated with the service but that are deleted aren't included in the count. The count might not
      *         reflect pending registrations and deregistrations.
      */
 
@@ -377,14 +377,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count. The count might not
-     *        reflect pending registrations and deregistrations.
+     *        associated with the service but that are deleted aren't included in the count. The count might not reflect
+     *        pending registrations and deregistrations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -860,14 +860,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
-     *        date/timestamp.
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     *        date/timestamp).
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -877,13 +877,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed requests to be retried without the
-     *         risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example,
-     *         a date/timestamp.
+     *         risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example,
+     *         a date/timestamp).
      */
 
     public String getCreatorRequestId() {
@@ -893,14 +893,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
-     *        date/timestamp.
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     *        date/timestamp).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

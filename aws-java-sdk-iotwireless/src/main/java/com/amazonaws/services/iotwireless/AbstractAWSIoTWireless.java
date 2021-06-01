@@ -148,7 +148,17 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public GetLogLevelsByResourceTypesResult getLogLevelsByResourceTypes(GetLogLevelsByResourceTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPartnerAccountResult getPartnerAccount(GetPartnerAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourceLogLevelResult getResourceLogLevel(GetResourceLogLevelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -243,6 +253,21 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    public PutResourceLogLevelResult putResourceLogLevel(PutResourceLogLevelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetAllResourceLogLevelsResult resetAllResourceLogLevels(ResetAllResourceLogLevelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResetResourceLogLevelResult resetResourceLogLevel(ResetResourceLogLevelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendDataToWirelessDeviceResult sendDataToWirelessDevice(SendDataToWirelessDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -264,6 +289,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public UpdateDestinationResult updateDestination(UpdateDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLogLevelsByResourceTypesResult updateLogLevelsByResourceTypes(UpdateLogLevelsByResourceTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

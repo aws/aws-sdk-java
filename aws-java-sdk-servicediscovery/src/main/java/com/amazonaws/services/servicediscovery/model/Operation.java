@@ -36,7 +36,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      */
     private String type;
@@ -48,7 +48,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>SUBMITTED</dt>
      * <dd>
      * <p>
-     * This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
      * </dd>
      * <dt>PENDING</dt>
@@ -139,7 +139,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date updateDate;
     /**
      * <p>
-     * The name of the target entity that is associated with the operation:
+     * The name of the target entity that's associated with the operation:
      * </p>
      * <dl>
      * <dt>NAMESPACE</dt>
@@ -206,11 +206,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      * 
      * @param type
-     *        The name of the operation that is associated with the specified ID.
+     *        The name of the operation that's associated with the specified ID.
      * @see OperationType
      */
 
@@ -220,10 +220,10 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      * 
-     * @return The name of the operation that is associated with the specified ID.
+     * @return The name of the operation that's associated with the specified ID.
      * @see OperationType
      */
 
@@ -233,11 +233,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      * 
      * @param type
-     *        The name of the operation that is associated with the specified ID.
+     *        The name of the operation that's associated with the specified ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -249,11 +249,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      * 
      * @param type
-     *        The name of the operation that is associated with the specified ID.
+     *        The name of the operation that's associated with the specified ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -271,7 +271,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>SUBMITTED</dt>
      * <dd>
      * <p>
-     * This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
      * </dd>
      * <dt>PENDING</dt>
@@ -300,7 +300,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        <dt>SUBMITTED</dt>
      *        <dd>
      *        <p>
-     *        This is the initial state immediately after you submit a request.
+     *        This is the initial state that occurs immediately after you submit a request.
      *        </p>
      *        </dd>
      *        <dt>PENDING</dt>
@@ -336,7 +336,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>SUBMITTED</dt>
      * <dd>
      * <p>
-     * This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
      * </dd>
      * <dt>PENDING</dt>
@@ -364,7 +364,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *         <dt>SUBMITTED</dt>
      *         <dd>
      *         <p>
-     *         This is the initial state immediately after you submit a request.
+     *         This is the initial state that occurs immediately after you submit a request.
      *         </p>
      *         </dd>
      *         <dt>PENDING</dt>
@@ -400,7 +400,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>SUBMITTED</dt>
      * <dd>
      * <p>
-     * This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
      * </dd>
      * <dt>PENDING</dt>
@@ -429,7 +429,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        <dt>SUBMITTED</dt>
      *        <dd>
      *        <p>
-     *        This is the initial state immediately after you submit a request.
+     *        This is the initial state that occurs immediately after you submit a request.
      *        </p>
      *        </dd>
      *        <dt>PENDING</dt>
@@ -467,7 +467,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <dt>SUBMITTED</dt>
      * <dd>
      * <p>
-     * This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
      * </dd>
      * <dt>PENDING</dt>
@@ -496,7 +496,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        <dt>SUBMITTED</dt>
      *        <dd>
      *        <p>
-     *        This is the initial state immediately after you submit a request.
+     *        This is the initial state that occurs immediately after you submit a request.
      *        </p>
      *        </dd>
      *        <dt>PENDING</dt>
@@ -937,7 +937,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target entity that is associated with the operation:
+     * The name of the target entity that's associated with the operation:
      * </p>
      * <dl>
      * <dt>NAMESPACE</dt>
@@ -960,7 +960,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </dd>
      * </dl>
      * 
-     * @return The name of the target entity that is associated with the operation:</p>
+     * @return The name of the target entity that's associated with the operation:</p>
      *         <dl>
      *         <dt>NAMESPACE</dt>
      *         <dd>
@@ -988,7 +988,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target entity that is associated with the operation:
+     * The name of the target entity that's associated with the operation:
      * </p>
      * <dl>
      * <dt>NAMESPACE</dt>
@@ -1012,7 +1012,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      * 
      * @param targets
-     *        The name of the target entity that is associated with the operation:</p>
+     *        The name of the target entity that's associated with the operation:</p>
      *        <dl>
      *        <dt>NAMESPACE</dt>
      *        <dd>
@@ -1040,7 +1040,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target entity that is associated with the operation:
+     * The name of the target entity that's associated with the operation:
      * </p>
      * <dl>
      * <dt>NAMESPACE</dt>
@@ -1064,7 +1064,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      * 
      * @param targets
-     *        The name of the target entity that is associated with the operation:</p>
+     *        The name of the target entity that's associated with the operation:</p>
      *        <dl>
      *        <dt>NAMESPACE</dt>
      *        <dd>

@@ -1774,6 +1774,74 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Returns current default log-levels, or log levels by resource types, could be for wireless device log options or
+     * wireless gateway log options.
+     * </p>
+     * 
+     * @param getLogLevelsByResourceTypesRequest
+     * @return Result of the GetLogLevelsByResourceTypes operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.GetLogLevelsByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLogLevelsByResourceTypesResult getLogLevelsByResourceTypes(GetLogLevelsByResourceTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLogLevelsByResourceTypes(request);
+    }
+
+    @SdkInternalApi
+    final GetLogLevelsByResourceTypesResult executeGetLogLevelsByResourceTypes(GetLogLevelsByResourceTypesRequest getLogLevelsByResourceTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLogLevelsByResourceTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLogLevelsByResourceTypesRequest> request = null;
+        Response<GetLogLevelsByResourceTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLogLevelsByResourceTypesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLogLevelsByResourceTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLogLevelsByResourceTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLogLevelsByResourceTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLogLevelsByResourceTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are
      * <code>null</code>, returns all partner accounts.
      * </p>
@@ -1826,6 +1894,72 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<GetPartnerAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPartnerAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Fetches the log-level override if any for a given resource-ID and resource-type, coulde be a wireless device or a
+     * wireless gateway.
+     * </p>
+     * 
+     * @param getResourceLogLevelRequest
+     * @return Result of the GetResourceLogLevel operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.GetResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourceLogLevelResult getResourceLogLevel(GetResourceLogLevelRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourceLogLevel(request);
+    }
+
+    @SdkInternalApi
+    final GetResourceLogLevelResult executeGetResourceLogLevel(GetResourceLogLevelRequest getResourceLogLevelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourceLogLevelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourceLogLevelRequest> request = null;
+        Response<GetResourceLogLevelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourceLogLevelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceLogLevelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceLogLevel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceLogLevelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourceLogLevelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3010,6 +3144,206 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Sets the log-level override for a resource-ID and resource-type, could be a wireless gateway or a wireless
+     * device.
+     * </p>
+     * 
+     * @param putResourceLogLevelRequest
+     * @return Result of the PutResourceLogLevel operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.PutResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutResourceLogLevelResult putResourceLogLevel(PutResourceLogLevelRequest request) {
+        request = beforeClientExecution(request);
+        return executePutResourceLogLevel(request);
+    }
+
+    @SdkInternalApi
+    final PutResourceLogLevelResult executePutResourceLogLevel(PutResourceLogLevelRequest putResourceLogLevelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putResourceLogLevelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutResourceLogLevelRequest> request = null;
+        Response<PutResourceLogLevelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutResourceLogLevelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourceLogLevelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourceLogLevel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutResourceLogLevelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourceLogLevelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove log-level overrides if any for all resources (both wireless devices and wireless gateways).
+     * </p>
+     * 
+     * @param resetAllResourceLogLevelsRequest
+     * @return Result of the ResetAllResourceLogLevels operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.ResetAllResourceLogLevels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ResetAllResourceLogLevelsResult resetAllResourceLogLevels(ResetAllResourceLogLevelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetAllResourceLogLevels(request);
+    }
+
+    @SdkInternalApi
+    final ResetAllResourceLogLevelsResult executeResetAllResourceLogLevels(ResetAllResourceLogLevelsRequest resetAllResourceLogLevelsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetAllResourceLogLevelsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetAllResourceLogLevelsRequest> request = null;
+        Response<ResetAllResourceLogLevelsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetAllResourceLogLevelsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(resetAllResourceLogLevelsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetAllResourceLogLevels");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResetAllResourceLogLevelsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ResetAllResourceLogLevelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove log-level override if any for a specific resource-ID and resource-type, could be a wireless device or a
+     * wireless gateway.
+     * </p>
+     * 
+     * @param resetResourceLogLevelRequest
+     * @return Result of the ResetResourceLogLevel operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.ResetResourceLogLevel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ResetResourceLogLevelResult resetResourceLogLevel(ResetResourceLogLevelRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetResourceLogLevel(request);
+    }
+
+    @SdkInternalApi
+    final ResetResourceLogLevelResult executeResetResourceLogLevel(ResetResourceLogLevelRequest resetResourceLogLevelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetResourceLogLevelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetResourceLogLevelRequest> request = null;
+        Response<ResetResourceLogLevelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetResourceLogLevelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetResourceLogLevelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetResourceLogLevel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResetResourceLogLevelResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ResetResourceLogLevelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sends a decrypted application data frame to a device.
      * </p>
      * 
@@ -3323,6 +3657,76 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Set default log level, or log levels by resource types, could be for wireless device log options or wireless
+     * gateways log options. This is to control the log messages that will be displayed in CloudWatch.
+     * </p>
+     * 
+     * @param updateLogLevelsByResourceTypesRequest
+     * @return Result of the UpdateLogLevelsByResourceTypes operation returned by the service.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @sample AWSIoTWireless.UpdateLogLevelsByResourceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLogLevelsByResourceTypesResult updateLogLevelsByResourceTypes(UpdateLogLevelsByResourceTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLogLevelsByResourceTypes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLogLevelsByResourceTypesResult executeUpdateLogLevelsByResourceTypes(UpdateLogLevelsByResourceTypesRequest updateLogLevelsByResourceTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLogLevelsByResourceTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLogLevelsByResourceTypesRequest> request = null;
+        Response<UpdateLogLevelsByResourceTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLogLevelsByResourceTypesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateLogLevelsByResourceTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLogLevelsByResourceTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLogLevelsByResourceTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateLogLevelsByResourceTypesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
