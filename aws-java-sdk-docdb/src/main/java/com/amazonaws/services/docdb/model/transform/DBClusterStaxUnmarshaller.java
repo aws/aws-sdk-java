@@ -140,6 +140,21 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("ReplicationSourceIdentifier", targetDepth)) {
+                    dBCluster.setReplicationSourceIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ReadReplicaIdentifiers", targetDepth)) {
+                    dBCluster.withReadReplicaIdentifiers(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("ReadReplicaIdentifiers/ReadReplicaIdentifier", targetDepth)) {
+                    dBCluster.withReadReplicaIdentifiers(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("DBClusterMembers", targetDepth)) {
                     dBCluster.withDBClusterMembers(new ArrayList<DBClusterMember>());
                     continue;

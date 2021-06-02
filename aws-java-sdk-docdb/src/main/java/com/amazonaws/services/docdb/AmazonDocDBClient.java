@@ -121,14 +121,17 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
         exceptionUnmarshallers.add(new InstanceQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new GlobalClusterQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new GlobalClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidGlobalClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBInstanceStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSubnetGroupStateExceptionUnmarshaller());
@@ -157,6 +160,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
         exceptionUnmarshallers.add(new InsufficientStorageClusterCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterSnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new GlobalClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
@@ -550,6 +554,10 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonDocDB.CreateDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -993,6 +1001,85 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
+     * Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions. The global cluster
+     * contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global
+     * clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated
+     * infrastructure with no impact to your workload’s performance.
+     * </p>
+     * <p/>
+     * <p>
+     * You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can
+     * specify an existing cluster during the create operation, and this cluster becomes the primary of the global
+     * cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param createGlobalClusterRequest
+     *        Represents the input to <a>CreateGlobalCluster</a>.
+     * @return Result of the CreateGlobalCluster operation returned by the service.
+     * @throws GlobalClusterAlreadyExistsException
+     *         The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster identifier (unique
+     *         name) to create a new global cluster.
+     * @throws GlobalClusterQuotaExceededException
+     *         The number of global clusters for this account is already at the maximum allowed.
+     * @throws InvalidDBClusterStateException
+     *         The cluster isn't in a valid state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+     * @sample AmazonDocDB.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GlobalCluster createGlobalCluster(CreateGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeCreateGlobalCluster(CreateGlobalClusterRequest createGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(createGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a previously provisioned cluster. When you delete a cluster, all automated backups for that cluster are
      * deleted and can't be recovered. Manual DB cluster snapshots of the specified cluster are not deleted.
      * </p>
@@ -1370,6 +1457,72 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
             }
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before
+     * attempting to delete a global cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param deleteGlobalClusterRequest
+     *        Represents the input to <a>DeleteGlobalCluster</a>.
+     * @return Result of the DeleteGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonDocDB.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GlobalCluster deleteGlobalCluster(DeleteGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeDeleteGlobalCluster(DeleteGlobalClusterRequest deleteGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(deleteGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -2164,6 +2317,69 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
+     * Returns information about Amazon DocumentDB global clusters. This API supports pagination.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeGlobalClustersRequest
+     * @return Result of the DescribeGlobalClusters operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @sample AmazonDocDB.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeGlobalClustersResult describeGlobalClusters(DescribeGlobalClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGlobalClusters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGlobalClustersResult executeDescribeGlobalClusters(DescribeGlobalClustersRequest describeGlobalClustersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGlobalClustersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGlobalClustersRequest> request = null;
+        Response<DescribeGlobalClustersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGlobalClustersRequestMarshaller().marshall(super.beforeMarshalling(describeGlobalClustersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalClusters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeGlobalClustersResult> responseHandler = new StaxResponseHandler<DescribeGlobalClustersResult>(
+                    new DescribeGlobalClustersResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of orderable instance options for the specified engine.
      * </p>
      * 
@@ -2872,6 +3088,73 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
+     * Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters
+     * (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new
+     * values in the request.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param modifyGlobalClusterRequest
+     *        Represents the input to <a>ModifyGlobalCluster</a>.
+     * @return Result of the ModifyGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonDocDB.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GlobalCluster modifyGlobalCluster(ModifyGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeModifyGlobalCluster(ModifyGlobalClusterRequest modifyGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(modifyGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain
      * changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the
      * instance for the changes to take effect.
@@ -2925,6 +3208,74 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster
+     * with read-write capability instead of being read-only and receiving data from a primary in a different region.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param removeFromGlobalClusterRequest
+     *        Represents the input to <a>RemoveFromGlobalCluster</a>.
+     * @return Result of the RemoveFromGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+     * @sample AmazonDocDB.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveFromGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GlobalCluster removeFromGlobalCluster(RemoveFromGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveFromGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeRemoveFromGlobalCluster(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeFromGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveFromGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveFromGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(removeFromGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveFromGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

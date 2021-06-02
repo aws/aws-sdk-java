@@ -945,8 +945,7 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Describes Amazon Elastic Container Service container instances. Returns metadata about registered and remaining
-     * resources on each container instance requested.
+     * Describes one or more container instances. Returns metadata about each container instance requested.
      * </p>
      * 
      * @param describeContainerInstancesRequest
@@ -960,8 +959,7 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Describes Amazon Elastic Container Service container instances. Returns metadata about registered and remaining
-     * resources on each container instance requested.
+     * Describes one or more container instances. Returns metadata about each container instance requested.
      * </p>
      * 
      * @param describeContainerInstancesRequest

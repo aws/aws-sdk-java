@@ -199,6 +199,10 @@ public interface AmazonDocDB {
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonDocDB.CreateDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -389,6 +393,43 @@ public interface AmazonDocDB {
 
     /**
      * <p>
+     * Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions. The global cluster
+     * contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global
+     * clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated
+     * infrastructure with no impact to your workload’s performance.
+     * </p>
+     * <p/>
+     * <p>
+     * You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can
+     * specify an existing cluster during the create operation, and this cluster becomes the primary of the global
+     * cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param createGlobalClusterRequest
+     *        Represents the input to <a>CreateGlobalCluster</a>.
+     * @return Result of the CreateGlobalCluster operation returned by the service.
+     * @throws GlobalClusterAlreadyExistsException
+     *         The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster identifier (unique
+     *         name) to create a new global cluster.
+     * @throws GlobalClusterQuotaExceededException
+     *         The number of global clusters for this account is already at the maximum allowed.
+     * @throws InvalidDBClusterStateException
+     *         The cluster isn't in a valid state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+     * @sample AmazonDocDB.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GlobalCluster createGlobalCluster(CreateGlobalClusterRequest createGlobalClusterRequest);
+
+    /**
+     * <p>
      * Deletes a previously provisioned cluster. When you delete a cluster, all automated backups for that cluster are
      * deleted and can't be recovered. Manual DB cluster snapshots of the specified cluster are not deleted.
      * </p>
@@ -522,6 +563,30 @@ public interface AmazonDocDB {
      *      API Documentation</a>
      */
     EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before
+     * attempting to delete a global cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param deleteGlobalClusterRequest
+     *        Represents the input to <a>DeleteGlobalCluster</a>.
+     * @return Result of the DeleteGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonDocDB.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GlobalCluster deleteGlobalCluster(DeleteGlobalClusterRequest deleteGlobalClusterRequest);
 
     /**
      * <p>
@@ -740,6 +805,26 @@ public interface AmazonDocDB {
      *      Documentation</a>
      */
     DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest);
+
+    /**
+     * <p>
+     * Returns information about Amazon DocumentDB global clusters. This API supports pagination.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeGlobalClustersRequest
+     * @return Result of the DescribeGlobalClusters operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @sample AmazonDocDB.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeGlobalClustersResult describeGlobalClusters(DescribeGlobalClustersRequest describeGlobalClustersRequest);
 
     /**
      * <p>
@@ -1023,6 +1108,31 @@ public interface AmazonDocDB {
 
     /**
      * <p>
+     * Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters
+     * (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new
+     * values in the request.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param modifyGlobalClusterRequest
+     *        Represents the input to <a>ModifyGlobalCluster</a>.
+     * @return Result of the ModifyGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonDocDB.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GlobalCluster modifyGlobalCluster(ModifyGlobalClusterRequest modifyGlobalClusterRequest);
+
+    /**
+     * <p>
      * You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain
      * changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the
      * instance for the changes to take effect.
@@ -1044,6 +1154,32 @@ public interface AmazonDocDB {
      *      Documentation</a>
      */
     DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest);
+
+    /**
+     * <p>
+     * Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster
+     * with read-write capability instead of being read-only and receiving data from a primary in a different region.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param removeFromGlobalClusterRequest
+     *        Represents the input to <a>RemoveFromGlobalCluster</a>.
+     * @return Result of the RemoveFromGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+     * @sample AmazonDocDB.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveFromGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GlobalCluster removeFromGlobalCluster(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest);
 
     /**
      * <p>

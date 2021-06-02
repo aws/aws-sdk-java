@@ -33,8 +33,11 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     private String autoScalingGroupName;
     /**
      * <p>
-     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
-     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
+     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * you specify an unknown scheduled action, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 actions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> scheduledActionNames;
@@ -106,13 +109,17 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
-     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
+     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * you specify an unknown scheduled action, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 actions.
      * </p>
      * 
-     * @return The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter,
-     *         all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no
-     *         error.
+     * @return The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are
+     *         described. If you specify an unknown scheduled action, it is ignored with no error.</p>
+     *         <p>
+     *         Array Members: Maximum number of 50 actions.
      */
 
     public java.util.List<String> getScheduledActionNames() {
@@ -124,14 +131,18 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
-     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
+     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * you specify an unknown scheduled action, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 actions.
      * </p>
      * 
      * @param scheduledActionNames
-     *        The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter,
-     *        all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no
-     *        error.
+     *        The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are
+     *        described. If you specify an unknown scheduled action, it is ignored with no error.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 actions.
      */
 
     public void setScheduledActionNames(java.util.Collection<String> scheduledActionNames) {
@@ -145,8 +156,11 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
-     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
+     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * you specify an unknown scheduled action, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 actions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -155,9 +169,10 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param scheduledActionNames
-     *        The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter,
-     *        all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no
-     *        error.
+     *        The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are
+     *        described. If you specify an unknown scheduled action, it is ignored with no error.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,14 +188,18 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter, all
-     * scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.
+     * The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If
+     * you specify an unknown scheduled action, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 actions.
      * </p>
      * 
      * @param scheduledActionNames
-     *        The names of one or more scheduled actions. You can specify up to 50 actions. If you omit this parameter,
-     *        all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no
-     *        error.
+     *        The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are
+     *        described. If you specify an unknown scheduled action, it is ignored with no error.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -506,6 +506,67 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
 
     /**
      * <p>
+     * Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions. The global cluster
+     * contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global
+     * clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated
+     * infrastructure with no impact to your workload’s performance.
+     * </p>
+     * <p/>
+     * <p>
+     * You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can
+     * specify an existing cluster during the create operation, and this cluster becomes the primary of the global
+     * cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param createGlobalClusterRequest
+     *        Represents the input to <a>CreateGlobalCluster</a>.
+     * @return A Java Future containing the result of the CreateGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest createGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions. The global cluster
+     * contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global
+     * clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated
+     * infrastructure with no impact to your workload’s performance.
+     * </p>
+     * <p/>
+     * <p>
+     * You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can
+     * specify an existing cluster during the create operation, and this cluster becomes the primary of the global
+     * cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param createGlobalClusterRequest
+     *        Represents the input to <a>CreateGlobalCluster</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest createGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGlobalClusterRequest, GlobalCluster> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a previously provisioned cluster. When you delete a cluster, all automated backups for that cluster are
      * deleted and can't be recovered. Manual DB cluster snapshots of the specified cluster are not deleted.
      * </p>
@@ -731,6 +792,51 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      */
     java.util.concurrent.Future<EventSubscription> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, EventSubscription> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before
+     * attempting to delete a global cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param deleteGlobalClusterRequest
+     *        Represents the input to <a>DeleteGlobalCluster</a>.
+     * @return A Java Future containing the result of the DeleteGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(DeleteGlobalClusterRequest deleteGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before
+     * attempting to delete a global cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param deleteGlobalClusterRequest
+     *        Represents the input to <a>DeleteGlobalCluster</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(DeleteGlobalClusterRequest deleteGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGlobalClusterRequest, GlobalCluster> asyncHandler);
 
     /**
      * <p>
@@ -1217,6 +1323,47 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
 
     /**
      * <p>
+     * Returns information about Amazon DocumentDB global clusters. This API supports pagination.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeGlobalClustersRequest
+     * @return A Java Future containing the result of the DescribeGlobalClusters operation returned by the service.
+     * @sample AmazonDocDBAsync.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(DescribeGlobalClustersRequest describeGlobalClustersRequest);
+
+    /**
+     * <p>
+     * Returns information about Amazon DocumentDB global clusters. This API supports pagination.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeGlobalClustersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeGlobalClusters operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(DescribeGlobalClustersRequest describeGlobalClustersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGlobalClustersRequest, DescribeGlobalClustersResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of orderable instance options for the specified engine.
      * </p>
      * 
@@ -1637,6 +1784,53 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
 
     /**
      * <p>
+     * Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters
+     * (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new
+     * values in the request.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param modifyGlobalClusterRequest
+     *        Represents the input to <a>ModifyGlobalCluster</a>.
+     * @return A Java Future containing the result of the ModifyGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(ModifyGlobalClusterRequest modifyGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters
+     * (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new
+     * values in the request.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param modifyGlobalClusterRequest
+     *        Represents the input to <a>ModifyGlobalCluster</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(ModifyGlobalClusterRequest modifyGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyGlobalClusterRequest, GlobalCluster> asyncHandler);
+
+    /**
+     * <p>
      * You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain
      * changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the
      * instance for the changes to take effect.
@@ -1679,6 +1873,51 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      */
     java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest rebootDBInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler);
+
+    /**
+     * <p>
+     * Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster
+     * with read-write capability instead of being read-only and receiving data from a primary in a different region.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param removeFromGlobalClusterRequest
+     *        Represents the input to <a>RemoveFromGlobalCluster</a>.
+     * @return A Java Future containing the result of the RemoveFromGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveFromGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster
+     * with read-write capability instead of being read-only and receiving data from a primary in a different region.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param removeFromGlobalClusterRequest
+     *        Represents the input to <a>RemoveFromGlobalCluster</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveFromGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveFromGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveFromGlobalClusterRequest, GlobalCluster> asyncHandler);
 
     /**
      * <p>

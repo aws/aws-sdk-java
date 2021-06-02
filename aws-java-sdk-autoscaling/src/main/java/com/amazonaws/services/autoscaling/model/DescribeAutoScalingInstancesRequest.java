@@ -27,8 +27,11 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you omit this parameter, all Auto
-     * Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.
+     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * ID that does not exist, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 items.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -48,13 +51,17 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you omit this parameter, all Auto
-     * Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.
+     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * ID that does not exist, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 items.
      * </p>
      * 
-     * @return The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you omit this parameter,
-     *         all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no
-     *         error.
+     * @return The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you
+     *         specify an ID that does not exist, it is ignored with no error.</p>
+     *         <p>
+     *         Array Members: Maximum number of 50 items.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -66,14 +73,18 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you omit this parameter, all Auto
-     * Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.
+     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * ID that does not exist, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 items.
      * </p>
      * 
      * @param instanceIds
-     *        The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you omit this parameter,
-     *        all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no
-     *        error.
+     *        The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you
+     *        specify an ID that does not exist, it is ignored with no error.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 items.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -87,8 +98,11 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you omit this parameter, all Auto
-     * Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.
+     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * ID that does not exist, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 items.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,9 +111,10 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param instanceIds
-     *        The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you omit this parameter,
-     *        all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no
-     *        error.
+     *        The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you
+     *        specify an ID that does not exist, it is ignored with no error.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,14 +130,18 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you omit this parameter, all Auto
-     * Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.
+     * The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an
+     * ID that does not exist, it is ignored with no error.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 items.
      * </p>
      * 
      * @param instanceIds
-     *        The IDs of the instances. You can specify up to <code>MaxRecords</code> IDs. If you omit this parameter,
-     *        all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no
-     *        error.
+     *        The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you
+     *        specify an ID that does not exist, it is ignored with no error.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

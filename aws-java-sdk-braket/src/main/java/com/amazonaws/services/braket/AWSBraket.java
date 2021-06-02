@@ -104,6 +104,10 @@ public interface AWSBraket {
      *         You do not have sufficient access to perform this action.
      * @throws ThrottlingException
      *         The throttling rate limit is met.
+     * @throws DeviceOfflineException
+     *         The specified device is currently offline.
+     * @throws DeviceRetiredException
+     *         The specified device has been retired.
      * @throws InternalServiceException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws ValidationException

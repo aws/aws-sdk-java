@@ -438,6 +438,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
     }
 
     @Override
+    public java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest request) {
+
+        return createGlobalClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(final CreateGlobalClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGlobalClusterRequest, GlobalCluster> asyncHandler) {
+        final CreateGlobalClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalCluster>() {
+            @Override
+            public GlobalCluster call() throws Exception {
+                GlobalCluster result = null;
+
+                try {
+                    result = executeCreateGlobalCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> deleteDBClusterAsync(DeleteDBClusterRequest request) {
 
         return deleteDBClusterAsync(request, null);
@@ -621,6 +654,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
 
                 try {
                     result = executeDeleteEventSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(DeleteGlobalClusterRequest request) {
+
+        return deleteGlobalClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(final DeleteGlobalClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGlobalClusterRequest, GlobalCluster> asyncHandler) {
+        final DeleteGlobalClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalCluster>() {
+            @Override
+            public GlobalCluster call() throws Exception {
+                GlobalCluster result = null;
+
+                try {
+                    result = executeDeleteGlobalCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1070,6 +1136,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(DescribeGlobalClustersRequest request) {
+
+        return describeGlobalClustersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(final DescribeGlobalClustersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeGlobalClustersRequest, DescribeGlobalClustersResult> asyncHandler) {
+        final DescribeGlobalClustersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeGlobalClustersResult>() {
+            @Override
+            public DescribeGlobalClustersResult call() throws Exception {
+                DescribeGlobalClustersResult result = null;
+
+                try {
+                    result = executeDescribeGlobalClusters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(
             DescribeOrderableDBInstanceOptionsRequest request) {
 
@@ -1406,6 +1505,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
     }
 
     @Override
+    public java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(ModifyGlobalClusterRequest request) {
+
+        return modifyGlobalClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(final ModifyGlobalClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyGlobalClusterRequest, GlobalCluster> asyncHandler) {
+        final ModifyGlobalClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalCluster>() {
+            @Override
+            public GlobalCluster call() throws Exception {
+                GlobalCluster result = null;
+
+                try {
+                    result = executeModifyGlobalCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest request) {
 
         return rebootDBInstanceAsync(request, null);
@@ -1423,6 +1555,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
 
                 try {
                     result = executeRebootDBInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(RemoveFromGlobalClusterRequest request) {
+
+        return removeFromGlobalClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(final RemoveFromGlobalClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveFromGlobalClusterRequest, GlobalCluster> asyncHandler) {
+        final RemoveFromGlobalClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalCluster>() {
+            @Override
+            public GlobalCluster call() throws Exception {
+                GlobalCluster result = null;
+
+                try {
+                    result = executeRemoveFromGlobalCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

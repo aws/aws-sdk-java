@@ -681,9 +681,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * already been completed, but it prevents new replacements from being started.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * instances based on an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * This operation is part of the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh
+     * feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group after you
+     * make configuration changes.
      * </p>
      * 
      * @param cancelInstanceRefreshRequest
@@ -1550,6 +1551,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * <p>
      * Deletes the warm pool for the specified Auto Scaling group.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for
+     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @param deleteWarmPoolRequest
      * @return Result of the DeleteWarmPool operation returned by the service.
@@ -1616,7 +1622,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS account.
+     * Describes the current Amazon EC2 Auto Scaling resource quotas for your account.
      * </p>
      * <p>
      * For information about requesting an increase, see <a
@@ -1685,8 +1691,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the available adjustment types for Amazon EC2 Auto Scaling scaling policies. These settings apply to
-     * step scaling policies and simple scaling policies; they do not apply to target tracking scaling policies.
+     * Describes the available adjustment types for step scaling and simple scaling policies.
      * </p>
      * <p>
      * The following adjustment types are supported:
@@ -1694,17 +1699,17 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * <ul>
      * <li>
      * <p>
-     * ChangeInCapacity
+     * <code>ChangeInCapacity</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ExactCapacity
+     * <code>ExactCapacity</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * PercentChangeInCapacity
+     * <code>PercentChangeInCapacity</code>
      * </p>
      * </li>
      * </ul>
@@ -1770,7 +1775,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes one or more Auto Scaling groups.
+     * Gets information about the Auto Scaling groups in the account and Region.
      * </p>
      * <p>
      * This operation returns information about instances in Auto Scaling groups. To retrieve information about the
@@ -1840,7 +1845,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes one or more Auto Scaling instances.
+     * Gets information about the Auto Scaling instances in the account and Region.
      * </p>
      * 
      * @param describeAutoScalingInstancesRequest
@@ -1972,11 +1977,21 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes one or more instance refreshes.
+     * Gets information about the instance refreshes for the specified Auto Scaling group.
      * </p>
      * <p>
-     * You can determine the status of a request by looking at the <code>Status</code> parameter. The following are the
-     * possible statuses:
+     * This operation is part of the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh
+     * feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group after you
+     * make configuration changes.
+     * </p>
+     * <p>
+     * To help you determine the status of an instance refresh, this operation returns information about the instance
+     * refreshes you previously initiated, including their status, end time, the percentage of the instance refresh that
+     * is complete, and the number of instances remaining to update before the instance refresh is complete.
+     * </p>
+     * <p>
+     * The following are the possible statuses:
      * </p>
      * <ul>
      * <li>
@@ -2012,11 +2027,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * instances based on an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-     * </p>
      * 
      * @param describeInstanceRefreshesRequest
      * @return Result of the DescribeInstanceRefreshes operation returned by the service.
@@ -2076,7 +2086,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes one or more launch configurations.
+     * Gets information about the launch configurations in the account and Region.
      * </p>
      * 
      * @param describeLaunchConfigurationsRequest
@@ -2150,12 +2160,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * <ul>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_LAUNCHING
+     * <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * autoscaling:EC2_INSTANCE_TERMINATING
+     * <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
      * </p>
      * </li>
      * </ul>
@@ -2221,7 +2231,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the lifecycle hooks for the specified Auto Scaling group.
+     * Gets information about the lifecycle hooks for the specified Auto Scaling group.
      * </p>
      * 
      * @param describeLifecycleHooksRequest
@@ -2280,7 +2290,29 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the target groups for the specified Auto Scaling group.
+     * Gets information about the load balancer target groups for the specified Auto Scaling group.
+     * </p>
+     * <p>
+     * To determine the availability of registered instances, use the <code>State</code> element in the response. When
+     * you attach a target group to an Auto Scaling group, the initial <code>State</code> value is <code>Adding</code>.
+     * The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target
+     * group. If Elastic Load Balancing health checks are enabled for the Auto Scaling group, the state transitions to
+     * <code>InService</code> after at least one Auto Scaling instance passes the health check. When the target group is
+     * in the <code>InService</code> state, Amazon EC2 Auto Scaling can terminate and replace any instances that are
+     * reported as unhealthy. If no registered instances pass the health checks, the target group doesn't enter the
+     * <code>InService</code> state.
+     * </p>
+     * <p>
+     * Target groups also have an <code>InService</code> state if you attach them in the <a>CreateAutoScalingGroup</a>
+     * API call. If your target group state is <code>InService</code>, but it is not working properly, check the scaling
+     * activities by calling <a>DescribeScalingActivities</a> and take any corrective actions necessary.
+     * </p>
+     * <p>
+     * For help with failed health checks, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting Amazon EC2
+     * Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load
+     * Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeLoadBalancerTargetGroupsRequest
@@ -2340,11 +2372,33 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the load balancers for the specified Auto Scaling group.
+     * Gets information about the load balancers for the specified Auto Scaling group.
      * </p>
      * <p>
      * This operation describes only Classic Load Balancers. If you have Application Load Balancers, Network Load
      * Balancers, or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a> API instead.
+     * </p>
+     * <p>
+     * To determine the availability of registered instances, use the <code>State</code> element in the response. When
+     * you attach a load balancer to an Auto Scaling group, the initial <code>State</code> value is <code>Adding</code>.
+     * The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the load
+     * balancer. If Elastic Load Balancing health checks are enabled for the Auto Scaling group, the state transitions
+     * to <code>InService</code> after at least one Auto Scaling instance passes the health check. When the load
+     * balancer is in the <code>InService</code> state, Amazon EC2 Auto Scaling can terminate and replace any instances
+     * that are reported as unhealthy. If no registered instances pass the health checks, the load balancer doesn't
+     * enter the <code>InService</code> state.
+     * </p>
+     * <p>
+     * Load balancers also have an <code>InService</code> state if you attach them in the <a>CreateAutoScalingGroup</a>
+     * API call. If your load balancer state is <code>InService</code>, but it is not working properly, check the
+     * scaling activities by calling <a>DescribeScalingActivities</a> and take any corrective actions necessary.
+     * </p>
+     * <p>
+     * For help with failed health checks, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting Amazon EC2
+     * Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load
+     * Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeLoadBalancersRequest
@@ -2471,7 +2525,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the notification actions associated with the specified Auto Scaling group.
+     * Gets information about the Amazon SNS notifications that are configured for one or more Auto Scaling groups.
      * </p>
      * 
      * @param describeNotificationConfigurationsRequest
@@ -2539,7 +2593,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the policies for the specified Auto Scaling group.
+     * Gets information about the scaling policies in the account and Region.
      * </p>
      * 
      * @param describePoliciesRequest
@@ -2607,14 +2661,21 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes one or more scaling activities for the specified Auto Scaling group.
+     * Gets information about the scaling activities in the account and Region.
      * </p>
      * <p>
-     * To view the scaling activities from the Amazon EC2 Auto Scaling console, choose the <b>Activity</b> tab of the
-     * Auto Scaling group. When scaling events occur, you see scaling activity messages in the <b>Activity history</b>.
-     * For more information, see <a
+     * When scaling events occur, you see a record of the scaling activity in the scaling activities. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-verify-scaling-activity.html">Verifying a scaling
      * activity for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * If the scaling event succeeds, the value of the <code>StatusCode</code> element in the response is
+     * <code>Successful</code>. If an attempt to launch instances failed, the <code>StatusCode</code> value is
+     * <code>Failed</code> or <code>Cancelled</code> and the <code>StatusMessage</code> element in the response
+     * indicates the cause of the failure. For help interpreting the <code>StatusMessage</code>, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting Amazon EC2
+     * Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeScalingActivitiesRequest
@@ -2744,8 +2805,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes the actions scheduled for your Auto Scaling group that haven't run or that have not reached their end
-     * time. To describe the actions that have already run, call the <a>DescribeScalingActivities</a> API.
+     * Gets information about the scheduled actions that haven't run or that have not reached their end time.
+     * </p>
+     * <p>
+     * To describe the scaling activities for scheduled actions that have already run, call the
+     * <a>DescribeScalingActivities</a> API.
      * </p>
      * 
      * @param describeScheduledActionsRequest
@@ -2959,7 +3023,12 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Describes a warm pool and its instances.
+     * Gets information about a warm pool and its instances.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for
+     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeWarmPoolRequest
@@ -4429,15 +4498,16 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * the Auto Scaling group with a new group of instances.
      * </p>
      * <p>
-     * If successful, this call creates a new instance refresh request with a unique ID that you can use to track its
+     * This operation is part of the <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh
+     * feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group after you
+     * make configuration changes.
+     * </p>
+     * <p>
+     * If the call succeeds, it creates a new instance refresh request with a unique ID that you can use to track its
      * progress. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes
      * that have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an instance refresh operation in
      * progress, use the <a>CancelInstanceRefresh</a> API.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * instances based on an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param startInstanceRefreshRequest

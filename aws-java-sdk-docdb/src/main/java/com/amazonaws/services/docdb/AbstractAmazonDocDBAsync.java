@@ -171,6 +171,19 @@ public class AbstractAmazonDocDBAsync extends AbstractAmazonDocDB implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest request) {
+
+        return createGlobalClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGlobalClusterRequest, GlobalCluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> deleteDBClusterAsync(DeleteDBClusterRequest request) {
 
         return deleteDBClusterAsync(request, null);
@@ -244,6 +257,19 @@ public class AbstractAmazonDocDBAsync extends AbstractAmazonDocDB implements Ama
     @Override
     public java.util.concurrent.Future<EventSubscription> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, EventSubscription> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(DeleteGlobalClusterRequest request) {
+
+        return deleteGlobalClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(DeleteGlobalClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteGlobalClusterRequest, GlobalCluster> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -422,6 +448,19 @@ public class AbstractAmazonDocDBAsync extends AbstractAmazonDocDB implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(DescribeGlobalClustersRequest request) {
+
+        return describeGlobalClustersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(DescribeGlobalClustersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeGlobalClustersRequest, DescribeGlobalClustersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(
             DescribeOrderableDBInstanceOptionsRequest request) {
 
@@ -557,6 +596,19 @@ public class AbstractAmazonDocDBAsync extends AbstractAmazonDocDB implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(ModifyGlobalClusterRequest request) {
+
+        return modifyGlobalClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(ModifyGlobalClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyGlobalClusterRequest, GlobalCluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest request) {
 
         return rebootDBInstanceAsync(request, null);
@@ -565,6 +617,19 @@ public class AbstractAmazonDocDBAsync extends AbstractAmazonDocDB implements Ama
     @Override
     public java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(RemoveFromGlobalClusterRequest request) {
+
+        return removeFromGlobalClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(RemoveFromGlobalClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveFromGlobalClusterRequest, GlobalCluster> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

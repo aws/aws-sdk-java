@@ -208,9 +208,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration;
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is set to <code>true</code>.
+     * The version number of the database engine to which you want to upgrade. Modifying engine version is not supported
+     * on Amazon DocumentDB.
      * </p>
      */
     private String engineVersion;
@@ -1385,15 +1384,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is set to <code>true</code>.
+     * The version number of the database engine to which you want to upgrade. Modifying engine version is not supported
+     * on Amazon DocumentDB.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
-     *        an outage. The change is applied during the next maintenance window unless the
-     *        <code>ApplyImmediately</code> parameter is set to <code>true</code>.
+     *        The version number of the database engine to which you want to upgrade. Modifying engine version is not
+     *        supported on Amazon DocumentDB.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1402,14 +1399,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is set to <code>true</code>.
+     * The version number of the database engine to which you want to upgrade. Modifying engine version is not supported
+     * on Amazon DocumentDB.
      * </p>
      * 
-     * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
-     *         in an outage. The change is applied during the next maintenance window unless the
-     *         <code>ApplyImmediately</code> parameter is set to <code>true</code>.
+     * @return The version number of the database engine to which you want to upgrade. Modifying engine version is not
+     *         supported on Amazon DocumentDB.
      */
 
     public String getEngineVersion() {
@@ -1418,15 +1413,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
-     * outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is set to <code>true</code>.
+     * The version number of the database engine to which you want to upgrade. Modifying engine version is not supported
+     * on Amazon DocumentDB.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
-     *        an outage. The change is applied during the next maintenance window unless the
-     *        <code>ApplyImmediately</code> parameter is set to <code>true</code>.
+     *        The version number of the database engine to which you want to upgrade. Modifying engine version is not
+     *        supported on Amazon DocumentDB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

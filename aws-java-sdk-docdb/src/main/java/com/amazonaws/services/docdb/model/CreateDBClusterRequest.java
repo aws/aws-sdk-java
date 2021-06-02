@@ -281,6 +281,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * The cluster identifier of the new global cluster.
+     * </p>
+     */
+    private String globalClusterIdentifier;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -2013,6 +2019,46 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The cluster identifier of the new global cluster.
+     * </p>
+     * 
+     * @param globalClusterIdentifier
+     *        The cluster identifier of the new global cluster.
+     */
+
+    public void setGlobalClusterIdentifier(String globalClusterIdentifier) {
+        this.globalClusterIdentifier = globalClusterIdentifier;
+    }
+
+    /**
+     * <p>
+     * The cluster identifier of the new global cluster.
+     * </p>
+     * 
+     * @return The cluster identifier of the new global cluster.
+     */
+
+    public String getGlobalClusterIdentifier() {
+        return this.globalClusterIdentifier;
+    }
+
+    /**
+     * <p>
+     * The cluster identifier of the new global cluster.
+     * </p>
+     * 
+     * @param globalClusterIdentifier
+     *        The cluster identifier of the new global cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withGlobalClusterIdentifier(String globalClusterIdentifier) {
+        setGlobalClusterIdentifier(globalClusterIdentifier);
+        return this;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -2096,6 +2142,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getGlobalClusterIdentifier() != null)
+            sb.append("GlobalClusterIdentifier: ").append(getGlobalClusterIdentifier()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -2188,6 +2236,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getGlobalClusterIdentifier() == null ^ this.getGlobalClusterIdentifier() == null)
+            return false;
+        if (other.getGlobalClusterIdentifier() != null && other.getGlobalClusterIdentifier().equals(this.getGlobalClusterIdentifier()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -2219,6 +2271,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getGlobalClusterIdentifier() == null) ? 0 : getGlobalClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

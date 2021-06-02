@@ -459,7 +459,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      *        If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots
      *        are returned. You can include shared cluster snapshots with these results by setting the
      *        <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with
-     *        these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
+     *        these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.
      *        </p>
      *        <p>
      *        The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
@@ -541,7 +541,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      *         If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots
      *         are returned. You can include shared cluster snapshots with these results by setting the
      *         <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with
-     *         these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
+     *         these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.
      *         </p>
      *         <p>
      *         The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for
@@ -624,7 +624,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      *        If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots
      *        are returned. You can include shared cluster snapshots with these results by setting the
      *        <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with
-     *        these results by setting the <code>IncludePublic</code> parameter to <code>true</code>.
+     *        these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.
      *        </p>
      *        <p>
      *        The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for

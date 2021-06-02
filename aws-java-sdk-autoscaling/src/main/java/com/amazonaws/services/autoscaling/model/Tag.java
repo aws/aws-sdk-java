@@ -28,7 +28,7 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      */
     private String resourceId;
@@ -59,11 +59,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param resourceId
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      */
 
     public void setResourceId(String resourceId) {
@@ -72,10 +72,10 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
-     * @return The name of the group.
+     * @return The name of the Auto Scaling group.
      */
 
     public String getResourceId() {
@@ -84,11 +84,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the group.
+     * The name of the Auto Scaling group.
      * </p>
      * 
      * @param resourceId
-     *        The name of the group.
+     *        The name of the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

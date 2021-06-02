@@ -64,6 +64,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"},
+        {"shape":"DeviceOfflineException"},
+        {"shape":"DeviceRetiredException"},
         {"shape":"InternalServiceException"},
         {"shape":"ValidationException"}
       ],
@@ -290,7 +292,7 @@
     },
     "CreateQuantumTaskRequestDeviceParametersString":{
       "type":"string",
-      "max":2048,
+      "max":48000,
       "min":1
     },
     "CreateQuantumTaskRequestOutputS3BucketString":{
@@ -335,11 +337,24 @@
       },
       "exception":true
     },
+    "DeviceRetiredException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "documentation":"<p>The specified device has been retired.</p>",
+      "error":{
+        "httpStatusCode":410,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "DeviceStatus":{
       "type":"string",
       "enum":[
         "ONLINE",
-        "OFFLINE"
+        "OFFLINE",
+        "RETIRED"
       ]
     },
     "DeviceSummary":{
@@ -872,7 +887,7 @@
         },
         "tagKeys":{
           "shape":"TagKeys",
-          "documentation":"<p>pecify the keys for the tags to remove from the resource.</p>",
+          "documentation":"<p>Specify the keys for the tags to remove from the resource.</p>",
           "location":"querystring",
           "locationName":"tagKeys"
         }

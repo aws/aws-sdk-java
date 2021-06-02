@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DeviceStatus {
 
     ONLINE("ONLINE"),
-    OFFLINE("OFFLINE");
+    OFFLINE("OFFLINE"),
+    RETIRED("RETIRED");
 
     private String value;
 

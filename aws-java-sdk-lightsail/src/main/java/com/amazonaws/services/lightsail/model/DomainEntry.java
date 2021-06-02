@@ -79,7 +79,7 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AAA</code>
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
@@ -387,7 +387,7 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AAA</code>
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
@@ -436,7 +436,7 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AAA</code>
+     *        <code>AAAA</code>
      *        </p>
      *        </li>
      *        <li>
@@ -491,7 +491,7 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AAA</code>
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
@@ -540,7 +540,7 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AAA</code>
+     *         <code>AAAA</code>
      *         </p>
      *         </li>
      *         <li>
@@ -595,7 +595,7 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>AAA</code>
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
@@ -644,7 +644,7 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AAA</code>
+     *        <code>AAAA</code>
      *        </p>
      *        </li>
      *        <li>

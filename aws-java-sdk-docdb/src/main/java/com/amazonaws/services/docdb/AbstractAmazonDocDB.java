@@ -84,6 +84,11 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
     }
 
     @Override
+    public GlobalCluster createGlobalCluster(CreateGlobalClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBCluster deleteDBCluster(DeleteDBClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +115,11 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
 
     @Override
     public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GlobalCluster deleteGlobalCluster(DeleteGlobalClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,6 +189,11 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
     }
 
     @Override
+    public DescribeGlobalClustersResult describeGlobalClusters(DescribeGlobalClustersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeOrderableDBInstanceOptionsResult describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,7 +244,17 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
     }
 
     @Override
+    public GlobalCluster modifyGlobalCluster(ModifyGlobalClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBInstance rebootDBInstance(RebootDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GlobalCluster removeFromGlobalCluster(RemoveFromGlobalClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

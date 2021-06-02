@@ -147,6 +147,18 @@ public class DBCluster implements Serializable, Cloneable {
     private String preferredMaintenanceWindow;
     /**
      * <p>
+     * Contains the identifier of the source cluster if this cluster is a secondary cluster.
+     * </p>
+     */
+    private String replicationSourceIdentifier;
+    /**
+     * <p>
+     * Contains one or more identifiers of the secondary clusters that are associated with this cluster.
+     * </p>
+     */
+    private java.util.List<String> readReplicaIdentifiers;
+    /**
+     * <p>
      * Provides the list of instances that make up the cluster.
      * </p>
      */
@@ -1047,6 +1059,116 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Contains the identifier of the source cluster if this cluster is a secondary cluster.
+     * </p>
+     * 
+     * @param replicationSourceIdentifier
+     *        Contains the identifier of the source cluster if this cluster is a secondary cluster.
+     */
+
+    public void setReplicationSourceIdentifier(String replicationSourceIdentifier) {
+        this.replicationSourceIdentifier = replicationSourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * Contains the identifier of the source cluster if this cluster is a secondary cluster.
+     * </p>
+     * 
+     * @return Contains the identifier of the source cluster if this cluster is a secondary cluster.
+     */
+
+    public String getReplicationSourceIdentifier() {
+        return this.replicationSourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * Contains the identifier of the source cluster if this cluster is a secondary cluster.
+     * </p>
+     * 
+     * @param replicationSourceIdentifier
+     *        Contains the identifier of the source cluster if this cluster is a secondary cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withReplicationSourceIdentifier(String replicationSourceIdentifier) {
+        setReplicationSourceIdentifier(replicationSourceIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of the secondary clusters that are associated with this cluster.
+     * </p>
+     * 
+     * @return Contains one or more identifiers of the secondary clusters that are associated with this cluster.
+     */
+
+    public java.util.List<String> getReadReplicaIdentifiers() {
+        return readReplicaIdentifiers;
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of the secondary clusters that are associated with this cluster.
+     * </p>
+     * 
+     * @param readReplicaIdentifiers
+     *        Contains one or more identifiers of the secondary clusters that are associated with this cluster.
+     */
+
+    public void setReadReplicaIdentifiers(java.util.Collection<String> readReplicaIdentifiers) {
+        if (readReplicaIdentifiers == null) {
+            this.readReplicaIdentifiers = null;
+            return;
+        }
+
+        this.readReplicaIdentifiers = new java.util.ArrayList<String>(readReplicaIdentifiers);
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of the secondary clusters that are associated with this cluster.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReadReplicaIdentifiers(java.util.Collection)} or
+     * {@link #withReadReplicaIdentifiers(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param readReplicaIdentifiers
+     *        Contains one or more identifiers of the secondary clusters that are associated with this cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withReadReplicaIdentifiers(String... readReplicaIdentifiers) {
+        if (this.readReplicaIdentifiers == null) {
+            setReadReplicaIdentifiers(new java.util.ArrayList<String>(readReplicaIdentifiers.length));
+        }
+        for (String ele : readReplicaIdentifiers) {
+            this.readReplicaIdentifiers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains one or more identifiers of the secondary clusters that are associated with this cluster.
+     * </p>
+     * 
+     * @param readReplicaIdentifiers
+     *        Contains one or more identifiers of the secondary clusters that are associated with this cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withReadReplicaIdentifiers(java.util.Collection<String> readReplicaIdentifiers) {
+        setReadReplicaIdentifiers(readReplicaIdentifiers);
+        return this;
+    }
+
+    /**
+     * <p>
      * Provides the list of instances that make up the cluster.
      * </p>
      * 
@@ -1718,6 +1840,10 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("PreferredBackupWindow: ").append(getPreferredBackupWindow()).append(",");
         if (getPreferredMaintenanceWindow() != null)
             sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
+        if (getReplicationSourceIdentifier() != null)
+            sb.append("ReplicationSourceIdentifier: ").append(getReplicationSourceIdentifier()).append(",");
+        if (getReadReplicaIdentifiers() != null)
+            sb.append("ReadReplicaIdentifiers: ").append(getReadReplicaIdentifiers()).append(",");
         if (getDBClusterMembers() != null)
             sb.append("DBClusterMembers: ").append(getDBClusterMembers()).append(",");
         if (getVpcSecurityGroups() != null)
@@ -1826,6 +1952,14 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false)
             return false;
+        if (other.getReplicationSourceIdentifier() == null ^ this.getReplicationSourceIdentifier() == null)
+            return false;
+        if (other.getReplicationSourceIdentifier() != null && other.getReplicationSourceIdentifier().equals(this.getReplicationSourceIdentifier()) == false)
+            return false;
+        if (other.getReadReplicaIdentifiers() == null ^ this.getReadReplicaIdentifiers() == null)
+            return false;
+        if (other.getReadReplicaIdentifiers() != null && other.getReadReplicaIdentifiers().equals(this.getReadReplicaIdentifiers()) == false)
+            return false;
         if (other.getDBClusterMembers() == null ^ this.getDBClusterMembers() == null)
             return false;
         if (other.getDBClusterMembers() != null && other.getDBClusterMembers().equals(this.getDBClusterMembers()) == false)
@@ -1896,6 +2030,8 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMasterUsername() == null) ? 0 : getMasterUsername().hashCode());
         hashCode = prime * hashCode + ((getPreferredBackupWindow() == null) ? 0 : getPreferredBackupWindow().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
+        hashCode = prime * hashCode + ((getReplicationSourceIdentifier() == null) ? 0 : getReplicationSourceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getReadReplicaIdentifiers() == null) ? 0 : getReadReplicaIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getDBClusterMembers() == null) ? 0 : getDBClusterMembers().hashCode());
         hashCode = prime * hashCode + ((getVpcSecurityGroups() == null) ? 0 : getVpcSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());

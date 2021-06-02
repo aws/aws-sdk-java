@@ -1,3 +1,28 @@
+# __1.11.1032__ __2021-06-02__
+## __AWS Identity and Access Management__
+  - ### Features
+    - Documentation updates for AWS Identity and Access Management (IAM).
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - This SDK release adds support for DocDB global clusters.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Documentation updates for Amazon ECS.
+
+## __Amazon Lightsail__
+  - ### Features
+    - Documentation updates for Lightsail
+
+## __Auto Scaling__
+  - ### Features
+    - You can now launch EC2 instances with GP3 volumes when using Auto Scaling groups with Launch Configurations
+
+## __Braket__
+  - ### Features
+    - Introduction of a RETIRED status for devices.
+
 # __1.11.1031__ __2021-06-01__
 ## __AWS Cloud Map__
   - ### Features

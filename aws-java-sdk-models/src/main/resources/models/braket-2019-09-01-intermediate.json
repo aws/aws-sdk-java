@@ -224,6 +224,14 @@
         "documentation" : "<p>The throttling rate limit is met.</p>",
         "httpStatusCode" : 429
       }, {
+        "exceptionName" : "DeviceOfflineException",
+        "documentation" : "<p>The specified device is currently offline.</p>",
+        "httpStatusCode" : 424
+      }, {
+        "exceptionName" : "DeviceRetiredException",
+        "documentation" : "<p>The specified device has been retired.</p>",
+        "httpStatusCode" : 410
+      }, {
         "exceptionName" : "InternalServiceException",
         "documentation" : "<p>The request processing has failed because of an unknown error, exception, or failure.</p>",
         "httpStatusCode" : 500
@@ -2876,6 +2884,47 @@
       },
       "wrapper" : false
     },
+    "DeviceRetiredException" : {
+      "c2jName" : "DeviceRetiredException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The specified device has been retired.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : "DeviceRetiredException",
+      "fullyQualifiedName" : "com.amazonaws.services.braket.exception.DeviceRetiredException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.braket.exception",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeviceRetiredException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeviceRetiredException",
+        "variableName" : "deviceRetiredException",
+        "variableType" : "DeviceRetiredException",
+        "documentation" : null,
+        "simpleType" : "DeviceRetiredException",
+        "variableSetterType" : "DeviceRetiredException"
+      },
+      "wrapper" : false
+    },
     "DeviceStatus" : {
       "c2jName" : "DeviceStatus",
       "customization" : {
@@ -2893,6 +2942,9 @@
       }, {
         "name" : "OFFLINE",
         "value" : "OFFLINE"
+      }, {
+        "name" : "RETIRED",
+        "value" : "RETIRED"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.braket.enum.DeviceStatus",
@@ -13018,12 +13070,12 @@
         "c2jName" : "tagKeys",
         "c2jShape" : "TagKeys",
         "deprecated" : false,
-        "documentation" : "<p>pecify the keys for the tags to remove from the resource.</p>",
+        "documentation" : "<p>Specify the keys for the tags to remove from the resource.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>pecify the keys for the tags to remove from the resource.</p>\n@param tagKeys pecify the keys for the tags to remove from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Specify the keys for the tags to remove from the resource.</p>\n@param tagKeys Specify the keys for the tags to remove from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTagKeys",
-        "getterDocumentation" : "/**<p>pecify the keys for the tags to remove from the resource.</p>\n@return pecify the keys for the tags to remove from the resource.*/",
+        "getterDocumentation" : "/**<p>Specify the keys for the tags to remove from the resource.</p>\n@return Specify the keys for the tags to remove from the resource.*/",
         "getterMethodName" : "getTagKeys",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -13141,7 +13193,7 @@
         "marshallingType" : "LIST",
         "name" : "TagKeys",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>pecify the keys for the tags to remove from the resource.</p>\n@param tagKeys pecify the keys for the tags to remove from the resource.*/",
+        "setterDocumentation" : "/**<p>Specify the keys for the tags to remove from the resource.</p>\n@param tagKeys Specify the keys for the tags to remove from the resource.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
           "timestampFormat" : null,
@@ -13156,13 +13208,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>pecify the keys for the tags to remove from the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys pecify the keys for the tags to remove from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specify the keys for the tags to remove from the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys Specify the keys for the tags to remove from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "tagKeys",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>pecify the keys for the tags to remove from the resource.</p>",
+          "documentation" : "<p>Specify the keys for the tags to remove from the resource.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -13243,12 +13295,12 @@
           "c2jName" : "tagKeys",
           "c2jShape" : "TagKeys",
           "deprecated" : false,
-          "documentation" : "<p>pecify the keys for the tags to remove from the resource.</p>",
+          "documentation" : "<p>Specify the keys for the tags to remove from the resource.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>pecify the keys for the tags to remove from the resource.</p>\n@param tagKeys pecify the keys for the tags to remove from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Specify the keys for the tags to remove from the resource.</p>\n@param tagKeys Specify the keys for the tags to remove from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTagKeys",
-          "getterDocumentation" : "/**<p>pecify the keys for the tags to remove from the resource.</p>\n@return pecify the keys for the tags to remove from the resource.*/",
+          "getterDocumentation" : "/**<p>Specify the keys for the tags to remove from the resource.</p>\n@return Specify the keys for the tags to remove from the resource.*/",
           "getterMethodName" : "getTagKeys",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -13366,7 +13418,7 @@
           "marshallingType" : "LIST",
           "name" : "TagKeys",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>pecify the keys for the tags to remove from the resource.</p>\n@param tagKeys pecify the keys for the tags to remove from the resource.*/",
+          "setterDocumentation" : "/**<p>Specify the keys for the tags to remove from the resource.</p>\n@param tagKeys Specify the keys for the tags to remove from the resource.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
             "timestampFormat" : null,
@@ -13381,13 +13433,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>pecify the keys for the tags to remove from the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys pecify the keys for the tags to remove from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specify the keys for the tags to remove from the resource.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys Specify the keys for the tags to remove from the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "tagKeys",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>pecify the keys for the tags to remove from the resource.</p>",
+            "documentation" : "<p>Specify the keys for the tags to remove from the resource.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
