@@ -134,6 +134,11 @@ public class S3CopyObjectOperationStaxUnmarshaller implements Unmarshaller<S3Cop
                     s3CopyObjectOperation.setObjectLockRetainUntilDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("BucketKeyEnabled", targetDepth)) {
+                    s3CopyObjectOperation.setBucketKeyEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return s3CopyObjectOperation;

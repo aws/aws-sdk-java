@@ -25,19 +25,18 @@ public class UpdateFirewallConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud (VPC).
+     * Configuration of the firewall behavior provided by DNS Firewall for a single VPC.
      * </p>
      */
     private FirewallConfig firewallConfig;
 
     /**
      * <p>
-     * Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud (VPC).
+     * Configuration of the firewall behavior provided by DNS Firewall for a single VPC.
      * </p>
      * 
      * @param firewallConfig
-     *        Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud
-     *        (VPC).
+     *        Configuration of the firewall behavior provided by DNS Firewall for a single VPC.
      */
 
     public void setFirewallConfig(FirewallConfig firewallConfig) {
@@ -46,11 +45,10 @@ public class UpdateFirewallConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud (VPC).
+     * Configuration of the firewall behavior provided by DNS Firewall for a single VPC.
      * </p>
      * 
-     * @return Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud
-     *         (VPC).
+     * @return Configuration of the firewall behavior provided by DNS Firewall for a single VPC.
      */
 
     public FirewallConfig getFirewallConfig() {
@@ -59,12 +57,11 @@ public class UpdateFirewallConfigResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud (VPC).
+     * Configuration of the firewall behavior provided by DNS Firewall for a single VPC.
      * </p>
      * 
      * @param firewallConfig
-     *        Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud
-     *        (VPC).
+     *        Configuration of the firewall behavior provided by DNS Firewall for a single VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

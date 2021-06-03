@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * High level information about a list of firewall domains for use in a <a>FirewallRule</a>. This is returned by
+ * High-level information about a list of firewall domains for use in a <a>FirewallRule</a>. This is returned by
  * <a>GetFirewallDomainList</a>.
  * </p>
  * <p>
@@ -79,7 +79,7 @@ public class FirewallDomainList implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      */
     private String creatorRequestId;
@@ -411,12 +411,12 @@ public class FirewallDomainList implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string defined by you to identify the request. This allows you to retry failed requests without
-     *        the risk of executing the operation twice. This can be any unique string, for example, a timestamp.
+     *        the risk of running the operation twice. This can be any unique string, for example, a timestamp.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -426,11 +426,11 @@ public class FirewallDomainList implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      * 
      * @return A unique string defined by you to identify the request. This allows you to retry failed requests without
-     *         the risk of executing the operation twice. This can be any unique string, for example, a timestamp.
+     *         the risk of running the operation twice. This can be any unique string, for example, a timestamp.
      */
 
     public String getCreatorRequestId() {
@@ -440,12 +440,12 @@ public class FirewallDomainList implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string defined by you to identify the request. This allows you to retry failed requests without
-     *        the risk of executing the operation twice. This can be any unique string, for example, a timestamp.
+     *        the risk of running the operation twice. This can be any unique string, for example, a timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

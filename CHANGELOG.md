@@ -1,3 +1,24 @@
+# __1.11.1033__ __2021-06-03__
+## __AWS S3 Control__
+  - ### Features
+    - Amazon S3 Batch Operations now supports S3 Bucket Keys.
+
+## __Amazon Forecast Service__
+  - ### Features
+    - Added optional field AutoMLOverrideStrategy to CreatePredictor API that allows users to customize AutoML strategy. If provided in CreatePredictor request, this field is visible in DescribePredictor and GetAccuracyMetrics responses.
+
+## __Amazon Route 53 Resolver__
+  - ### Features
+    - Documentation updates for Route 53 Resolver
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - S3 Inventory now supports Bucket Key Status
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Documentation updates for ssm to fix customer reported issue
+
 # __1.11.1032__ __2021-06-02__
 ## __AWS Identity and Access Management__
   - ### Features

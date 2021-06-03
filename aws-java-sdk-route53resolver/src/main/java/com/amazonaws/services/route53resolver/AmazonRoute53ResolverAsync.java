@@ -27,8 +27,8 @@ import com.amazonaws.services.route53resolver.model.*;
  * <p>
  * <p>
  * When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC from Route 53 Resolver.
- * By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2 instances or ELB load
- * balancers. Resolver performs recursive lookups against public name servers for all other domain names.
+ * By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2 instances or Elastic Load
+ * Balancing load balancers. Resolver performs recursive lookups against public name servers for all other domain names.
  * </p>
  * <p>
  * You can also configure DNS resolution between your VPC and your network over a Direct Connect or VPN connection:
@@ -59,7 +59,7 @@ import com.amazonaws.services.route53resolver.model.*;
  * Guide</i>.
  * </p>
  * <p>
- * Like Amazon VPC, Resolver is regional. In each region where you have VPCs, you can choose whether to forward queries
+ * Like Amazon VPC, Resolver is Regional. In each Region where you have VPCs, you can choose whether to forward queries
  * from your VPCs to your network (outbound queries), from your network to your VPCs (inbound queries), or both.
  * </p>
  */
@@ -841,8 +841,8 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      * <note>
      * <p>
      * Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration.
-     * If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, VPCs can be
-     * disassociated from the configuration in the following ways:
+     * If you used AWS Resource Access Manager (AWS RAM) to share a query logging configuration with other accounts,
+     * VPCs can be disassociated from the configuration in the following ways:
      * </p>
      * <ul>
      * <li>
@@ -876,8 +876,8 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      * <note>
      * <p>
      * Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration.
-     * If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, VPCs can be
-     * disassociated from the configuration in the following ways:
+     * If you used AWS Resource Access Manager (AWS RAM) to share a query logging configuration with other accounts,
+     * VPCs can be disassociated from the configuration in the following ways:
      * </p>
      * <ul>
      * <li>
@@ -954,8 +954,8 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
-     * cloud (VPC).
+     * Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon
+     * Virtual Private Cloud (Amazon VPC).
      * </p>
      * 
      * @param getFirewallConfigRequest
@@ -968,8 +968,8 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
-     * cloud (VPC).
+     * Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon
+     * Virtual Private Cloud (Amazon VPC).
      * </p>
      * 
      * @param getFirewallConfigRequest
@@ -1087,7 +1087,7 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
     /**
      * <p>
      * Returns the AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use
-     * the policy to share the rule group using AWS Resource Access Manager (RAM).
+     * the policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      * </p>
      * 
      * @param getFirewallRuleGroupPolicyRequest
@@ -1102,7 +1102,7 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
     /**
      * <p>
      * Returns the AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use
-     * the policy to share the rule group using AWS Resource Access Manager (RAM).
+     * the policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      * </p>
      * 
      * @param getFirewallRuleGroupPolicyRequest
@@ -1987,7 +1987,7 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
     /**
      * <p>
      * Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule group. You can use the
-     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      * </p>
      * 
      * @param putFirewallRuleGroupPolicyRequest
@@ -2002,7 +2002,7 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
     /**
      * <p>
      * Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule group. You can use the
-     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      * </p>
      * 
      * @param putFirewallRuleGroupPolicyRequest
@@ -2155,8 +2155,8 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Updates the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
-     * cloud (VPC).
+     * Updates the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual
+     * Private Cloud (Amazon VPC).
      * </p>
      * 
      * @param updateFirewallConfigRequest
@@ -2169,8 +2169,8 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Updates the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
-     * cloud (VPC).
+     * Updates the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual
+     * Private Cloud (Amazon VPC).
      * </p>
      * 
      * @param updateFirewallConfigRequest

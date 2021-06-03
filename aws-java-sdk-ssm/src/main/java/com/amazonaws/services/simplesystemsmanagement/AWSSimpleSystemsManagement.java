@@ -222,6 +222,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -1831,6 +1832,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -2466,6 +2468,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -2500,6 +2503,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -3033,10 +3037,10 @@ public interface AWSSimpleSystemsManagement {
      *         deleted. To continue creating new parameters, first move the label from the oldest version of the
      *         parameter to a newer one for use in your operations. For information about moving parameter labels, see
      *         <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move"
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move"
      *         >Move a parameter label (console)</a> or <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move"
-     *         >Move a parameter label (CLI) </a> in the <i>AWS Systems Manager User Guide</i>.
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move"
+     *         >Move a parameter label (CLI)</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws ParameterPatternMismatchException
      *         The parameter name is not valid.
      * @throws UnsupportedParameterTypeException

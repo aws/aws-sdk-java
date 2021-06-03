@@ -42,7 +42,8 @@ public class ListFirewallRuleGroupAssociationsRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * The setting that determines the processing order of the rule group among the rule groups that are associated with
-     * a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority setting.
+     * a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority
+     * setting.
      * </p>
      */
     private Integer priority;
@@ -172,13 +173,14 @@ public class ListFirewallRuleGroupAssociationsRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * The setting that determines the processing order of the rule group among the rule groups that are associated with
-     * a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority setting.
+     * a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority
+     * setting.
      * </p>
      * 
      * @param priority
      *        The setting that determines the processing order of the rule group among the rule groups that are
-     *        associated with a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest
-     *        numeric priority setting.
+     *        associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the
+     *        lowest numeric priority setting.
      */
 
     public void setPriority(Integer priority) {
@@ -188,12 +190,13 @@ public class ListFirewallRuleGroupAssociationsRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * The setting that determines the processing order of the rule group among the rule groups that are associated with
-     * a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority setting.
+     * a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority
+     * setting.
      * </p>
      * 
      * @return The setting that determines the processing order of the rule group among the rule groups that are
-     *         associated with a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest
-     *         numeric priority setting.
+     *         associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the
+     *         lowest numeric priority setting.
      */
 
     public Integer getPriority() {
@@ -203,13 +206,14 @@ public class ListFirewallRuleGroupAssociationsRequest extends com.amazonaws.Amaz
     /**
      * <p>
      * The setting that determines the processing order of the rule group among the rule groups that are associated with
-     * a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority setting.
+     * a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority
+     * setting.
      * </p>
      * 
      * @param priority
      *        The setting that determines the processing order of the rule group among the rule groups that are
-     *        associated with a single VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest
-     *        numeric priority setting.
+     *        associated with a single VPC. DNS Firewall filters VPC traffic starting from the rule group with the
+     *        lowest numeric priority setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

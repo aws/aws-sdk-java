@@ -35,7 +35,7 @@ public class ListFirewallRulesResult extends com.amazonaws.AmazonWebServiceResul
      * A list of the rules that you have defined.
      * </p>
      * <p>
-     * This might be a parital list of the firewall rules that you've defined. For information, see
+     * This might be a partial list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>.
      * </p>
      */
@@ -92,13 +92,13 @@ public class ListFirewallRulesResult extends com.amazonaws.AmazonWebServiceResul
      * A list of the rules that you have defined.
      * </p>
      * <p>
-     * This might be a parital list of the firewall rules that you've defined. For information, see
+     * This might be a partial list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>.
      * </p>
      * 
      * @return A list of the rules that you have defined. </p>
      *         <p>
-     *         This might be a parital list of the firewall rules that you've defined. For information, see
+     *         This might be a partial list of the firewall rules that you've defined. For information, see
      *         <code>MaxResults</code>.
      */
 
@@ -111,14 +111,14 @@ public class ListFirewallRulesResult extends com.amazonaws.AmazonWebServiceResul
      * A list of the rules that you have defined.
      * </p>
      * <p>
-     * This might be a parital list of the firewall rules that you've defined. For information, see
+     * This might be a partial list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>.
      * </p>
      * 
      * @param firewallRules
      *        A list of the rules that you have defined. </p>
      *        <p>
-     *        This might be a parital list of the firewall rules that you've defined. For information, see
+     *        This might be a partial list of the firewall rules that you've defined. For information, see
      *        <code>MaxResults</code>.
      */
 
@@ -136,7 +136,7 @@ public class ListFirewallRulesResult extends com.amazonaws.AmazonWebServiceResul
      * A list of the rules that you have defined.
      * </p>
      * <p>
-     * This might be a parital list of the firewall rules that you've defined. For information, see
+     * This might be a partial list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>.
      * </p>
      * <p>
@@ -148,7 +148,7 @@ public class ListFirewallRulesResult extends com.amazonaws.AmazonWebServiceResul
      * @param firewallRules
      *        A list of the rules that you have defined. </p>
      *        <p>
-     *        This might be a parital list of the firewall rules that you've defined. For information, see
+     *        This might be a partial list of the firewall rules that you've defined. For information, see
      *        <code>MaxResults</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -168,14 +168,14 @@ public class ListFirewallRulesResult extends com.amazonaws.AmazonWebServiceResul
      * A list of the rules that you have defined.
      * </p>
      * <p>
-     * This might be a parital list of the firewall rules that you've defined. For information, see
+     * This might be a partial list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>.
      * </p>
      * 
      * @param firewallRules
      *        A list of the rules that you have defined. </p>
      *        <p>
-     *        This might be a parital list of the firewall rules that you've defined. For information, see
+     *        This might be a partial list of the firewall rules that you've defined. For information, see
      *        <code>MaxResults</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

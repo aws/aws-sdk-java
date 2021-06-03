@@ -94,10 +94,10 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
      * instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM role for an EC2 instance,
      * use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
-     * <i>AWS CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS
+     * CLI Command Reference</i>.
      * </p>
      */
     private String iamRole;
@@ -119,15 +119,15 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * managed instance. The name is specified as the <code>DefaultInstanceName</code> property using the
      * <a>CreateActivation</a> command. It is applied to the managed instance by specifying the Activation Code and
      * Activation ID when you install SSM Agent on the instance, as explained in <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM
      * Agent for a hybrid environment (Linux)</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM
      * Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
      * <code>DescribeInstances</code> action. For information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
-     * <i>AWS CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS
+     * CLI Command Reference</i>.
      * </p>
      */
     private String name;
@@ -667,20 +667,20 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
      * instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM role for an EC2 instance,
      * use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
-     * <i>AWS CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS
+     * CLI Command Reference</i>.
      * </p>
      * 
      * @param iamRole
      *        The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
      *        instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM role for an EC2
      *        instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *        >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
-     *        in the <i>AWS CLI Command Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
+     *        <i>AWS CLI Command Reference</i>.
      */
 
     public void setIamRole(String iamRole) {
@@ -692,19 +692,19 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
      * instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM role for an EC2 instance,
      * use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
-     * <i>AWS CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS
+     * CLI Command Reference</i>.
      * </p>
      * 
      * @return The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
      *         instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM role for an EC2
      *         instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *         >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *         href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
-     *         in the <i>AWS CLI Command Reference</i>.
+     *         href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
+     *         <i>AWS CLI Command Reference</i>.
      */
 
     public String getIamRole() {
@@ -716,20 +716,20 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
      * instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM role for an EC2 instance,
      * use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
-     * <i>AWS CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS
+     * CLI Command Reference</i>.
      * </p>
      * 
      * @param iamRole
      *        The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager managed
      *        instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM role for an EC2
      *        instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *        >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
-     *        in the <i>AWS CLI Command Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
+     *        <i>AWS CLI Command Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -857,15 +857,15 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * managed instance. The name is specified as the <code>DefaultInstanceName</code> property using the
      * <a>CreateActivation</a> command. It is applied to the managed instance by specifying the Activation Code and
      * Activation ID when you install SSM Agent on the instance, as explained in <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM
      * Agent for a hybrid environment (Linux)</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM
      * Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
      * <code>DescribeInstances</code> action. For information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
-     * <i>AWS CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS
+     * CLI Command Reference</i>.
      * </p>
      * 
      * @param name
@@ -873,15 +873,15 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      *        Manager managed instance. The name is specified as the <code>DefaultInstanceName</code> property using the
      *        <a>CreateActivation</a> command. It is applied to the managed instance by specifying the Activation Code
      *        and Activation ID when you install SSM Agent on the instance, as explained in <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html"
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html"
      *        >Install SSM Agent for a hybrid environment (Linux)</a> and <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
-     *        SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the
-     *        Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html"
+     *        >Install SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance,
+     *        use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *        >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
-     *        in the <i>AWS CLI Command Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
+     *        <i>AWS CLI Command Reference</i>.
      */
 
     public void setName(String name) {
@@ -894,30 +894,30 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * managed instance. The name is specified as the <code>DefaultInstanceName</code> property using the
      * <a>CreateActivation</a> command. It is applied to the managed instance by specifying the Activation Code and
      * Activation ID when you install SSM Agent on the instance, as explained in <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM
      * Agent for a hybrid environment (Linux)</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM
      * Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
      * <code>DescribeInstances</code> action. For information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
-     * <i>AWS CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS
+     * CLI Command Reference</i>.
      * </p>
      * 
      * @return The name assigned to an on-premises server or virtual machine (VM) when it is activated as a Systems
      *         Manager managed instance. The name is specified as the <code>DefaultInstanceName</code> property using
      *         the <a>CreateActivation</a> command. It is applied to the managed instance by specifying the Activation
      *         Code and Activation ID when you install SSM Agent on the instance, as explained in <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html"
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html"
      *         >Install SSM Agent for a hybrid environment (Linux)</a> and <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html"
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html"
      *         >Install SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance,
      *         use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *         >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *         href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
-     *         in the <i>AWS CLI Command Reference</i>.
+     *         href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
+     *         <i>AWS CLI Command Reference</i>.
      */
 
     public String getName() {
@@ -930,15 +930,15 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * managed instance. The name is specified as the <code>DefaultInstanceName</code> property using the
      * <a>CreateActivation</a> command. It is applied to the managed instance by specifying the Activation Code and
      * Activation ID when you install SSM Agent on the instance, as explained in <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM
      * Agent for a hybrid environment (Linux)</a> and <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM
      * Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
      * <code>DescribeInstances</code> action. For information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in
      * the <i>Amazon EC2 API Reference</i> or <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a> in the
-     * <i>AWS CLI Command Reference</i>.
+     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS
+     * CLI Command Reference</i>.
      * </p>
      * 
      * @param name
@@ -946,15 +946,15 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      *        Manager managed instance. The name is specified as the <code>DefaultInstanceName</code> property using the
      *        <a>CreateActivation</a> command. It is applied to the managed instance by specifying the Activation Code
      *        and Activation ID when you install SSM Agent on the instance, as explained in <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html"
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html"
      *        >Install SSM Agent for a hybrid environment (Linux)</a> and <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install
-     *        SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the
-     *        Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html"
+     *        >Install SSM Agent for a hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance,
+     *        use the Amazon EC2 <code>DescribeInstances</code> action. For information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html"
      *        >DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a
-     *        href="http://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
-     *        in the <i>AWS CLI Command Reference</i>.
+     *        href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
+     *        <i>AWS CLI Command Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

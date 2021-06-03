@@ -61,6 +61,16 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     private Boolean performAutoML;
     /**
      * <p>
+     * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     */
+    private String autoMLOverrideStrategy;
+    /**
+     * <p>
      * Whether the predictor is set to perform hyperparameter optimization (HPO).
      * </p>
      */
@@ -491,6 +501,93 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     public Boolean isPerformAutoML() {
         return this.performAutoML;
+    }
+
+    /**
+     * <p>
+     * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @param autoMLOverrideStrategy
+     *        The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the
+     *        AutoML strategy optimizes predictor accuracy.</p>
+     *        <p>
+     *        This parameter is only valid for predictors trained using AutoML.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public void setAutoMLOverrideStrategy(String autoMLOverrideStrategy) {
+        this.autoMLOverrideStrategy = autoMLOverrideStrategy;
+    }
+
+    /**
+     * <p>
+     * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @return The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the
+     *         AutoML strategy optimizes predictor accuracy.</p>
+     *         <p>
+     *         This parameter is only valid for predictors trained using AutoML.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public String getAutoMLOverrideStrategy() {
+        return this.autoMLOverrideStrategy;
+    }
+
+    /**
+     * <p>
+     * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @param autoMLOverrideStrategy
+     *        The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the
+     *        AutoML strategy optimizes predictor accuracy.</p>
+     *        <p>
+     *        This parameter is only valid for predictors trained using AutoML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public DescribePredictorResult withAutoMLOverrideStrategy(String autoMLOverrideStrategy) {
+        setAutoMLOverrideStrategy(autoMLOverrideStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the AutoML
+     * strategy optimizes predictor accuracy.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @param autoMLOverrideStrategy
+     *        The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code> is specified, the
+     *        AutoML strategy optimizes predictor accuracy.</p>
+     *        <p>
+     *        This parameter is only valid for predictors trained using AutoML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public DescribePredictorResult withAutoMLOverrideStrategy(AutoMLOverrideStrategy autoMLOverrideStrategy) {
+        this.autoMLOverrideStrategy = autoMLOverrideStrategy.toString();
+        return this;
     }
 
     /**
@@ -1577,6 +1674,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("ForecastTypes: ").append(getForecastTypes()).append(",");
         if (getPerformAutoML() != null)
             sb.append("PerformAutoML: ").append(getPerformAutoML()).append(",");
+        if (getAutoMLOverrideStrategy() != null)
+            sb.append("AutoMLOverrideStrategy: ").append(getAutoMLOverrideStrategy()).append(",");
         if (getPerformHPO() != null)
             sb.append("PerformHPO: ").append(getPerformHPO()).append(",");
         if (getTrainingParameters() != null)
@@ -1644,6 +1743,10 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
         if (other.getPerformAutoML() == null ^ this.getPerformAutoML() == null)
             return false;
         if (other.getPerformAutoML() != null && other.getPerformAutoML().equals(this.getPerformAutoML()) == false)
+            return false;
+        if (other.getAutoMLOverrideStrategy() == null ^ this.getAutoMLOverrideStrategy() == null)
+            return false;
+        if (other.getAutoMLOverrideStrategy() != null && other.getAutoMLOverrideStrategy().equals(this.getAutoMLOverrideStrategy()) == false)
             return false;
         if (other.getPerformHPO() == null ^ this.getPerformHPO() == null)
             return false;
@@ -1720,6 +1823,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getForecastHorizon() == null) ? 0 : getForecastHorizon().hashCode());
         hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         hashCode = prime * hashCode + ((getPerformAutoML() == null) ? 0 : getPerformAutoML().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLOverrideStrategy() == null) ? 0 : getAutoMLOverrideStrategy().hashCode());
         hashCode = prime * hashCode + ((getPerformHPO() == null) ? 0 : getPerformHPO().hashCode());
         hashCode = prime * hashCode + ((getTrainingParameters() == null) ? 0 : getTrainingParameters().hashCode());
         hashCode = prime * hashCode + ((getEvaluationParameters() == null) ? 0 : getEvaluationParameters().hashCode());

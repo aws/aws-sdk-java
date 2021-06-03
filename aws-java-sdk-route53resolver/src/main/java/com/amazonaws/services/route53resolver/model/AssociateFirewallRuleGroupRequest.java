@@ -28,7 +28,7 @@ public class AssociateFirewallRuleGroupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      */
@@ -48,13 +48,16 @@ public class AssociateFirewallRuleGroupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The setting that determines the processing order of the rule group among the rule groups that you associate with
-     * the specified VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority
+     * the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority
      * setting.
      * </p>
      * <p>
      * You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to
-     * insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change
+     * insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change
      * the priority setting for a rule group association after you create it.
+     * </p>
+     * <p>
+     * The allowed values for <code>Priority</code> are between 100 and 9900.
      * </p>
      */
     private Integer priority;
@@ -82,13 +85,13 @@ public class AssociateFirewallRuleGroupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      */
 
@@ -99,13 +102,13 @@ public class AssociateFirewallRuleGroupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed requests to be retried without the
-     *         risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     *         example, a date/time stamp.
+     *         risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example,
+     *         a date/time stamp.
      */
 
     public String getCreatorRequestId() {
@@ -115,13 +118,13 @@ public class AssociateFirewallRuleGroupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -214,23 +217,29 @@ public class AssociateFirewallRuleGroupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The setting that determines the processing order of the rule group among the rule groups that you associate with
-     * the specified VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority
+     * the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority
      * setting.
      * </p>
      * <p>
      * You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to
-     * insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change
+     * insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change
      * the priority setting for a rule group association after you create it.
+     * </p>
+     * <p>
+     * The allowed values for <code>Priority</code> are between 100 and 9900.
      * </p>
      * 
      * @param priority
      *        The setting that determines the processing order of the rule group among the rule groups that you
-     *        associate with the specified VPC. DNS Firewall filters VPC traffic starting from rule group with the
+     *        associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the
      *        lowest numeric priority setting. </p>
      *        <p>
      *        You must specify a unique priority for each rule group that you associate with a single VPC. To make it
-     *        easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on.
+     *        easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on.
      *        You can change the priority setting for a rule group association after you create it.
+     *        </p>
+     *        <p>
+     *        The allowed values for <code>Priority</code> are between 100 and 9900.
      */
 
     public void setPriority(Integer priority) {
@@ -240,22 +249,28 @@ public class AssociateFirewallRuleGroupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The setting that determines the processing order of the rule group among the rule groups that you associate with
-     * the specified VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority
+     * the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority
      * setting.
      * </p>
      * <p>
      * You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to
-     * insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change
+     * insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change
      * the priority setting for a rule group association after you create it.
+     * </p>
+     * <p>
+     * The allowed values for <code>Priority</code> are between 100 and 9900.
      * </p>
      * 
      * @return The setting that determines the processing order of the rule group among the rule groups that you
-     *         associate with the specified VPC. DNS Firewall filters VPC traffic starting from rule group with the
+     *         associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the
      *         lowest numeric priority setting. </p>
      *         <p>
      *         You must specify a unique priority for each rule group that you associate with a single VPC. To make it
-     *         easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so
+     *         easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so
      *         on. You can change the priority setting for a rule group association after you create it.
+     *         </p>
+     *         <p>
+     *         The allowed values for <code>Priority</code> are between 100 and 9900.
      */
 
     public Integer getPriority() {
@@ -265,23 +280,29 @@ public class AssociateFirewallRuleGroupRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The setting that determines the processing order of the rule group among the rule groups that you associate with
-     * the specified VPC. DNS Firewall filters VPC traffic starting from rule group with the lowest numeric priority
+     * the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the lowest numeric priority
      * setting.
      * </p>
      * <p>
      * You must specify a unique priority for each rule group that you associate with a single VPC. To make it easier to
-     * insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You can change
+     * insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You can change
      * the priority setting for a rule group association after you create it.
+     * </p>
+     * <p>
+     * The allowed values for <code>Priority</code> are between 100 and 9900.
      * </p>
      * 
      * @param priority
      *        The setting that determines the processing order of the rule group among the rule groups that you
-     *        associate with the specified VPC. DNS Firewall filters VPC traffic starting from rule group with the
+     *        associate with the specified VPC. DNS Firewall filters VPC traffic starting from the rule group with the
      *        lowest numeric priority setting. </p>
      *        <p>
      *        You must specify a unique priority for each rule group that you associate with a single VPC. To make it
-     *        easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on.
+     *        easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on.
      *        You can change the priority setting for a rule group association after you create it.
+     *        </p>
+     *        <p>
+     *        The allowed values for <code>Priority</code> are between 100 and 9900.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

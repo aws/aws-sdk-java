@@ -32,7 +32,8 @@ public class ListFirewallConfigsResult extends com.amazonaws.AmazonWebServiceRes
     private String nextToken;
     /**
      * <p>
-     * The configurations for the firewall behavior provided by DNS Firewall for Amazon virtual private clouds (VPC).
+     * The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud
+     * (Amazon VPC).
      * </p>
      */
     private java.util.List<FirewallConfig> firewallConfigs;
@@ -85,11 +86,12 @@ public class ListFirewallConfigsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The configurations for the firewall behavior provided by DNS Firewall for Amazon virtual private clouds (VPC).
+     * The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud
+     * (Amazon VPC).
      * </p>
      * 
-     * @return The configurations for the firewall behavior provided by DNS Firewall for Amazon virtual private clouds
-     *         (VPC).
+     * @return The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual
+     *         Private Cloud (Amazon VPC).
      */
 
     public java.util.List<FirewallConfig> getFirewallConfigs() {
@@ -98,12 +100,13 @@ public class ListFirewallConfigsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The configurations for the firewall behavior provided by DNS Firewall for Amazon virtual private clouds (VPC).
+     * The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud
+     * (Amazon VPC).
      * </p>
      * 
      * @param firewallConfigs
-     *        The configurations for the firewall behavior provided by DNS Firewall for Amazon virtual private clouds
-     *        (VPC).
+     *        The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private
+     *        Cloud (Amazon VPC).
      */
 
     public void setFirewallConfigs(java.util.Collection<FirewallConfig> firewallConfigs) {
@@ -117,7 +120,8 @@ public class ListFirewallConfigsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The configurations for the firewall behavior provided by DNS Firewall for Amazon virtual private clouds (VPC).
+     * The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud
+     * (Amazon VPC).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,8 +130,8 @@ public class ListFirewallConfigsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param firewallConfigs
-     *        The configurations for the firewall behavior provided by DNS Firewall for Amazon virtual private clouds
-     *        (VPC).
+     *        The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private
+     *        Cloud (Amazon VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,12 +147,13 @@ public class ListFirewallConfigsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The configurations for the firewall behavior provided by DNS Firewall for Amazon virtual private clouds (VPC).
+     * The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud
+     * (Amazon VPC).
      * </p>
      * 
      * @param firewallConfigs
-     *        The configurations for the firewall behavior provided by DNS Firewall for Amazon virtual private clouds
-     *        (VPC).
+     *        The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private
+     *        Cloud (Amazon VPC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

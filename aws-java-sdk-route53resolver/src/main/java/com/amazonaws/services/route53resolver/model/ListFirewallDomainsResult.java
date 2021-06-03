@@ -35,7 +35,7 @@ public class ListFirewallDomainsResult extends com.amazonaws.AmazonWebServiceRes
      * A list of the domains in the firewall domain list.
      * </p>
      * <p>
-     * This might be a parital list of the domains that you've defined in the domain list. For information, see
+     * This might be a partial list of the domains that you've defined in the domain list. For information, see
      * <code>MaxResults</code>.
      * </p>
      */
@@ -92,13 +92,13 @@ public class ListFirewallDomainsResult extends com.amazonaws.AmazonWebServiceRes
      * A list of the domains in the firewall domain list.
      * </p>
      * <p>
-     * This might be a parital list of the domains that you've defined in the domain list. For information, see
+     * This might be a partial list of the domains that you've defined in the domain list. For information, see
      * <code>MaxResults</code>.
      * </p>
      * 
      * @return A list of the domains in the firewall domain list. </p>
      *         <p>
-     *         This might be a parital list of the domains that you've defined in the domain list. For information, see
+     *         This might be a partial list of the domains that you've defined in the domain list. For information, see
      *         <code>MaxResults</code>.
      */
 
@@ -111,14 +111,14 @@ public class ListFirewallDomainsResult extends com.amazonaws.AmazonWebServiceRes
      * A list of the domains in the firewall domain list.
      * </p>
      * <p>
-     * This might be a parital list of the domains that you've defined in the domain list. For information, see
+     * This might be a partial list of the domains that you've defined in the domain list. For information, see
      * <code>MaxResults</code>.
      * </p>
      * 
      * @param domains
      *        A list of the domains in the firewall domain list. </p>
      *        <p>
-     *        This might be a parital list of the domains that you've defined in the domain list. For information, see
+     *        This might be a partial list of the domains that you've defined in the domain list. For information, see
      *        <code>MaxResults</code>.
      */
 
@@ -136,7 +136,7 @@ public class ListFirewallDomainsResult extends com.amazonaws.AmazonWebServiceRes
      * A list of the domains in the firewall domain list.
      * </p>
      * <p>
-     * This might be a parital list of the domains that you've defined in the domain list. For information, see
+     * This might be a partial list of the domains that you've defined in the domain list. For information, see
      * <code>MaxResults</code>.
      * </p>
      * <p>
@@ -148,7 +148,7 @@ public class ListFirewallDomainsResult extends com.amazonaws.AmazonWebServiceRes
      * @param domains
      *        A list of the domains in the firewall domain list. </p>
      *        <p>
-     *        This might be a parital list of the domains that you've defined in the domain list. For information, see
+     *        This might be a partial list of the domains that you've defined in the domain list. For information, see
      *        <code>MaxResults</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -168,14 +168,14 @@ public class ListFirewallDomainsResult extends com.amazonaws.AmazonWebServiceRes
      * A list of the domains in the firewall domain list.
      * </p>
      * <p>
-     * This might be a parital list of the domains that you've defined in the domain list. For information, see
+     * This might be a partial list of the domains that you've defined in the domain list. For information, see
      * <code>MaxResults</code>.
      * </p>
      * 
      * @param domains
      *        A list of the domains in the firewall domain list. </p>
      *        <p>
-     *        This might be a parital list of the domains that you've defined in the domain list. For information, see
+     *        This might be a partial list of the domains that you've defined in the domain list. For information, see
      *        <code>MaxResults</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

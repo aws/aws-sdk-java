@@ -48,7 +48,7 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies
-     * the request and allows failed requests to be retried without the risk of executing the operation twice.
+     * the request and allows failed requests to be retried without the risk of running the operation twice.
      * </p>
      */
     private String creatorRequestId;
@@ -124,7 +124,7 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     private String ownerId;
     /**
      * <p>
-     * Whether the rules is shared and, if so, whether the current account is sharing the rule with another account, or
+     * Whether the rule is shared and, if so, whether the current account is sharing the rule with another account, or
      * another account is sharing the rule with the current account.
      * </p>
      */
@@ -186,13 +186,13 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies
-     * the request and allows failed requests to be retried without the risk of executing the operation twice.
+     * the request and allows failed requests to be retried without the risk of running the operation twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code>
-     *        identifies the request and allows failed requests to be retried without the risk of executing the
-     *        operation twice.
+     *        identifies the request and allows failed requests to be retried without the risk of running the operation
+     *        twice.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -202,12 +202,12 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies
-     * the request and allows failed requests to be retried without the risk of executing the operation twice.
+     * the request and allows failed requests to be retried without the risk of running the operation twice.
      * </p>
      * 
      * @return A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code>
-     *         identifies the request and allows failed requests to be retried without the risk of executing the
-     *         operation twice.
+     *         identifies the request and allows failed requests to be retried without the risk of running the operation
+     *         twice.
      */
 
     public String getCreatorRequestId() {
@@ -217,13 +217,13 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies
-     * the request and allows failed requests to be retried without the risk of executing the operation twice.
+     * the request and allows failed requests to be retried without the risk of running the operation twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code>
-     *        identifies the request and allows failed requests to be retried without the risk of executing the
-     *        operation twice.
+     *        identifies the request and allows failed requests to be retried without the risk of running the operation
+     *        twice.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -793,12 +793,12 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the rules is shared and, if so, whether the current account is sharing the rule with another account, or
+     * Whether the rule is shared and, if so, whether the current account is sharing the rule with another account, or
      * another account is sharing the rule with the current account.
      * </p>
      * 
      * @param shareStatus
-     *        Whether the rules is shared and, if so, whether the current account is sharing the rule with another
+     *        Whether the rule is shared and, if so, whether the current account is sharing the rule with another
      *        account, or another account is sharing the rule with the current account.
      * @see ShareStatus
      */
@@ -809,11 +809,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the rules is shared and, if so, whether the current account is sharing the rule with another account, or
+     * Whether the rule is shared and, if so, whether the current account is sharing the rule with another account, or
      * another account is sharing the rule with the current account.
      * </p>
      * 
-     * @return Whether the rules is shared and, if so, whether the current account is sharing the rule with another
+     * @return Whether the rule is shared and, if so, whether the current account is sharing the rule with another
      *         account, or another account is sharing the rule with the current account.
      * @see ShareStatus
      */
@@ -824,12 +824,12 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the rules is shared and, if so, whether the current account is sharing the rule with another account, or
+     * Whether the rule is shared and, if so, whether the current account is sharing the rule with another account, or
      * another account is sharing the rule with the current account.
      * </p>
      * 
      * @param shareStatus
-     *        Whether the rules is shared and, if so, whether the current account is sharing the rule with another
+     *        Whether the rule is shared and, if so, whether the current account is sharing the rule with another
      *        account, or another account is sharing the rule with the current account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus
@@ -842,12 +842,12 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the rules is shared and, if so, whether the current account is sharing the rule with another account, or
+     * Whether the rule is shared and, if so, whether the current account is sharing the rule with another account, or
      * another account is sharing the rule with the current account.
      * </p>
      * 
      * @param shareStatus
-     *        Whether the rules is shared and, if so, whether the current account is sharing the rule with another
+     *        Whether the rule is shared and, if so, whether the current account is sharing the rule with another
      *        account, or another account is sharing the rule with the current account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ShareStatus

@@ -116,6 +116,16 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     private Boolean performAutoML;
     /**
      * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     */
+    private String autoMLOverrideStrategy;
+    /**
+     * <p>
      * Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training
      * data. The process of performing HPO is known as running a hyperparameter tuning job.
      * </p>
@@ -856,6 +866,93 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     public Boolean isPerformAutoML() {
         return this.performAutoML;
+    }
+
+    /**
+     * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @param autoMLOverrideStrategy
+     *        Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
+     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *        <p>
+     *        This parameter is only valid for predictors trained using AutoML.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public void setAutoMLOverrideStrategy(String autoMLOverrideStrategy) {
+        this.autoMLOverrideStrategy = autoMLOverrideStrategy;
+    }
+
+    /**
+     * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @return Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
+     *         strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *         <p>
+     *         This parameter is only valid for predictors trained using AutoML.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public String getAutoMLOverrideStrategy() {
+        return this.autoMLOverrideStrategy;
+    }
+
+    /**
+     * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @param autoMLOverrideStrategy
+     *        Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
+     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *        <p>
+     *        This parameter is only valid for predictors trained using AutoML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public CreatePredictorRequest withAutoMLOverrideStrategy(String autoMLOverrideStrategy) {
+        setAutoMLOverrideStrategy(autoMLOverrideStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @param autoMLOverrideStrategy
+     *        Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
+     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *        <p>
+     *        This parameter is only valid for predictors trained using AutoML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public CreatePredictorRequest withAutoMLOverrideStrategy(AutoMLOverrideStrategy autoMLOverrideStrategy) {
+        this.autoMLOverrideStrategy = autoMLOverrideStrategy.toString();
+        return this;
     }
 
     /**
@@ -1900,6 +1997,8 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ForecastTypes: ").append(getForecastTypes()).append(",");
         if (getPerformAutoML() != null)
             sb.append("PerformAutoML: ").append(getPerformAutoML()).append(",");
+        if (getAutoMLOverrideStrategy() != null)
+            sb.append("AutoMLOverrideStrategy: ").append(getAutoMLOverrideStrategy()).append(",");
         if (getPerformHPO() != null)
             sb.append("PerformHPO: ").append(getPerformHPO()).append(",");
         if (getTrainingParameters() != null)
@@ -1950,6 +2049,10 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getPerformAutoML() != null && other.getPerformAutoML().equals(this.getPerformAutoML()) == false)
             return false;
+        if (other.getAutoMLOverrideStrategy() == null ^ this.getAutoMLOverrideStrategy() == null)
+            return false;
+        if (other.getAutoMLOverrideStrategy() != null && other.getAutoMLOverrideStrategy().equals(this.getAutoMLOverrideStrategy()) == false)
+            return false;
         if (other.getPerformHPO() == null ^ this.getPerformHPO() == null)
             return false;
         if (other.getPerformHPO() != null && other.getPerformHPO().equals(this.getPerformHPO()) == false)
@@ -1995,6 +2098,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getForecastHorizon() == null) ? 0 : getForecastHorizon().hashCode());
         hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         hashCode = prime * hashCode + ((getPerformAutoML() == null) ? 0 : getPerformAutoML().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLOverrideStrategy() == null) ? 0 : getAutoMLOverrideStrategy().hashCode());
         hashCode = prime * hashCode + ((getPerformHPO() == null) ? 0 : getPerformHPO().hashCode());
         hashCode = prime * hashCode + ((getTrainingParameters() == null) ? 0 : getTrainingParameters().hashCode());
         hashCode = prime * hashCode + ((getEvaluationParameters() == null) ? 0 : getEvaluationParameters().hashCode());

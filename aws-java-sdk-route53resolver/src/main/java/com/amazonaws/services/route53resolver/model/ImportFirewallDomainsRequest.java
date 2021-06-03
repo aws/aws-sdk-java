@@ -40,8 +40,8 @@ public class ImportFirewallDomainsRequest extends com.amazonaws.AmazonWebService
     private String operation;
     /**
      * <p>
-     * The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (S3) that contains the list of
-     * domains to import.
+     * The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the
+     * list of domains to import.
      * </p>
      * <p>
      * The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and
@@ -159,8 +159,8 @@ public class ImportFirewallDomainsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (S3) that contains the list of
-     * domains to import.
+     * The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the
+     * list of domains to import.
      * </p>
      * <p>
      * The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and
@@ -168,8 +168,8 @@ public class ImportFirewallDomainsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param domainFileUrl
-     *        The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (S3) that contains the
-     *        list of domains to import.</p>
+     *        The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that
+     *        contains the list of domains to import.</p>
      *        <p>
      *        The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text
      *        file and must contain a single domain per line.
@@ -181,16 +181,16 @@ public class ImportFirewallDomainsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (S3) that contains the list of
-     * domains to import.
+     * The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the
+     * list of domains to import.
      * </p>
      * <p>
      * The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and
      * must contain a single domain per line.
      * </p>
      * 
-     * @return The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (S3) that contains the
-     *         list of domains to import.</p>
+     * @return The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that
+     *         contains the list of domains to import.</p>
      *         <p>
      *         The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text
      *         file and must contain a single domain per line.
@@ -202,8 +202,8 @@ public class ImportFirewallDomainsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (S3) that contains the list of
-     * domains to import.
+     * The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the
+     * list of domains to import.
      * </p>
      * <p>
      * The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and
@@ -211,8 +211,8 @@ public class ImportFirewallDomainsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param domainFileUrl
-     *        The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (S3) that contains the
-     *        list of domains to import.</p>
+     *        The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that
+     *        contains the list of domains to import.</p>
      *        <p>
      *        The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text
      *        file and must contain a single domain per line.

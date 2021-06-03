@@ -266,6 +266,10 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                 if (s3PutObjectCopy.getObjectLockRetainUntilDate() != null) {
                                     xmlWriter.startElement("ObjectLockRetainUntilDate").value(s3PutObjectCopy.getObjectLockRetainUntilDate()).endElement();
                                 }
+
+                                if (s3PutObjectCopy.getBucketKeyEnabled() != null) {
+                                    xmlWriter.startElement("BucketKeyEnabled").value(s3PutObjectCopy.getBucketKeyEnabled()).endElement();
+                                }
                                 xmlWriter.endElement();
                             }
                         }

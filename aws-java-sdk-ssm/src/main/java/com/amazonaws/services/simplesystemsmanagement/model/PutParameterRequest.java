@@ -345,7 +345,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
      * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
      * AMI is available in your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
@@ -2726,7 +2726,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
      * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
      * AMI is available in your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -2752,8 +2752,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager
      *        validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and
      *        that the specified AMI is available in your AWS account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     *        parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
+     *        >Native parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setDataType(String dataType) {
@@ -2784,7 +2784,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
      * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
      * AMI is available in your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -2809,7 +2809,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager
      *         validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and
      *         that the specified AMI is available in your AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
      *         >Native parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
@@ -2841,7 +2841,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
      * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
      * AMI is available in your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -2867,8 +2867,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager
      *        validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and
      *        that the specified AMI is available in your AWS account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     *        parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
+     *        >Native parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

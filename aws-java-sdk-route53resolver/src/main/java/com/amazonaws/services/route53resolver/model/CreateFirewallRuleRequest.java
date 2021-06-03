@@ -28,7 +28,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A unique string that identifies the request and that allows you to retry failed requests without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      */
@@ -70,7 +70,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+     * <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
      * </p>
      * </li>
      * <li>
@@ -84,7 +84,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
     private String action;
     /**
      * <p>
-     * The way that you want DNS Firewall to block the request, used with the rule aciton setting <code>BLOCK</code>.
+     * The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.
      * </p>
      * <ul>
      * <li>
@@ -151,13 +151,13 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A unique string that identifies the request and that allows you to retry failed requests without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows you to retry failed requests without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      */
 
@@ -168,12 +168,12 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A unique string that identifies the request and that allows you to retry failed requests without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @return A unique string that identifies the request and that allows you to retry failed requests without the risk
-     *         of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *         of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *         date/time stamp.
      */
 
@@ -184,13 +184,13 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A unique string that identifies the request and that allows you to retry failed requests without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows you to retry failed requests without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -366,7 +366,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+     * <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
      * </p>
      * </li>
      * <li>
@@ -388,7 +388,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+     *        <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
      *        </p>
      *        </li>
      *        <li>
@@ -417,7 +417,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+     * <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
      * </p>
      * </li>
      * <li>
@@ -438,7 +438,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+     *         <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
      *         </p>
      *         </li>
      *         <li>
@@ -467,7 +467,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+     * <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
      * </p>
      * </li>
      * <li>
@@ -489,7 +489,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+     *        <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
      *        </p>
      *        </li>
      *        <li>
@@ -520,7 +520,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+     * <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
      * </p>
      * </li>
      * <li>
@@ -542,7 +542,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALERT</code> - Permit the request and send metrics and log to Cloud Watch.
+     *        <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
      *        </p>
      *        </li>
      *        <li>
@@ -562,7 +562,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The way that you want DNS Firewall to block the request, used with the rule aciton setting <code>BLOCK</code>.
+     * The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.
      * </p>
      * <ul>
      * <li>
@@ -587,7 +587,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param blockResponse
-     *        The way that you want DNS Firewall to block the request, used with the rule aciton setting
+     *        The way that you want DNS Firewall to block the request, used with the rule action setting
      *        <code>BLOCK</code>. </p>
      *        <ul>
      *        <li>
@@ -619,7 +619,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The way that you want DNS Firewall to block the request, used with the rule aciton setting <code>BLOCK</code>.
+     * The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.
      * </p>
      * <ul>
      * <li>
@@ -643,7 +643,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * This setting is required if the rule action setting is <code>BLOCK</code>.
      * </p>
      * 
-     * @return The way that you want DNS Firewall to block the request, used with the rule aciton setting
+     * @return The way that you want DNS Firewall to block the request, used with the rule action setting
      *         <code>BLOCK</code>. </p>
      *         <ul>
      *         <li>
@@ -675,7 +675,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The way that you want DNS Firewall to block the request, used with the rule aciton setting <code>BLOCK</code>.
+     * The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.
      * </p>
      * <ul>
      * <li>
@@ -700,7 +700,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param blockResponse
-     *        The way that you want DNS Firewall to block the request, used with the rule aciton setting
+     *        The way that you want DNS Firewall to block the request, used with the rule action setting
      *        <code>BLOCK</code>. </p>
      *        <ul>
      *        <li>
@@ -734,7 +734,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The way that you want DNS Firewall to block the request, used with the rule aciton setting <code>BLOCK</code>.
+     * The way that you want DNS Firewall to block the request, used with the rule action setting <code>BLOCK</code>.
      * </p>
      * <ul>
      * <li>
@@ -759,7 +759,7 @@ public class CreateFirewallRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param blockResponse
-     *        The way that you want DNS Firewall to block the request, used with the rule aciton setting
+     *        The way that you want DNS Firewall to block the request, used with the rule action setting
      *        <code>BLOCK</code>. </p>
      *        <ul>
      *        <li>

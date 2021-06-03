@@ -28,7 +28,7 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      */
@@ -69,7 +69,7 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a comma.
+     * addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
@@ -93,13 +93,13 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      */
 
@@ -110,13 +110,13 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed requests to be retried without the
-     *         risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     *         example, a date/time stamp.
+     *         risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example,
+     *         a date/time stamp.
      */
 
     public String getCreatorRequestId() {
@@ -126,13 +126,13 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -403,14 +403,14 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a comma.
+     * addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * </p>
      * 
      * @return The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate
-     *         IP addresses with a comma.</p>
+     *         IP addresses with a space.</p>
      *         <p>
      *         <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      */
@@ -422,7 +422,7 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a comma.
+     * addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
@@ -430,7 +430,7 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param targetIps
      *        The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     *        addresses with a comma.</p>
+     *        addresses with a space.</p>
      *        <p>
      *        <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      */
@@ -447,7 +447,7 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a comma.
+     * addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
@@ -460,7 +460,7 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param targetIps
      *        The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     *        addresses with a comma.</p>
+     *        addresses with a space.</p>
      *        <p>
      *        <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -479,7 +479,7 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a comma.
+     * addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
@@ -487,7 +487,7 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param targetIps
      *        The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     *        addresses with a comma.</p>
+     *        addresses with a space.</p>
      *        <p>
      *        <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

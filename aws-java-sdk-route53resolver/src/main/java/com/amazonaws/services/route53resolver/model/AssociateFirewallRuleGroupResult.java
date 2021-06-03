@@ -25,7 +25,7 @@ public class AssociateFirewallRuleGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The association that you just created. The association has an Id that you can use to identify it in other
+     * The association that you just created. The association has an ID that you can use to identify it in other
      * requests, like update and delete.
      * </p>
      */
@@ -33,12 +33,12 @@ public class AssociateFirewallRuleGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The association that you just created. The association has an Id that you can use to identify it in other
+     * The association that you just created. The association has an ID that you can use to identify it in other
      * requests, like update and delete.
      * </p>
      * 
      * @param firewallRuleGroupAssociation
-     *        The association that you just created. The association has an Id that you can use to identify it in other
+     *        The association that you just created. The association has an ID that you can use to identify it in other
      *        requests, like update and delete.
      */
 
@@ -48,11 +48,11 @@ public class AssociateFirewallRuleGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The association that you just created. The association has an Id that you can use to identify it in other
+     * The association that you just created. The association has an ID that you can use to identify it in other
      * requests, like update and delete.
      * </p>
      * 
-     * @return The association that you just created. The association has an Id that you can use to identify it in other
+     * @return The association that you just created. The association has an ID that you can use to identify it in other
      *         requests, like update and delete.
      */
 
@@ -62,12 +62,12 @@ public class AssociateFirewallRuleGroupResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The association that you just created. The association has an Id that you can use to identify it in other
+     * The association that you just created. The association has an ID that you can use to identify it in other
      * requests, like update and delete.
      * </p>
      * 
      * @param firewallRuleGroupAssociation
-     *        The association that you just created. The association has an Id that you can use to identify it in other
+     *        The association that you just created. The association has an ID that you can use to identify it in other
      *        requests, like update and delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

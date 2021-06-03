@@ -26,7 +26,7 @@ public class GetFirewallRuleGroupPolicyResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use the
-     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      * </p>
      */
     private String firewallRuleGroupPolicy;
@@ -34,12 +34,12 @@ public class GetFirewallRuleGroupPolicyResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use the
-     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      * </p>
      * 
      * @param firewallRuleGroupPolicy
      *        The AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use
-     *        the policy to share the rule group using AWS Resource Access Manager (RAM).
+     *        the policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      */
 
     public void setFirewallRuleGroupPolicy(String firewallRuleGroupPolicy) {
@@ -49,11 +49,11 @@ public class GetFirewallRuleGroupPolicyResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use the
-     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      * </p>
      * 
      * @return The AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use
-     *         the policy to share the rule group using AWS Resource Access Manager (RAM).
+     *         the policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      */
 
     public String getFirewallRuleGroupPolicy() {
@@ -63,12 +63,12 @@ public class GetFirewallRuleGroupPolicyResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use the
-     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      * </p>
      * 
      * @param firewallRuleGroupPolicy
      *        The AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use
-     *        the policy to share the rule group using AWS Resource Access Manager (RAM).
+     *        the policy to share the rule group using AWS Resource Access Manager (AWS RAM).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

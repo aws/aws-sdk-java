@@ -15,7 +15,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The specified command ID is not valid. Verify the ID and try again.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidCommandIdException extends com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException {

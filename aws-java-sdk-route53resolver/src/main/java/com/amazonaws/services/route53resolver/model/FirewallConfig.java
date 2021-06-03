@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud (VPC).
+ * Configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud
+ * (Amazon VPC).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallConfig" target="_top">AWS API
@@ -30,7 +31,7 @@ public class FirewallConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Id of the firewall configuration.
+     * The ID of the firewall configuration.
      * </p>
      */
     private String id;
@@ -73,11 +74,11 @@ public class FirewallConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Id of the firewall configuration.
+     * The ID of the firewall configuration.
      * </p>
      * 
      * @param id
-     *        The Id of the firewall configuration.
+     *        The ID of the firewall configuration.
      */
 
     public void setId(String id) {
@@ -86,10 +87,10 @@ public class FirewallConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Id of the firewall configuration.
+     * The ID of the firewall configuration.
      * </p>
      * 
-     * @return The Id of the firewall configuration.
+     * @return The ID of the firewall configuration.
      */
 
     public String getId() {
@@ -98,11 +99,11 @@ public class FirewallConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Id of the firewall configuration.
+     * The ID of the firewall configuration.
      * </p>
      * 
      * @param id
-     *        The Id of the firewall configuration.
+     *        The ID of the firewall configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

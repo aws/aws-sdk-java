@@ -27,10 +27,10 @@ import javax.annotation.Generated;
  * This safeguard is to prevent parameter versions with mission critical labels assigned to them from being deleted. To
  * continue creating new parameters, first move the label from the oldest version of the parameter to a newer one for
  * use in your operations. For information about moving parameter labels, see <a href=
- * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move"
+ * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move"
  * >Move a parameter label (console)</a> or <a href=
- * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move"
- * >Move a parameter label (CLI) </a> in the <i>AWS Systems Manager User Guide</i>.
+ * "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move"
+ * >Move a parameter label (CLI)</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -74,6 +74,10 @@ public class DescribePredictorResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describePredictorResult.setPerformAutoML(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("AutoMLOverrideStrategy", targetDepth)) {
+                    context.nextToken();
+                    describePredictorResult.setAutoMLOverrideStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PerformHPO", targetDepth)) {
                     context.nextToken();
                     describePredictorResult.setPerformHPO(context.getUnmarshaller(Boolean.class).unmarshall(context));

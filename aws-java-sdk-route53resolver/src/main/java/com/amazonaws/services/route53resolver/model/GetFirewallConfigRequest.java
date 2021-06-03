@@ -27,18 +27,18 @@ public class GetFirewallConfigRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the Amazon virtual private cloud (VPC) that the configuration is for.
+     * The ID of the VPC from Amazon VPC that the configuration is for.
      * </p>
      */
     private String resourceId;
 
     /**
      * <p>
-     * The ID of the Amazon virtual private cloud (VPC) that the configuration is for.
+     * The ID of the VPC from Amazon VPC that the configuration is for.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the Amazon virtual private cloud (VPC) that the configuration is for.
+     *        The ID of the VPC from Amazon VPC that the configuration is for.
      */
 
     public void setResourceId(String resourceId) {
@@ -47,10 +47,10 @@ public class GetFirewallConfigRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the Amazon virtual private cloud (VPC) that the configuration is for.
+     * The ID of the VPC from Amazon VPC that the configuration is for.
      * </p>
      * 
-     * @return The ID of the Amazon virtual private cloud (VPC) that the configuration is for.
+     * @return The ID of the VPC from Amazon VPC that the configuration is for.
      */
 
     public String getResourceId() {
@@ -59,11 +59,11 @@ public class GetFirewallConfigRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the Amazon virtual private cloud (VPC) that the configuration is for.
+     * The ID of the VPC from Amazon VPC that the configuration is for.
      * </p>
      * 
      * @param resourceId
-     *        The ID of the Amazon virtual private cloud (VPC) that the configuration is for.
+     *        The ID of the VPC from Amazon VPC that the configuration is for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

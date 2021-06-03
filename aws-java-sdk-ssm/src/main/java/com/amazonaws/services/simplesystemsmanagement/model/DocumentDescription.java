@@ -159,7 +159,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      */
@@ -1286,15 +1286,15 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
     public void setTargetType(String targetType) {
@@ -1305,13 +1305,13 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The target type which defines the kinds of resources the document can run on. For example,
      *         /AWS::EC2::Instance. For a list of valid resource types, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      *         resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
@@ -1323,15 +1323,15 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

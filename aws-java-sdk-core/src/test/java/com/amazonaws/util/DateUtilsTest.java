@@ -35,6 +35,7 @@ import com.amazonaws.protocol.json.StructuredJsonGenerator;
 import com.fasterxml.jackson.core.JsonFactory;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.IllegalFieldValueException;
 import org.joda.time.Interval;
 import org.junit.Test;
@@ -138,6 +139,20 @@ public class DateUtilsTest {
         Date expectedDate = sdf.parse(expected);
         DateTime actualDateTime = DateUtils.alternateIso8601DateFormat.parseDateTime(actual);
         assertEquals(expectedDate, new Date(actualDateTime.getMillis()));
+    }
+
+    @Test
+    public void iso8601_withUTCOffset() {
+        String expected = "2021-05-10T17:12:13-07:00";
+        Date actualDate = DateUtils.parseISO8601Date(expected);
+
+        DateTime expectedDate = DateUtils.ISO8601_DATE_FORMAT_WITH_OFFSET.parseDateTime(expected);
+        assertEquals(new Date(expectedDate.getMillis()), actualDate);
+
+        String actualString =
+            expectedDate.withZone(DateTimeZone.forOffsetHours(-7)).toString(DateUtils.ISO8601_DATE_FORMAT_WITH_OFFSET);
+
+        assertEquals(expected, actualString);
     }
 
     @Test

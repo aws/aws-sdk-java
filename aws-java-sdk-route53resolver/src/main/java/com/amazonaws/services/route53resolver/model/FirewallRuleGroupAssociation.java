@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An association between a firewall rul group and a VPC, which enables DNS filtering for the VPC.
+ * An association between a firewall rule group and a VPC, which enables DNS filtering for the VPC.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallRuleGroupAssociation"
@@ -94,7 +94,7 @@ public class FirewallRuleGroupAssociation implements Serializable, Cloneable, St
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      */
     private String creatorRequestId;
@@ -576,12 +576,12 @@ public class FirewallRuleGroupAssociation implements Serializable, Cloneable, St
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string defined by you to identify the request. This allows you to retry failed requests without
-     *        the risk of executing the operation twice. This can be any unique string, for example, a timestamp.
+     *        the risk of running the operation twice. This can be any unique string, for example, a timestamp.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -591,11 +591,11 @@ public class FirewallRuleGroupAssociation implements Serializable, Cloneable, St
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      * 
      * @return A unique string defined by you to identify the request. This allows you to retry failed requests without
-     *         the risk of executing the operation twice. This can be any unique string, for example, a timestamp.
+     *         the risk of running the operation twice. This can be any unique string, for example, a timestamp.
      */
 
     public String getCreatorRequestId() {
@@ -605,12 +605,12 @@ public class FirewallRuleGroupAssociation implements Serializable, Cloneable, St
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string defined by you to identify the request. This allows you to retry failed requests without
-     *        the risk of executing the operation twice. This can be any unique string, for example, a timestamp.
+     *        the risk of running the operation twice. This can be any unique string, for example, a timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

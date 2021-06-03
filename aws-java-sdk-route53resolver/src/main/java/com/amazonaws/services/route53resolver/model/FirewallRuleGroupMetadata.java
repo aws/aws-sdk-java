@@ -61,7 +61,7 @@ public class FirewallRuleGroupMetadata implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      */
     private String creatorRequestId;
@@ -242,12 +242,12 @@ public class FirewallRuleGroupMetadata implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string defined by you to identify the request. This allows you to retry failed requests without
-     *        the risk of executing the operation twice. This can be any unique string, for example, a timestamp.
+     *        the risk of running the operation twice. This can be any unique string, for example, a timestamp.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -257,11 +257,11 @@ public class FirewallRuleGroupMetadata implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      * 
      * @return A unique string defined by you to identify the request. This allows you to retry failed requests without
-     *         the risk of executing the operation twice. This can be any unique string, for example, a timestamp.
+     *         the risk of running the operation twice. This can be any unique string, for example, a timestamp.
      */
 
     public String getCreatorRequestId() {
@@ -271,12 +271,12 @@ public class FirewallRuleGroupMetadata implements Serializable, Cloneable, Struc
     /**
      * <p>
      * A unique string defined by you to identify the request. This allows you to retry failed requests without the risk
-     * of executing the operation twice. This can be any unique string, for example, a timestamp.
+     * of running the operation twice. This can be any unique string, for example, a timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string defined by you to identify the request. This allows you to retry failed requests without
-     *        the risk of executing the operation twice. This can be any unique string, for example, a timestamp.
+     *        the risk of running the operation twice. This can be any unique string, for example, a timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

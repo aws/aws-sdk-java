@@ -47,6 +47,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * <code>/ssm/documents/console/public-sharing-permission</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
      * </p>
      * </li>
@@ -98,6 +103,10 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
      * of a CloudWatch Logs log group.
      * </p>
+     * <p>
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
+     * or Disable.
+     * </p>
      */
     private String settingValue;
 
@@ -116,6 +125,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * <code>/ssm/automation/customer-script-log-group-name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/documents/console/public-sharing-permission</code>
      * </p>
      * </li>
      * <li>
@@ -148,6 +162,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>/ssm/automation/customer-script-log-group-name</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/documents/console/public-sharing-permission</code>
      *        </p>
      *        </li>
      *        <li>
@@ -190,6 +209,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * <code>/ssm/documents/console/public-sharing-permission</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
      * </p>
      * </li>
@@ -217,6 +241,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *         <li>
      *         <p>
      *         <code>/ssm/automation/customer-script-log-group-name</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/documents/console/public-sharing-permission</code>
      *         </p>
      *         </li>
      *         <li>
@@ -259,6 +288,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
+     * <code>/ssm/documents/console/public-sharing-permission</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
      * </p>
      * </li>
@@ -287,6 +321,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>/ssm/automation/customer-script-log-group-name</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/documents/console/public-sharing-permission</code>
      *        </p>
      *        </li>
      *        <li>
@@ -347,6 +386,10 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
      * of a CloudWatch Logs log group.
      * </p>
+     * <p>
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
+     * or Disable.
+     * </p>
      * 
      * @param settingValue
      *        The new value to specify for the service setting. For the
@@ -380,6 +423,10 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be
      *        the name of a CloudWatch Logs log group.
+     *        </p>
+     *        <p>
+     *        For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
+     *        Enable or Disable.
      */
 
     public void setSettingValue(String settingValue) {
@@ -421,6 +468,10 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
      * of a CloudWatch Logs log group.
      * </p>
+     * <p>
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
+     * or Disable.
+     * </p>
      * 
      * @return The new value to specify for the service setting. For the
      *         <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be one of the
@@ -453,6 +504,10 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be
      *         the name of a CloudWatch Logs log group.
+     *         </p>
+     *         <p>
+     *         For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can
+     *         be Enable or Disable.
      */
 
     public String getSettingValue() {
@@ -494,6 +549,10 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
      * of a CloudWatch Logs log group.
      * </p>
+     * <p>
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
+     * or Disable.
+     * </p>
      * 
      * @param settingValue
      *        The new value to specify for the service setting. For the
@@ -527,6 +586,10 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be
      *        the name of a CloudWatch Logs log group.
+     *        </p>
+     *        <p>
+     *        For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
+     *        Enable or Disable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

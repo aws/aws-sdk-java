@@ -139,8 +139,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource type values that can be
  * used with this key, see <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource
- * and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+ * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
  * </p>
  * <p>
  * If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If

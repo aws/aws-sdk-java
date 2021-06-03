@@ -169,7 +169,11 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String standardErrorUrl;
-
+    /**
+     * <p>
+     * Plugins processed by the command.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<CommandPlugin> commandPlugins;
     /**
      * <p>
@@ -1104,7 +1108,11 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * Plugins processed by the command.
+     * </p>
+     * 
+     * @return Plugins processed by the command.
      */
 
     public java.util.List<CommandPlugin> getCommandPlugins() {
@@ -1115,7 +1123,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Plugins processed by the command.
+     * </p>
+     * 
      * @param commandPlugins
+     *        Plugins processed by the command.
      */
 
     public void setCommandPlugins(java.util.Collection<CommandPlugin> commandPlugins) {
@@ -1129,12 +1142,16 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * Plugins processed by the command.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCommandPlugins(java.util.Collection)} or {@link #withCommandPlugins(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param commandPlugins
+     *        Plugins processed by the command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1149,7 +1166,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Plugins processed by the command.
+     * </p>
+     * 
      * @param commandPlugins
+     *        Plugins processed by the command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

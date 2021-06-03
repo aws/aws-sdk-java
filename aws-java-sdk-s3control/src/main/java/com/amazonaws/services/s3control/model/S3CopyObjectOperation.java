@@ -87,6 +87,18 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date objectLockRetainUntilDate;
+    /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     */
+    private Boolean bucketKeyEnabled;
 
     /**
      * <p>
@@ -823,6 +835,102 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     * 
+     * @param bucketKeyEnabled
+     *        Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
+     *        using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key
+     *        for object encryption with SSE-KMS.</p>
+     *        <p>
+     *        Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
+     *        Bucket Key.
+     */
+
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        this.bucketKeyEnabled = bucketKeyEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     * 
+     * @return Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
+     *         using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     *         Key for object encryption with SSE-KMS.</p>
+     *         <p>
+     *         Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
+     *         Bucket Key.
+     */
+
+    public Boolean getBucketKeyEnabled() {
+        return this.bucketKeyEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     * 
+     * @param bucketKeyEnabled
+     *        Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
+     *        using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key
+     *        for object encryption with SSE-KMS.</p>
+     *        <p>
+     *        Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
+     *        Bucket Key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3CopyObjectOperation withBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        setBucketKeyEnabled(bucketKeyEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     * 
+     * @return Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
+     *         using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     *         Key for object encryption with SSE-KMS.</p>
+     *         <p>
+     *         Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
+     *         Bucket Key.
+     */
+
+    public Boolean isBucketKeyEnabled() {
+        return this.bucketKeyEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -865,7 +973,9 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
         if (getObjectLockMode() != null)
             sb.append("ObjectLockMode: ").append(getObjectLockMode()).append(",");
         if (getObjectLockRetainUntilDate() != null)
-            sb.append("ObjectLockRetainUntilDate: ").append(getObjectLockRetainUntilDate());
+            sb.append("ObjectLockRetainUntilDate: ").append(getObjectLockRetainUntilDate()).append(",");
+        if (getBucketKeyEnabled() != null)
+            sb.append("BucketKeyEnabled: ").append(getBucketKeyEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -944,6 +1054,10 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
             return false;
         if (other.getObjectLockRetainUntilDate() != null && other.getObjectLockRetainUntilDate().equals(this.getObjectLockRetainUntilDate()) == false)
             return false;
+        if (other.getBucketKeyEnabled() == null ^ this.getBucketKeyEnabled() == null)
+            return false;
+        if (other.getBucketKeyEnabled() != null && other.getBucketKeyEnabled().equals(this.getBucketKeyEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -968,6 +1082,7 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getObjectLockLegalHoldStatus() == null) ? 0 : getObjectLockLegalHoldStatus().hashCode());
         hashCode = prime * hashCode + ((getObjectLockMode() == null) ? 0 : getObjectLockMode().hashCode());
         hashCode = prime * hashCode + ((getObjectLockRetainUntilDate() == null) ? 0 : getObjectLockRetainUntilDate().hashCode());
+        hashCode = prime * hashCode + ((getBucketKeyEnabled() == null) ? 0 : getBucketKeyEnabled().hashCode());
         return hashCode;
     }
 

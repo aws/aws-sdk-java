@@ -125,7 +125,7 @@ public class ResolverQueryLogConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A unique string that identifies the request that created the query logging configuration. The
-     * <code>CreatorRequestId</code> allows failed requests to be retried without the risk of executing the operation
+     * <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation
      * twice.
      * </p>
      */
@@ -801,13 +801,13 @@ public class ResolverQueryLogConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A unique string that identifies the request that created the query logging configuration. The
-     * <code>CreatorRequestId</code> allows failed requests to be retried without the risk of executing the operation
+     * <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation
      * twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request that created the query logging configuration. The
-     *        <code>CreatorRequestId</code> allows failed requests to be retried without the risk of executing the
+     *        <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the
      *        operation twice.
      */
 
@@ -818,12 +818,12 @@ public class ResolverQueryLogConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A unique string that identifies the request that created the query logging configuration. The
-     * <code>CreatorRequestId</code> allows failed requests to be retried without the risk of executing the operation
+     * <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation
      * twice.
      * </p>
      * 
      * @return A unique string that identifies the request that created the query logging configuration. The
-     *         <code>CreatorRequestId</code> allows failed requests to be retried without the risk of executing the
+     *         <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the
      *         operation twice.
      */
 
@@ -834,13 +834,13 @@ public class ResolverQueryLogConfig implements Serializable, Cloneable, Structur
     /**
      * <p>
      * A unique string that identifies the request that created the query logging configuration. The
-     * <code>CreatorRequestId</code> allows failed requests to be retried without the risk of executing the operation
+     * <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation
      * twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request that created the query logging configuration. The
-     *        <code>CreatorRequestId</code> allows failed requests to be retried without the risk of executing the
+     *        <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the
      *        operation twice.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

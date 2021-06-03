@@ -25,7 +25,7 @@ public class UpdateFirewallDomainsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Id of the firewall domain list that DNS Firewall just updated.
+     * The ID of the firewall domain list that DNS Firewall just updated.
      * </p>
      */
     private String id;
@@ -49,11 +49,11 @@ public class UpdateFirewallDomainsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Id of the firewall domain list that DNS Firewall just updated.
+     * The ID of the firewall domain list that DNS Firewall just updated.
      * </p>
      * 
      * @param id
-     *        The Id of the firewall domain list that DNS Firewall just updated.
+     *        The ID of the firewall domain list that DNS Firewall just updated.
      */
 
     public void setId(String id) {
@@ -62,10 +62,10 @@ public class UpdateFirewallDomainsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Id of the firewall domain list that DNS Firewall just updated.
+     * The ID of the firewall domain list that DNS Firewall just updated.
      * </p>
      * 
-     * @return The Id of the firewall domain list that DNS Firewall just updated.
+     * @return The ID of the firewall domain list that DNS Firewall just updated.
      */
 
     public String getId() {
@@ -74,11 +74,11 @@ public class UpdateFirewallDomainsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Id of the firewall domain list that DNS Firewall just updated.
+     * The ID of the firewall domain list that DNS Firewall just updated.
      * </p>
      * 
      * @param id
-     *        The Id of the firewall domain list that DNS Firewall just updated.
+     *        The ID of the firewall domain list that DNS Firewall just updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

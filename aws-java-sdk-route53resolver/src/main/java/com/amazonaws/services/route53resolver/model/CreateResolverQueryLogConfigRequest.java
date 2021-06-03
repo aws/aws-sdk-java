@@ -27,7 +27,7 @@ public class CreateResolverQueryLogConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name that you want to give the query logging configuration
+     * The name that you want to give the query logging configuration.
      * </p>
      */
     private String name;
@@ -74,7 +74,7 @@ public class CreateResolverQueryLogConfigRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      */
@@ -88,11 +88,11 @@ public class CreateResolverQueryLogConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name that you want to give the query logging configuration
+     * The name that you want to give the query logging configuration.
      * </p>
      * 
      * @param name
-     *        The name that you want to give the query logging configuration
+     *        The name that you want to give the query logging configuration.
      */
 
     public void setName(String name) {
@@ -101,10 +101,10 @@ public class CreateResolverQueryLogConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name that you want to give the query logging configuration
+     * The name that you want to give the query logging configuration.
      * </p>
      * 
-     * @return The name that you want to give the query logging configuration
+     * @return The name that you want to give the query logging configuration.
      */
 
     public String getName() {
@@ -113,11 +113,11 @@ public class CreateResolverQueryLogConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name that you want to give the query logging configuration
+     * The name that you want to give the query logging configuration.
      * </p>
      * 
      * @param name
-     *        The name that you want to give the query logging configuration
+     *        The name that you want to give the query logging configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,13 +370,13 @@ public class CreateResolverQueryLogConfigRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      */
 
@@ -387,13 +387,13 @@ public class CreateResolverQueryLogConfigRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed requests to be retried without the
-     *         risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     *         example, a date/time stamp.
+     *         risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example,
+     *         a date/time stamp.
      */
 
     public String getCreatorRequestId() {
@@ -403,13 +403,13 @@ public class CreateResolverQueryLogConfigRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

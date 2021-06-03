@@ -135,7 +135,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/' the document can
      * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
      * of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      */
@@ -969,7 +969,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/' the document can
      * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
      * of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
@@ -977,9 +977,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Specify a target type to define the kinds of resources the document can run on. For example, to run a
      *        document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/'
      *        the document can run on all types of resources. If you don't specify a value, the document can't run on
-     *        any resources. For a list of valid resource types, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        any resources. For a list of valid resource types, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
     public void setTargetType(String targetType) {
@@ -992,7 +992,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/' the document can
      * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
      * of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
@@ -1000,7 +1000,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *         document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of
      *         '/' the document can run on all types of resources. If you don't specify a value, the document can't run
      *         on any resources. For a list of valid resource types, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      *         resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
@@ -1014,7 +1014,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/' the document can
      * run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list
      * of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
@@ -1022,9 +1022,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Specify a target type to define the kinds of resources the document can run on. For example, to run a
      *        document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you specify a value of '/'
      *        the document can run on all types of resources. If you don't specify a value, the document can't run on
-     *        any resources. For a list of valid resource types, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        any resources. For a list of valid resource types, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

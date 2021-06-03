@@ -18,7 +18,9 @@
 package com.amazonaws.util;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -49,6 +51,15 @@ public class DateUtils {
     /** Alternate ISO 8601 format without fractional seconds */
     protected static final DateTimeFormatter alternateIso8601DateFormat =
         DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'").withZone(GMT);
+
+    /**
+     * ISO 8601 format with a UTC Offset
+     */
+    protected static final DateTimeFormatter ISO8601_DATE_FORMAT_WITH_OFFSET =
+        DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ssZZ");
+
+    private static final List<DateTimeFormatter> ALTERNATE_ISO8601_FORMATTERS = Arrays.asList(
+        alternateIso8601DateFormat, ISO8601_DATE_FORMAT_WITH_OFFSET);
 
     /** RFC 822 format */
     protected static final DateTimeFormatter rfc822DateFormat =
@@ -110,14 +121,17 @@ public class DateUtils {
             }
             return new Date(milli);
         } catch (IllegalArgumentException e) {
-            try {
-                return new Date(alternateIso8601DateFormat.parseMillis(dateString));
-                // If the first ISO 8601 parser didn't work, try the alternate
-                // version which doesn't include fractional seconds
-            } catch(Exception oops) {
-                // no the alternative route doesn't work; let's bubble up the original exception
-                throw e;
+            for (DateTimeFormatter dateTimeFormatter : ALTERNATE_ISO8601_FORMATTERS) {
+                try {
+                    return new Date(dateTimeFormatter.parseMillis(dateString));
+                    // If the first ISO 8601 parser didn't work, try the alternate
+                    // version which doesn't include fractional seconds
+                } catch(Exception oops) {
+                    // ignore
+                }
             }
+
+            throw e;
         }
     }
 

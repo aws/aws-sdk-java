@@ -32,7 +32,7 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
      * <p>
      * The type of data source for the resource data sync. <code>SourceType</code> is either
      * <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
-     * <code>singleAccountMultiRegions</code>.
+     * <code>SingleAccountMultiRegions</code>.
      * </p>
      */
     private String sourceType;
@@ -70,13 +70,13 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
      * <p>
      * The type of data source for the resource data sync. <code>SourceType</code> is either
      * <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
-     * <code>singleAccountMultiRegions</code>.
+     * <code>SingleAccountMultiRegions</code>.
      * </p>
      * 
      * @param sourceType
      *        The type of data source for the resource data sync. <code>SourceType</code> is either
      *        <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
-     *        <code>singleAccountMultiRegions</code>.
+     *        <code>SingleAccountMultiRegions</code>.
      */
 
     public void setSourceType(String sourceType) {
@@ -87,12 +87,12 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
      * <p>
      * The type of data source for the resource data sync. <code>SourceType</code> is either
      * <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
-     * <code>singleAccountMultiRegions</code>.
+     * <code>SingleAccountMultiRegions</code>.
      * </p>
      * 
      * @return The type of data source for the resource data sync. <code>SourceType</code> is either
      *         <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
-     *         <code>singleAccountMultiRegions</code>.
+     *         <code>SingleAccountMultiRegions</code>.
      */
 
     public String getSourceType() {
@@ -103,13 +103,13 @@ public class ResourceDataSyncSource implements Serializable, Cloneable, Structur
      * <p>
      * The type of data source for the resource data sync. <code>SourceType</code> is either
      * <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
-     * <code>singleAccountMultiRegions</code>.
+     * <code>SingleAccountMultiRegions</code>.
      * </p>
      * 
      * @param sourceType
      *        The type of data source for the resource data sync. <code>SourceType</code> is either
      *        <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
-     *        <code>singleAccountMultiRegions</code>.
+     *        <code>SingleAccountMultiRegions</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
