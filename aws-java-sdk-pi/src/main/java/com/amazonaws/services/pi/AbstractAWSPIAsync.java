@@ -40,6 +40,19 @@ public class AbstractAWSPIAsync extends AbstractAWSPI implements AWSPIAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDimensionKeyDetailsResult> getDimensionKeyDetailsAsync(GetDimensionKeyDetailsRequest request) {
+
+        return getDimensionKeyDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDimensionKeyDetailsResult> getDimensionKeyDetailsAsync(GetDimensionKeyDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDimensionKeyDetailsRequest, GetDimensionKeyDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourceMetricsResult> getResourceMetricsAsync(GetResourceMetricsRequest request) {
 
         return getResourceMetricsAsync(request, null);

@@ -25,18 +25,18 @@ public class CancelJournalKinesisStreamResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (Base62-encoded text) of the canceled QLDB journal stream.
      * </p>
      */
     private String streamId;
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (Base62-encoded text) of the canceled QLDB journal stream.
      * </p>
      * 
      * @param streamId
-     *        The unique ID that QLDB assigns to each QLDB journal stream.
+     *        The UUID (Base62-encoded text) of the canceled QLDB journal stream.
      */
 
     public void setStreamId(String streamId) {
@@ -45,10 +45,10 @@ public class CancelJournalKinesisStreamResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (Base62-encoded text) of the canceled QLDB journal stream.
      * </p>
      * 
-     * @return The unique ID that QLDB assigns to each QLDB journal stream.
+     * @return The UUID (Base62-encoded text) of the canceled QLDB journal stream.
      */
 
     public String getStreamId() {
@@ -57,11 +57,11 @@ public class CancelJournalKinesisStreamResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (Base62-encoded text) of the canceled QLDB journal stream.
      * </p>
      * 
      * @param streamId
-     *        The unique ID that QLDB assigns to each QLDB journal stream.
+     *        The UUID (Base62-encoded text) of the canceled QLDB journal stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

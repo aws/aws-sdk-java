@@ -33,7 +33,7 @@ public class CancelJournalKinesisStreamRequest extends com.amazonaws.AmazonWebSe
     private String ledgerName;
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
      * </p>
      */
     private String streamId;
@@ -80,11 +80,11 @@ public class CancelJournalKinesisStreamRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
      * </p>
      * 
      * @param streamId
-     *        The unique ID that QLDB assigns to each QLDB journal stream.
+     *        The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
      */
 
     public void setStreamId(String streamId) {
@@ -93,10 +93,10 @@ public class CancelJournalKinesisStreamRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
      * </p>
      * 
-     * @return The unique ID that QLDB assigns to each QLDB journal stream.
+     * @return The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
      */
 
     public String getStreamId() {
@@ -105,11 +105,11 @@ public class CancelJournalKinesisStreamRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
      * </p>
      * 
      * @param streamId
-     *        The unique ID that QLDB assigns to each QLDB journal stream.
+     *        The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

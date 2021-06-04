@@ -155,10 +155,7 @@ public class Ebs implements Serializable, Cloneable {
     private Boolean encrypted;
     /**
      * <p>
-     * The throughput to provision for a <code>gp3</code> volume.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * The throughput (MiBps) to provision for a <code>gp3</code> volume.
      * </p>
      */
     private Integer throughput;
@@ -1018,16 +1015,11 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The throughput to provision for a <code>gp3</code> volume.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * The throughput (MiBps) to provision for a <code>gp3</code> volume.
      * </p>
      * 
      * @param throughput
-     *        The throughput to provision for a <code>gp3</code> volume.</p>
-     *        <p>
-     *        Valid Range: Minimum value of 125. Maximum value of 1000.
+     *        The throughput (MiBps) to provision for a <code>gp3</code> volume.
      */
 
     public void setThroughput(Integer throughput) {
@@ -1036,15 +1028,10 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The throughput to provision for a <code>gp3</code> volume.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * The throughput (MiBps) to provision for a <code>gp3</code> volume.
      * </p>
      * 
-     * @return The throughput to provision for a <code>gp3</code> volume.</p>
-     *         <p>
-     *         Valid Range: Minimum value of 125. Maximum value of 1000.
+     * @return The throughput (MiBps) to provision for a <code>gp3</code> volume.
      */
 
     public Integer getThroughput() {
@@ -1053,16 +1040,11 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The throughput to provision for a <code>gp3</code> volume.
-     * </p>
-     * <p>
-     * Valid Range: Minimum value of 125. Maximum value of 1000.
+     * The throughput (MiBps) to provision for a <code>gp3</code> volume.
      * </p>
      * 
      * @param throughput
-     *        The throughput to provision for a <code>gp3</code> volume.</p>
-     *        <p>
-     *        Valid Range: Minimum value of 125. Maximum value of 1000.
+     *        The throughput (MiBps) to provision for a <code>gp3</code> volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

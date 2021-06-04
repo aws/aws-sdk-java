@@ -33,11 +33,11 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * The inclusive start date and time for the range of journal contents that you want to export.
+     * The inclusive start date and time for the range of journal contents to export.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.
@@ -50,11 +50,11 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
     private java.util.Date inclusiveStartTime;
     /**
      * <p>
-     * The exclusive end date and time for the range of journal contents that you want to export.
+     * The exclusive end date and time for the range of journal contents to export.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.
@@ -130,11 +130,11 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The inclusive start date and time for the range of journal contents that you want to export.
+     * The inclusive start date and time for the range of journal contents to export.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.
@@ -145,10 +145,10 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param inclusiveStartTime
-     *        The inclusive start date and time for the range of journal contents that you want to export.</p>
+     *        The inclusive start date and time for the range of journal contents to export.</p>
      *        <p>
      *        The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      *        </p>
      *        <p>
      *        The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.
@@ -164,11 +164,11 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The inclusive start date and time for the range of journal contents that you want to export.
+     * The inclusive start date and time for the range of journal contents to export.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.
@@ -178,10 +178,10 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      * Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.
      * </p>
      * 
-     * @return The inclusive start date and time for the range of journal contents that you want to export.</p>
+     * @return The inclusive start date and time for the range of journal contents to export.</p>
      *         <p>
      *         The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in
-     *         Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *         Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      *         </p>
      *         <p>
      *         The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.
@@ -197,11 +197,11 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The inclusive start date and time for the range of journal contents that you want to export.
+     * The inclusive start date and time for the range of journal contents to export.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.
@@ -212,10 +212,10 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param inclusiveStartTime
-     *        The inclusive start date and time for the range of journal contents that you want to export.</p>
+     *        The inclusive start date and time for the range of journal contents to export.</p>
      *        <p>
      *        The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      *        </p>
      *        <p>
      *        The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.
@@ -233,21 +233,21 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The exclusive end date and time for the range of journal contents that you want to export.
+     * The exclusive end date and time for the range of journal contents to export.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.
      * </p>
      * 
      * @param exclusiveEndTime
-     *        The exclusive end date and time for the range of journal contents that you want to export.</p>
+     *        The exclusive end date and time for the range of journal contents to export.</p>
      *        <p>
      *        The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      *        </p>
      *        <p>
      *        The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.
@@ -259,20 +259,20 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The exclusive end date and time for the range of journal contents that you want to export.
+     * The exclusive end date and time for the range of journal contents to export.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.
      * </p>
      * 
-     * @return The exclusive end date and time for the range of journal contents that you want to export.</p>
+     * @return The exclusive end date and time for the range of journal contents to export.</p>
      *         <p>
      *         The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *         Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *         Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      *         </p>
      *         <p>
      *         The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.
@@ -284,21 +284,21 @@ public class ExportJournalToS3Request extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The exclusive end date and time for the range of journal contents that you want to export.
+     * The exclusive end date and time for the range of journal contents to export.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.
      * </p>
      * 
      * @param exclusiveEndTime
-     *        The exclusive end date and time for the range of journal contents that you want to export.</p>
+     *        The exclusive end date and time for the range of journal contents to export.</p>
      *        <p>
      *        The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      *        </p>
      *        <p>
      *        The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.

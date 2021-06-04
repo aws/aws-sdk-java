@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265AdaptiveQuantization {
 
+    AUTO("AUTO"),
     HIGH("HIGH"),
     HIGHER("HIGHER"),
     LOW("LOW"),

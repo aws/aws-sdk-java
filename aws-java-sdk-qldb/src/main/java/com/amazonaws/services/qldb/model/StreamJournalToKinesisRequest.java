@@ -49,7 +49,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The inclusive start date and time from which to start streaming journal data. This parameter must be in
      * <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code>
+     * <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.
@@ -67,7 +67,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      */
     private java.util.Date exclusiveEndTime;
@@ -255,7 +255,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The inclusive start date and time from which to start streaming journal data. This parameter must be in
      * <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code>
+     * <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.
@@ -268,7 +268,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * @param inclusiveStartTime
      *        The inclusive start date and time from which to start streaming journal data. This parameter must be in
      *        <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     *        <code>2019-06-13T21:36:34Z</code> </p>
+     *        <code>2019-06-13T21:36:34Z</code>.</p>
      *        <p>
      *        The <code>InclusiveStartTime</code> cannot be in the future and must be before
      *        <code>ExclusiveEndTime</code>.
@@ -286,7 +286,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The inclusive start date and time from which to start streaming journal data. This parameter must be in
      * <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code>
+     * <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.
@@ -298,7 +298,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The inclusive start date and time from which to start streaming journal data. This parameter must be in
      *         <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     *         <code>2019-06-13T21:36:34Z</code> </p>
+     *         <code>2019-06-13T21:36:34Z</code>.</p>
      *         <p>
      *         The <code>InclusiveStartTime</code> cannot be in the future and must be before
      *         <code>ExclusiveEndTime</code>.
@@ -316,7 +316,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The inclusive start date and time from which to start streaming journal data. This parameter must be in
      * <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code>
+     * <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.
@@ -329,7 +329,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * @param inclusiveStartTime
      *        The inclusive start date and time from which to start streaming journal data. This parameter must be in
      *        <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     *        <code>2019-06-13T21:36:34Z</code> </p>
+     *        <code>2019-06-13T21:36:34Z</code>.</p>
      *        <p>
      *        The <code>InclusiveStartTime</code> cannot be in the future and must be before
      *        <code>ExclusiveEndTime</code>.
@@ -352,7 +352,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * 
      * @param exclusiveEndTime
@@ -360,7 +360,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      *        stream runs indefinitely until you cancel it.</p>
      *        <p>
      *        The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      */
 
     public void setExclusiveEndTime(java.util.Date exclusiveEndTime) {
@@ -374,14 +374,14 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * 
      * @return The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the
      *         stream runs indefinitely until you cancel it.</p>
      *         <p>
      *         The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *         Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *         Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      */
 
     public java.util.Date getExclusiveEndTime() {
@@ -395,7 +395,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * 
      * @param exclusiveEndTime
@@ -403,7 +403,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      *        stream runs indefinitely until you cancel it.</p>
      *        <p>
      *        The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

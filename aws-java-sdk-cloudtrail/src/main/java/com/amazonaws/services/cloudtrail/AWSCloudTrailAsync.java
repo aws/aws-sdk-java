@@ -231,8 +231,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * <li>
      * <p>
-     * If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions that you are logging
-     * for data events.
+     * If your event selector includes data events, the resources on which you are logging data events.
      * </p>
      * </li>
      * </ul>
@@ -269,8 +268,7 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * </li>
      * <li>
      * <p>
-     * If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions that you are logging
-     * for data events.
+     * If your event selector includes data events, the resources on which you are logging data events.
      * </p>
      * </li>
      * </ul>

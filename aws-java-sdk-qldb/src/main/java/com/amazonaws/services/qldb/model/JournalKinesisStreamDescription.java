@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation
- * time, current status, and the parameters of your original stream creation request.
+ * Information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation
+ * time, current status, and the parameters of the original stream creation request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/JournalKinesisStreamDescription"
@@ -64,7 +64,7 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
     private String roleArn;
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream.
      * </p>
      */
     private String streamId;
@@ -82,7 +82,7 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
     private String status;
     /**
      * <p>
-     * The configuration settings of the Amazon Kinesis Data Streams destination for your QLDB journal stream.
+     * The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.
      * </p>
      */
     private KinesisConfiguration kinesisConfiguration;
@@ -320,11 +320,11 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream.
      * </p>
      * 
      * @param streamId
-     *        The unique ID that QLDB assigns to each QLDB journal stream.
+     *        The UUID (represented in Base62-encoded text) of the QLDB journal stream.
      */
 
     public void setStreamId(String streamId) {
@@ -333,10 +333,10 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream.
      * </p>
      * 
-     * @return The unique ID that QLDB assigns to each QLDB journal stream.
+     * @return The UUID (represented in Base62-encoded text) of the QLDB journal stream.
      */
 
     public String getStreamId() {
@@ -345,11 +345,11 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream.
      * </p>
      * 
      * @param streamId
-     *        The unique ID that QLDB assigns to each QLDB journal stream.
+     *        The UUID (represented in Base62-encoded text) of the QLDB journal stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,11 +459,11 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The configuration settings of the Amazon Kinesis Data Streams destination for your QLDB journal stream.
+     * The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.
      * </p>
      * 
      * @param kinesisConfiguration
-     *        The configuration settings of the Amazon Kinesis Data Streams destination for your QLDB journal stream.
+     *        The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.
      */
 
     public void setKinesisConfiguration(KinesisConfiguration kinesisConfiguration) {
@@ -472,10 +472,10 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The configuration settings of the Amazon Kinesis Data Streams destination for your QLDB journal stream.
+     * The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.
      * </p>
      * 
-     * @return The configuration settings of the Amazon Kinesis Data Streams destination for your QLDB journal stream.
+     * @return The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.
      */
 
     public KinesisConfiguration getKinesisConfiguration() {
@@ -484,11 +484,11 @@ public class JournalKinesisStreamDescription implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The configuration settings of the Amazon Kinesis Data Streams destination for your QLDB journal stream.
+     * The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.
      * </p>
      * 
      * @param kinesisConfiguration
-     *        The configuration settings of the Amazon Kinesis Data Streams destination for your QLDB journal stream.
+     *        The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

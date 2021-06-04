@@ -250,9 +250,9 @@ public interface AWSCloudTrail {
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws KmsKeyNotFoundException
-     *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
-     *         the same region, or when the KMS key associated with the SNS topic either does not exist or is not in the
-     *         same region.
+     *         This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and the AWS KMS key are
+     *         not in the same region, or when the AWS KMS key associated with the SNS topic either does not exist or is
+     *         not in the same region.
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException
@@ -455,8 +455,7 @@ public interface AWSCloudTrail {
      * </li>
      * <li>
      * <p>
-     * If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions that you are logging
-     * for data events.
+     * If your event selector includes data events, the resources on which you are logging data events.
      * </p>
      * </li>
      * </ul>
@@ -1436,9 +1435,9 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @throws KmsKeyNotFoundException
-     *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
-     *         the same region, or when the KMS key associated with the SNS topic either does not exist or is not in the
-     *         same region.
+     *         This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and the AWS KMS key are
+     *         not in the same region, or when the AWS KMS key associated with the SNS topic either does not exist or is
+     *         not in the same region.
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException

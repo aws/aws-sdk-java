@@ -97,6 +97,29 @@ public interface AWSPI {
 
     /**
      * <p>
+     * Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify
+     * a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension
+     * <code>db.sql.statement</code> associated with this ID. This operation is useful because
+     * <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL
+     * statement text.
+     * </p>
+     * 
+     * @param getDimensionKeyDetailsRequest
+     * @return Result of the GetDimensionKeyDetails operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.GetDimensionKeyDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDimensionKeyDetailsResult getDimensionKeyDetails(GetDimensionKeyDetailsRequest getDimensionKeyDetailsRequest);
+
+    /**
+     * <p>
      * Retrieve Performance Insights metrics for a set of data sources, over a time period. You can provide specific
      * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
      * </p>

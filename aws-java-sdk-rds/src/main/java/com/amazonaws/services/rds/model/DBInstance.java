@@ -52,9 +52,9 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private String dBInstanceStatus;
@@ -661,17 +661,17 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param dBInstanceStatus
      *        Specifies the current state of this database.</p>
      *        <p>
-     *        For information about DB instance statuses, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     *        Status</a> in the <i>Amazon RDS User Guide.</i>
+     *        For information about DB instance statuses, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     *        >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setDBInstanceStatus(String dBInstanceStatus) {
@@ -683,16 +683,16 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return Specifies the current state of this database.</p>
      *         <p>
-     *         For information about DB instance statuses, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     *         Status</a> in the <i>Amazon RDS User Guide.</i>
+     *         For information about DB instance statuses, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     *         >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public String getDBInstanceStatus() {
@@ -704,17 +704,17 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param dBInstanceStatus
      *        Specifies the current state of this database.</p>
      *        <p>
-     *        For information about DB instance statuses, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     *        Status</a> in the <i>Amazon RDS User Guide.</i>
+     *        For information about DB instance statuses, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     *        >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

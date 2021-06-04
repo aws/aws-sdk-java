@@ -43,7 +43,7 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service (AWS KMS).
-     * Amazon QLDB does not support asymmetric CMKs.
+     * Amazon S3 does not support asymmetric CMKs.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -154,7 +154,7 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service (AWS KMS).
-     * Amazon QLDB does not support asymmetric CMKs.
+     * Amazon S3 does not support asymmetric CMKs.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -167,7 +167,7 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
      * 
      * @param kmsKeyArn
      *        The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service
-     *        (AWS KMS). Amazon QLDB does not support asymmetric CMKs.</p>
+     *        (AWS KMS). Amazon S3 does not support asymmetric CMKs.</p>
      *        <p>
      *        You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      *        <code>ObjectEncryptionType</code>.
@@ -184,7 +184,7 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service (AWS KMS).
-     * Amazon QLDB does not support asymmetric CMKs.
+     * Amazon S3 does not support asymmetric CMKs.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -196,7 +196,7 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service
-     *         (AWS KMS). Amazon QLDB does not support asymmetric CMKs.</p>
+     *         (AWS KMS). Amazon S3 does not support asymmetric CMKs.</p>
      *         <p>
      *         You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      *         <code>ObjectEncryptionType</code>.
@@ -213,7 +213,7 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service (AWS KMS).
-     * Amazon QLDB does not support asymmetric CMKs.
+     * Amazon S3 does not support asymmetric CMKs.
      * </p>
      * <p>
      * You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
@@ -226,7 +226,7 @@ public class S3EncryptionConfiguration implements Serializable, Cloneable, Struc
      * 
      * @param kmsKeyArn
      *        The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in AWS Key Management Service
-     *        (AWS KMS). Amazon QLDB does not support asymmetric CMKs.</p>
+     *        (AWS KMS). Amazon S3 does not support asymmetric CMKs.</p>
      *        <p>
      *        You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
      *        <code>ObjectEncryptionType</code>.

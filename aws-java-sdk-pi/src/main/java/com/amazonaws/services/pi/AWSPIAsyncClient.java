@@ -136,6 +136,39 @@ public class AWSPIAsyncClient extends AWSPIClient implements AWSPIAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDimensionKeyDetailsResult> getDimensionKeyDetailsAsync(GetDimensionKeyDetailsRequest request) {
+
+        return getDimensionKeyDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDimensionKeyDetailsResult> getDimensionKeyDetailsAsync(final GetDimensionKeyDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDimensionKeyDetailsRequest, GetDimensionKeyDetailsResult> asyncHandler) {
+        final GetDimensionKeyDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDimensionKeyDetailsResult>() {
+            @Override
+            public GetDimensionKeyDetailsResult call() throws Exception {
+                GetDimensionKeyDetailsResult result = null;
+
+                try {
+                    result = executeGetDimensionKeyDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourceMetricsResult> getResourceMetricsAsync(GetResourceMetricsRequest request) {
 
         return getResourceMetricsAsync(request, null);

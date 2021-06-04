@@ -213,7 +213,7 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Creates a new ledger in your AWS account.
+     * Creates a new ledger in your AWS account in the current Region.
      * </p>
      * 
      * @param createLedgerRequest
@@ -279,10 +279,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
      * Deletes a ledger and all of its contents. This action is irreversible.
      * </p>
      * <p>
-     * If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API
-     * or the AWS Command Line Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables deletion protection for you when you
-     * use it to delete a ledger.
+     * If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it
+     * by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
      * </p>
      * 
      * @param deleteLedgerRequest
@@ -346,8 +344,13 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
     /**
      * <p>
      * Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource
-     * Name (ARN), stream name, current status, creation time, and the parameters of your original stream creation
+     * Name (ARN), stream name, current status, creation time, and the parameters of the original stream creation
      * request.
+     * </p>
+     * <p>
+     * This action does not return any expired journal streams. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration"
+     * >Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param describeJournalKinesisStreamRequest
@@ -410,13 +413,13 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Returns information about a journal export job, including the ledger name, export ID, when it was created,
-     * current status, and its start and end time export parameters.
+     * Returns information about a journal export job, including the ledger name, export ID, creation time, current
+     * status, and the parameters of the original export creation request.
      * </p>
      * <p>
      * This action does not return any expired export jobs. For more information, see <a href=
      * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
-     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * >Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * <p>
      * If the export job with the given <code>ExportId</code> doesn't exist, then throws
@@ -818,6 +821,11 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
      * descriptor includes the same details that are returned by <code>DescribeJournalKinesisStream</code>.
      * </p>
      * <p>
+     * This action does not return any expired journal streams. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration"
+     * >Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * </p>
+     * <p>
      * This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the
      * items by calling <code>ListJournalKinesisStreamsForLedger</code> multiple times.
      * </p>
@@ -893,7 +901,7 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
      * <p>
      * This action does not return any expired export jobs. For more information, see <a href=
      * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
-     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * >Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param listJournalS3ExportsRequest
@@ -957,7 +965,7 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
      * <p>
      * This action does not return any expired export jobs. For more information, see <a href=
      * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
-     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * >Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param listJournalS3ExportsForLedgerRequest
@@ -1378,6 +1386,14 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
      * <p>
      * Updates the permissions mode of a ledger.
      * </p>
+     * <important>
+     * <p>
+     * Before you switch to the <code>STANDARD</code> permissions mode, you must first create all required IAM policies
+     * and table tags to avoid disruption to your users. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating"
+     * >Migrating to the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateLedgerPermissionsModeRequest
      * @return Result of the UpdateLedgerPermissionsMode operation returned by the service.

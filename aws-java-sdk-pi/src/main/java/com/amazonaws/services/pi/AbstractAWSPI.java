@@ -33,6 +33,11 @@ public class AbstractAWSPI implements AWSPI {
     }
 
     @Override
+    public GetDimensionKeyDetailsResult getDimensionKeyDetails(GetDimensionKeyDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetResourceMetricsResult getResourceMetrics(GetResourceMetricsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

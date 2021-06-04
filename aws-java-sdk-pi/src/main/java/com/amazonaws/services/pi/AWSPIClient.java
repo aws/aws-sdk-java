@@ -232,6 +232,72 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
 
     /**
      * <p>
+     * Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify
+     * a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension
+     * <code>db.sql.statement</code> associated with this ID. This operation is useful because
+     * <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL
+     * statement text.
+     * </p>
+     * 
+     * @param getDimensionKeyDetailsRequest
+     * @return Result of the GetDimensionKeyDetails operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.GetDimensionKeyDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDimensionKeyDetailsResult getDimensionKeyDetails(GetDimensionKeyDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDimensionKeyDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetDimensionKeyDetailsResult executeGetDimensionKeyDetails(GetDimensionKeyDetailsRequest getDimensionKeyDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDimensionKeyDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDimensionKeyDetailsRequest> request = null;
+        Response<GetDimensionKeyDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDimensionKeyDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDimensionKeyDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDimensionKeyDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDimensionKeyDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDimensionKeyDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieve Performance Insights metrics for a set of data sources, over a time period. You can provide specific
      * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
      * </p>

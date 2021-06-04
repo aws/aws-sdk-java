@@ -25,7 +25,7 @@ public class ExportJournalToS3Result extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each journal export job.
+     * The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.
      * </p>
      * <p>
      * To describe your export request and check the status of the job, you can use <code>ExportId</code> to call
@@ -36,7 +36,7 @@ public class ExportJournalToS3Result extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each journal export job.
+     * The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.
      * </p>
      * <p>
      * To describe your export request and check the status of the job, you can use <code>ExportId</code> to call
@@ -44,7 +44,7 @@ public class ExportJournalToS3Result extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param exportId
-     *        The unique ID that QLDB assigns to each journal export job.</p>
+     *        The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
      *        <p>
      *        To describe your export request and check the status of the job, you can use <code>ExportId</code> to call
      *        <code>DescribeJournalS3Export</code>.
@@ -56,14 +56,14 @@ public class ExportJournalToS3Result extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each journal export job.
+     * The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.
      * </p>
      * <p>
      * To describe your export request and check the status of the job, you can use <code>ExportId</code> to call
      * <code>DescribeJournalS3Export</code>.
      * </p>
      * 
-     * @return The unique ID that QLDB assigns to each journal export job.</p>
+     * @return The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
      *         <p>
      *         To describe your export request and check the status of the job, you can use <code>ExportId</code> to
      *         call <code>DescribeJournalS3Export</code>.
@@ -75,7 +75,7 @@ public class ExportJournalToS3Result extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each journal export job.
+     * The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.
      * </p>
      * <p>
      * To describe your export request and check the status of the job, you can use <code>ExportId</code> to call
@@ -83,7 +83,7 @@ public class ExportJournalToS3Result extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param exportId
-     *        The unique ID that QLDB assigns to each journal export job.</p>
+     *        The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
      *        <p>
      *        To describe your export request and check the status of the job, you can use <code>ExportId</code> to call
      *        <code>DescribeJournalS3Export</code>.

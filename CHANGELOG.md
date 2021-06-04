@@ -1,3 +1,28 @@
+# __1.11.1034__ __2021-06-04__
+## __AWS CloudTrail__
+  - ### Features
+    - AWS CloudTrail supports data events on new service resources, including Amazon DynamoDB tables and S3 Object Lambda access points.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - Add support for automatically setting the H.264 adaptive quantization and GOP B-frame fields.
+
+## __AWS Performance Insights__
+  - ### Features
+    - The new GetDimensionKeyDetails action retrieves the attributes of the specified dimension group for a DB instance or data source.
+
+## __Amazon QLDB__
+  - ### Features
+    - Documentation updates for Amazon QLDB
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Documentation updates for RDS: fixing an outdated link to the RDS documentation in DBInstance$DBInstanceStatus
+
+## __Auto Scaling__
+  - ### Features
+    - Documentation updates for Amazon EC2 Auto Scaling
+
 # __1.11.1033__ __2021-06-03__
 ## __AWS S3 Control__
   - ### Features
