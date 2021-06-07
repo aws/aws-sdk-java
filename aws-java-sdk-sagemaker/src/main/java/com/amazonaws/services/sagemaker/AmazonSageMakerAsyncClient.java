@@ -6573,6 +6573,76 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<SendPipelineExecutionStepFailureResult> sendPipelineExecutionStepFailureAsync(
+            SendPipelineExecutionStepFailureRequest request) {
+
+        return sendPipelineExecutionStepFailureAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendPipelineExecutionStepFailureResult> sendPipelineExecutionStepFailureAsync(
+            final SendPipelineExecutionStepFailureRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendPipelineExecutionStepFailureRequest, SendPipelineExecutionStepFailureResult> asyncHandler) {
+        final SendPipelineExecutionStepFailureRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendPipelineExecutionStepFailureResult>() {
+            @Override
+            public SendPipelineExecutionStepFailureResult call() throws Exception {
+                SendPipelineExecutionStepFailureResult result = null;
+
+                try {
+                    result = executeSendPipelineExecutionStepFailure(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendPipelineExecutionStepSuccessResult> sendPipelineExecutionStepSuccessAsync(
+            SendPipelineExecutionStepSuccessRequest request) {
+
+        return sendPipelineExecutionStepSuccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendPipelineExecutionStepSuccessResult> sendPipelineExecutionStepSuccessAsync(
+            final SendPipelineExecutionStepSuccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendPipelineExecutionStepSuccessRequest, SendPipelineExecutionStepSuccessResult> asyncHandler) {
+        final SendPipelineExecutionStepSuccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendPipelineExecutionStepSuccessResult>() {
+            @Override
+            public SendPipelineExecutionStepSuccessResult call() throws Exception {
+                SendPipelineExecutionStepSuccessResult result = null;
+
+                try {
+                    result = executeSendPipelineExecutionStepSuccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartMonitoringScheduleResult> startMonitoringScheduleAsync(StartMonitoringScheduleRequest request) {
 
         return startMonitoringScheduleAsync(request, null);

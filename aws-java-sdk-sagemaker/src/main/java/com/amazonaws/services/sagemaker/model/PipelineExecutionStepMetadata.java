@@ -65,6 +65,8 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      */
     private ConditionStepMetadata condition;
 
+    private CallbackStepMetadata callback;
+
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the training job that was run by this step execution.
@@ -306,6 +308,32 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
     }
 
     /**
+     * @param callback
+     */
+
+    public void setCallback(CallbackStepMetadata callback) {
+        this.callback = callback;
+    }
+
+    /**
+     * @return
+     */
+
+    public CallbackStepMetadata getCallback() {
+        return this.callback;
+    }
+
+    /**
+     * @param callback
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionStepMetadata withCallback(CallbackStepMetadata callback) {
+        setCallback(callback);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -328,7 +356,9 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
         if (getRegisterModel() != null)
             sb.append("RegisterModel: ").append(getRegisterModel()).append(",");
         if (getCondition() != null)
-            sb.append("Condition: ").append(getCondition());
+            sb.append("Condition: ").append(getCondition()).append(",");
+        if (getCallback() != null)
+            sb.append("Callback: ").append(getCallback());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +397,10 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
             return false;
         if (other.getCondition() != null && other.getCondition().equals(this.getCondition()) == false)
             return false;
+        if (other.getCallback() == null ^ this.getCallback() == null)
+            return false;
+        if (other.getCallback() != null && other.getCallback().equals(this.getCallback()) == false)
+            return false;
         return true;
     }
 
@@ -381,6 +415,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
         hashCode = prime * hashCode + ((getRegisterModel() == null) ? 0 : getRegisterModel().hashCode());
         hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
+        hashCode = prime * hashCode + ((getCallback() == null) ? 0 : getCallback().hashCode());
         return hashCode;
     }
 

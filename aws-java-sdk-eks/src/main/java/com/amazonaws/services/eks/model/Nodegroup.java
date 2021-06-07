@@ -166,6 +166,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NodegroupHealth health;
+
+    private NodegroupUpdateConfig updateConfig;
     /**
      * <p>
      * If a launch template was used to create the node group, then this is the launch template that was used.
@@ -1279,6 +1281,32 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param updateConfig
+     */
+
+    public void setUpdateConfig(NodegroupUpdateConfig updateConfig) {
+        this.updateConfig = updateConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public NodegroupUpdateConfig getUpdateConfig() {
+        return this.updateConfig;
+    }
+
+    /**
+     * @param updateConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Nodegroup withUpdateConfig(NodegroupUpdateConfig updateConfig) {
+        setUpdateConfig(updateConfig);
+        return this;
+    }
+
+    /**
      * <p>
      * If a launch template was used to create the node group, then this is the launch template that was used.
      * </p>
@@ -1450,6 +1478,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             sb.append("DiskSize: ").append(getDiskSize()).append(",");
         if (getHealth() != null)
             sb.append("Health: ").append(getHealth()).append(",");
+        if (getUpdateConfig() != null)
+            sb.append("UpdateConfig: ").append(getUpdateConfig()).append(",");
         if (getLaunchTemplate() != null)
             sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getTags() != null)
@@ -1548,6 +1578,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHealth() != null && other.getHealth().equals(this.getHealth()) == false)
             return false;
+        if (other.getUpdateConfig() == null ^ this.getUpdateConfig() == null)
+            return false;
+        if (other.getUpdateConfig() != null && other.getUpdateConfig().equals(this.getUpdateConfig()) == false)
+            return false;
         if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
             return false;
         if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
@@ -1584,6 +1618,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
         hashCode = prime * hashCode + ((getDiskSize() == null) ? 0 : getDiskSize().hashCode());
         hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode());
+        hashCode = prime * hashCode + ((getUpdateConfig() == null) ? 0 : getUpdateConfig().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

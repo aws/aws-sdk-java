@@ -2603,6 +2603,36 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<SendPipelineExecutionStepFailureResult> sendPipelineExecutionStepFailureAsync(
+            SendPipelineExecutionStepFailureRequest request) {
+
+        return sendPipelineExecutionStepFailureAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendPipelineExecutionStepFailureResult> sendPipelineExecutionStepFailureAsync(
+            SendPipelineExecutionStepFailureRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendPipelineExecutionStepFailureRequest, SendPipelineExecutionStepFailureResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendPipelineExecutionStepSuccessResult> sendPipelineExecutionStepSuccessAsync(
+            SendPipelineExecutionStepSuccessRequest request) {
+
+        return sendPipelineExecutionStepSuccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendPipelineExecutionStepSuccessResult> sendPipelineExecutionStepSuccessAsync(
+            SendPipelineExecutionStepSuccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendPipelineExecutionStepSuccessRequest, SendPipelineExecutionStepSuccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartMonitoringScheduleResult> startMonitoringScheduleAsync(StartMonitoringScheduleRequest request) {
 
         return startMonitoringScheduleAsync(request, null);

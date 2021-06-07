@@ -154,6 +154,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private LaunchTemplateSpecification launchTemplate;
+
+    private NodegroupUpdateConfig updateConfig;
     /**
      * <p>
      * The capacity type for your node group.
@@ -1241,6 +1243,32 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * @param updateConfig
+     */
+
+    public void setUpdateConfig(NodegroupUpdateConfig updateConfig) {
+        this.updateConfig = updateConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public NodegroupUpdateConfig getUpdateConfig() {
+        return this.updateConfig;
+    }
+
+    /**
+     * @param updateConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNodegroupRequest withUpdateConfig(NodegroupUpdateConfig updateConfig) {
+        setUpdateConfig(updateConfig);
+        return this;
+    }
+
+    /**
      * <p>
      * The capacity type for your node group.
      * </p>
@@ -1494,6 +1522,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getLaunchTemplate() != null)
             sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
+        if (getUpdateConfig() != null)
+            sb.append("UpdateConfig: ").append(getUpdateConfig()).append(",");
         if (getCapacityType() != null)
             sb.append("CapacityType: ").append(getCapacityType()).append(",");
         if (getVersion() != null)
@@ -1570,6 +1600,10 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
             return false;
+        if (other.getUpdateConfig() == null ^ this.getUpdateConfig() == null)
+            return false;
+        if (other.getUpdateConfig() != null && other.getUpdateConfig().equals(this.getUpdateConfig()) == false)
+            return false;
         if (other.getCapacityType() == null ^ this.getCapacityType() == null)
             return false;
         if (other.getCapacityType() != null && other.getCapacityType().equals(this.getCapacityType()) == false)
@@ -1604,6 +1638,7 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
+        hashCode = prime * hashCode + ((getUpdateConfig() == null) ? 0 : getUpdateConfig().hashCode());
         hashCode = prime * hashCode + ((getCapacityType() == null) ? 0 : getCapacityType().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getReleaseVersion() == null) ? 0 : getReleaseVersion().hashCode());

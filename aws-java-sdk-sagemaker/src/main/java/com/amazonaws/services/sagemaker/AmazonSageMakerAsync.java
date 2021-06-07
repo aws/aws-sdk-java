@@ -8086,6 +8086,84 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Notifies the pipeline that the execution of a callback step failed, along with a message describing why. When a
+     * callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon
+     * Simple Queue Service (Amazon SQS).
+     * </p>
+     * 
+     * @param sendPipelineExecutionStepFailureRequest
+     * @return A Java Future containing the result of the SendPipelineExecutionStepFailure operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.SendPipelineExecutionStepFailure
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendPipelineExecutionStepFailureResult> sendPipelineExecutionStepFailureAsync(
+            SendPipelineExecutionStepFailureRequest sendPipelineExecutionStepFailureRequest);
+
+    /**
+     * <p>
+     * Notifies the pipeline that the execution of a callback step failed, along with a message describing why. When a
+     * callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon
+     * Simple Queue Service (Amazon SQS).
+     * </p>
+     * 
+     * @param sendPipelineExecutionStepFailureRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendPipelineExecutionStepFailure operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.SendPipelineExecutionStepFailure
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendPipelineExecutionStepFailureResult> sendPipelineExecutionStepFailureAsync(
+            SendPipelineExecutionStepFailureRequest sendPipelineExecutionStepFailureRequest,
+            com.amazonaws.handlers.AsyncHandler<SendPipelineExecutionStepFailureRequest, SendPipelineExecutionStepFailureResult> asyncHandler);
+
+    /**
+     * <p>
+     * Notifies the pipeline that the execution of a callback step succeeded and provides a list of the step's output
+     * parameters. When a callback step is run, the pipeline generates a callback token and includes the token in a
+     * message sent to Amazon Simple Queue Service (Amazon SQS).
+     * </p>
+     * 
+     * @param sendPipelineExecutionStepSuccessRequest
+     * @return A Java Future containing the result of the SendPipelineExecutionStepSuccess operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.SendPipelineExecutionStepSuccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendPipelineExecutionStepSuccessResult> sendPipelineExecutionStepSuccessAsync(
+            SendPipelineExecutionStepSuccessRequest sendPipelineExecutionStepSuccessRequest);
+
+    /**
+     * <p>
+     * Notifies the pipeline that the execution of a callback step succeeded and provides a list of the step's output
+     * parameters. When a callback step is run, the pipeline generates a callback token and includes the token in a
+     * message sent to Amazon Simple Queue Service (Amazon SQS).
+     * </p>
+     * 
+     * @param sendPipelineExecutionStepSuccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendPipelineExecutionStepSuccess operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.SendPipelineExecutionStepSuccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendPipelineExecutionStepSuccessResult> sendPipelineExecutionStepSuccessAsync(
+            SendPipelineExecutionStepSuccessRequest sendPipelineExecutionStepSuccessRequest,
+            com.amazonaws.handlers.AsyncHandler<SendPipelineExecutionStepSuccessRequest, SendPipelineExecutionStepSuccessResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts a previously stopped monitoring schedule.
      * </p>
      * <note>

@@ -58,6 +58,14 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String pipelineExecutionDescription;
+
+    private PipelineExperimentConfig pipelineExperimentConfig;
+    /**
+     * <p>
+     * If the execution failed, a message describing why.
+     * </p>
+     */
+    private String failureReason;
     /**
      * <p>
      * The creation time of the pipeline execution.
@@ -301,6 +309,72 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * @param pipelineExperimentConfig
+     */
+
+    public void setPipelineExperimentConfig(PipelineExperimentConfig pipelineExperimentConfig) {
+        this.pipelineExperimentConfig = pipelineExperimentConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public PipelineExperimentConfig getPipelineExperimentConfig() {
+        return this.pipelineExperimentConfig;
+    }
+
+    /**
+     * @param pipelineExperimentConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecution withPipelineExperimentConfig(PipelineExperimentConfig pipelineExperimentConfig) {
+        setPipelineExperimentConfig(pipelineExperimentConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the execution failed, a message describing why.
+     * </p>
+     * 
+     * @param failureReason
+     *        If the execution failed, a message describing why.
+     */
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
+    /**
+     * <p>
+     * If the execution failed, a message describing why.
+     * </p>
+     * 
+     * @return If the execution failed, a message describing why.
+     */
+
+    public String getFailureReason() {
+        return this.failureReason;
+    }
+
+    /**
+     * <p>
+     * If the execution failed, a message describing why.
+     * </p>
+     * 
+     * @param failureReason
+     *        If the execution failed, a message describing why.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecution withFailureReason(String failureReason) {
+        setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
      * <p>
      * The creation time of the pipeline execution.
      * </p>
@@ -524,6 +598,10 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
             sb.append("PipelineExecutionStatus: ").append(getPipelineExecutionStatus()).append(",");
         if (getPipelineExecutionDescription() != null)
             sb.append("PipelineExecutionDescription: ").append(getPipelineExecutionDescription()).append(",");
+        if (getPipelineExperimentConfig() != null)
+            sb.append("PipelineExperimentConfig: ").append(getPipelineExperimentConfig()).append(",");
+        if (getFailureReason() != null)
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModifiedTime() != null)
@@ -568,6 +646,14 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getPipelineExecutionDescription() != null && other.getPipelineExecutionDescription().equals(this.getPipelineExecutionDescription()) == false)
             return false;
+        if (other.getPipelineExperimentConfig() == null ^ this.getPipelineExperimentConfig() == null)
+            return false;
+        if (other.getPipelineExperimentConfig() != null && other.getPipelineExperimentConfig().equals(this.getPipelineExperimentConfig()) == false)
+            return false;
+        if (other.getFailureReason() == null ^ this.getFailureReason() == null)
+            return false;
+        if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -601,6 +687,8 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getPipelineExecutionDisplayName() == null) ? 0 : getPipelineExecutionDisplayName().hashCode());
         hashCode = prime * hashCode + ((getPipelineExecutionStatus() == null) ? 0 : getPipelineExecutionStatus().hashCode());
         hashCode = prime * hashCode + ((getPipelineExecutionDescription() == null) ? 0 : getPipelineExecutionDescription().hashCode());
+        hashCode = prime * hashCode + ((getPipelineExperimentConfig() == null) ? 0 : getPipelineExperimentConfig().hashCode());
+        hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());

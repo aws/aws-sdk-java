@@ -39,6 +39,8 @@ public class UpdateNodegroupConfigRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taints").build();
     private static final MarshallingInfo<StructuredPojo> SCALINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scalingConfig").build();
+    private static final MarshallingInfo<StructuredPojo> UPDATECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateConfig").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -64,6 +66,7 @@ public class UpdateNodegroupConfigRequestMarshaller {
             protocolMarshaller.marshall(updateNodegroupConfigRequest.getLabels(), LABELS_BINDING);
             protocolMarshaller.marshall(updateNodegroupConfigRequest.getTaints(), TAINTS_BINDING);
             protocolMarshaller.marshall(updateNodegroupConfigRequest.getScalingConfig(), SCALINGCONFIG_BINDING);
+            protocolMarshaller.marshall(updateNodegroupConfigRequest.getUpdateConfig(), UPDATECONFIG_BINDING);
             protocolMarshaller.marshall(updateNodegroupConfigRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

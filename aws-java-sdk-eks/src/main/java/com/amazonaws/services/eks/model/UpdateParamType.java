@@ -40,7 +40,9 @@ public enum UpdateParamType {
     EncryptionConfig("EncryptionConfig"),
     AddonVersion("AddonVersion"),
     ServiceAccountRoleArn("ServiceAccountRoleArn"),
-    ResolveConflicts("ResolveConflicts");
+    ResolveConflicts("ResolveConflicts"),
+    MaxUnavailable("MaxUnavailable"),
+    MaxUnavailablePercentage("MaxUnavailablePercentage");
 
     private String value;
 

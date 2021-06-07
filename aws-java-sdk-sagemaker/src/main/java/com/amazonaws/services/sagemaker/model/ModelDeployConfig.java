@@ -31,7 +31,7 @@ public class ModelDeployConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment;
-     * set to <code>False</code> otherwise. The default value is <code>True</code>.
+     * set to <code>False</code> otherwise. The default value is <code>False</code>.
      * </p>
      * <note>
      * <p>
@@ -58,7 +58,7 @@ public class ModelDeployConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment;
-     * set to <code>False</code> otherwise. The default value is <code>True</code>.
+     * set to <code>False</code> otherwise. The default value is <code>False</code>.
      * </p>
      * <note>
      * <p>
@@ -69,7 +69,7 @@ public class ModelDeployConfig implements Serializable, Cloneable, StructuredPoj
      * 
      * @param autoGenerateEndpointName
      *        Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model
-     *        deployment; set to <code>False</code> otherwise. The default value is <code>True</code>.</p> <note>
+     *        deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p> <note>
      *        <p>
      *        If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the
      *        <code>EndpointName</code>; otherwise a 400 error is thrown.
@@ -83,7 +83,7 @@ public class ModelDeployConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment;
-     * set to <code>False</code> otherwise. The default value is <code>True</code>.
+     * set to <code>False</code> otherwise. The default value is <code>False</code>.
      * </p>
      * <note>
      * <p>
@@ -93,7 +93,7 @@ public class ModelDeployConfig implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @return Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model
-     *         deployment; set to <code>False</code> otherwise. The default value is <code>True</code>.</p> <note>
+     *         deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p> <note>
      *         <p>
      *         If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the
      *         <code>EndpointName</code>; otherwise a 400 error is thrown.
@@ -107,7 +107,7 @@ public class ModelDeployConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment;
-     * set to <code>False</code> otherwise. The default value is <code>True</code>.
+     * set to <code>False</code> otherwise. The default value is <code>False</code>.
      * </p>
      * <note>
      * <p>
@@ -118,7 +118,7 @@ public class ModelDeployConfig implements Serializable, Cloneable, StructuredPoj
      * 
      * @param autoGenerateEndpointName
      *        Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model
-     *        deployment; set to <code>False</code> otherwise. The default value is <code>True</code>.</p> <note>
+     *        deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p> <note>
      *        <p>
      *        If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the
      *        <code>EndpointName</code>; otherwise a 400 error is thrown.
@@ -134,7 +134,7 @@ public class ModelDeployConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model deployment;
-     * set to <code>False</code> otherwise. The default value is <code>True</code>.
+     * set to <code>False</code> otherwise. The default value is <code>False</code>.
      * </p>
      * <note>
      * <p>
@@ -144,7 +144,7 @@ public class ModelDeployConfig implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @return Set to <code>True</code> to automatically generate an endpoint name for a one-click Autopilot model
-     *         deployment; set to <code>False</code> otherwise. The default value is <code>True</code>.</p> <note>
+     *         deployment; set to <code>False</code> otherwise. The default value is <code>False</code>.</p> <note>
      *         <p>
      *         If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the
      *         <code>EndpointName</code>; otherwise a 400 error is thrown.

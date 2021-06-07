@@ -68,6 +68,14 @@ public class PipelineExecutionJsonUnmarshaller implements Unmarshaller<PipelineE
                     context.nextToken();
                     pipelineExecution.setPipelineExecutionDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PipelineExperimentConfig", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecution.setPipelineExperimentConfig(PipelineExperimentConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("FailureReason", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecution.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     pipelineExecution.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

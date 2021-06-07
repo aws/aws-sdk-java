@@ -3885,6 +3885,46 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Notifies the pipeline that the execution of a callback step failed, along with a message describing why. When a
+     * callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon
+     * Simple Queue Service (Amazon SQS).
+     * </p>
+     * 
+     * @param sendPipelineExecutionStepFailureRequest
+     * @return Result of the SendPipelineExecutionStepFailure operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.SendPipelineExecutionStepFailure
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendPipelineExecutionStepFailureResult sendPipelineExecutionStepFailure(SendPipelineExecutionStepFailureRequest sendPipelineExecutionStepFailureRequest);
+
+    /**
+     * <p>
+     * Notifies the pipeline that the execution of a callback step succeeded and provides a list of the step's output
+     * parameters. When a callback step is run, the pipeline generates a callback token and includes the token in a
+     * message sent to Amazon Simple Queue Service (Amazon SQS).
+     * </p>
+     * 
+     * @param sendPipelineExecutionStepSuccessRequest
+     * @return Result of the SendPipelineExecutionStepSuccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.SendPipelineExecutionStepSuccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendPipelineExecutionStepSuccessResult sendPipelineExecutionStepSuccess(SendPipelineExecutionStepSuccessRequest sendPipelineExecutionStepSuccessRequest);
+
+    /**
+     * <p>
      * Starts a previously stopped monitoring schedule.
      * </p>
      * <note>

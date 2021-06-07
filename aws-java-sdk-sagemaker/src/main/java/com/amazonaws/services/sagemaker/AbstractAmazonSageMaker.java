@@ -1004,6 +1004,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public SendPipelineExecutionStepFailureResult sendPipelineExecutionStepFailure(SendPipelineExecutionStepFailureRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendPipelineExecutionStepSuccessResult sendPipelineExecutionStepSuccess(SendPipelineExecutionStepSuccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartMonitoringScheduleResult startMonitoringSchedule(StartMonitoringScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

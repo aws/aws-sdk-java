@@ -43,10 +43,6 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.
      * Format(s) supported: CSV.
      * </p>
-     * <p>
-     * &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name of
-     * that endpoint if deployed automatically.&lt;/para&gt;
-     * </p>
      */
     private AutoMLOutputDataConfig outputDataConfig;
     /**
@@ -75,10 +71,6 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The ARN of the role that is used to access the data.
-     * </p>
-     * <p>
-     * &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name of
-     * that endpoint if deployed automatically.&lt;/para&gt;
      * </p>
      */
     private String roleArn;
@@ -229,17 +221,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.
      * Format(s) supported: CSV.
      * </p>
-     * <p>
-     * &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name of
-     * that endpoint if deployed automatically.&lt;/para&gt;
-     * </p>
      * 
      * @param outputDataConfig
      *        Provides information about encryption and the Amazon S3 output path needed to store artifacts from an
-     *        AutoML job. Format(s) supported: CSV.</p>
-     *        <p>
-     *        &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name
-     *        of that endpoint if deployed automatically.&lt;/para&gt;
+     *        AutoML job. Format(s) supported: CSV.
      */
 
     public void setOutputDataConfig(AutoMLOutputDataConfig outputDataConfig) {
@@ -251,16 +236,9 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.
      * Format(s) supported: CSV.
      * </p>
-     * <p>
-     * &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name of
-     * that endpoint if deployed automatically.&lt;/para&gt;
-     * </p>
      * 
      * @return Provides information about encryption and the Amazon S3 output path needed to store artifacts from an
-     *         AutoML job. Format(s) supported: CSV.</p>
-     *         <p>
-     *         &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the
-     *         name of that endpoint if deployed automatically.&lt;/para&gt;
+     *         AutoML job. Format(s) supported: CSV.
      */
 
     public AutoMLOutputDataConfig getOutputDataConfig() {
@@ -272,17 +250,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.
      * Format(s) supported: CSV.
      * </p>
-     * <p>
-     * &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name of
-     * that endpoint if deployed automatically.&lt;/para&gt;
-     * </p>
      * 
      * @param outputDataConfig
      *        Provides information about encryption and the Amazon S3 output path needed to store artifacts from an
-     *        AutoML job. Format(s) supported: CSV.</p>
-     *        <p>
-     *        &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name
-     *        of that endpoint if deployed automatically.&lt;/para&gt;
+     *        AutoML job. Format(s) supported: CSV.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -472,16 +443,9 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The ARN of the role that is used to access the data.
      * </p>
-     * <p>
-     * &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name of
-     * that endpoint if deployed automatically.&lt;/para&gt;
-     * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that is used to access the data.</p>
-     *        <p>
-     *        &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name
-     *        of that endpoint if deployed automatically.&lt;/para&gt;
+     *        The ARN of the role that is used to access the data.
      */
 
     public void setRoleArn(String roleArn) {
@@ -492,15 +456,8 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The ARN of the role that is used to access the data.
      * </p>
-     * <p>
-     * &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name of
-     * that endpoint if deployed automatically.&lt;/para&gt;
-     * </p>
      * 
-     * @return The ARN of the role that is used to access the data.</p>
-     *         <p>
-     *         &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the
-     *         name of that endpoint if deployed automatically.&lt;/para&gt;
+     * @return The ARN of the role that is used to access the data.
      */
 
     public String getRoleArn() {
@@ -511,16 +468,9 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The ARN of the role that is used to access the data.
      * </p>
-     * <p>
-     * &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name of
-     * that endpoint if deployed automatically.&lt;/para&gt;
-     * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that is used to access the data.</p>
-     *        <p>
-     *        &lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP; model to an endpoint and the name
-     *        of that endpoint if deployed automatically.&lt;/para&gt;
+     *        The ARN of the role that is used to access the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

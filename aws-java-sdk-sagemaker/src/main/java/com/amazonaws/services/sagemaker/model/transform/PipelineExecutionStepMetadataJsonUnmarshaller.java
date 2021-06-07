@@ -72,6 +72,10 @@ public class PipelineExecutionStepMetadataJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     pipelineExecutionStepMetadata.setCondition(ConditionStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Callback", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionStepMetadata.setCallback(CallbackStepMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

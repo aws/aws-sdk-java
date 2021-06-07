@@ -38,6 +38,10 @@ public class PipelineExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PipelineExecutionStatus").build();
     private static final MarshallingInfo<String> PIPELINEEXECUTIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PipelineExecutionDescription").build();
+    private static final MarshallingInfo<StructuredPojo> PIPELINEEXPERIMENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PipelineExperimentConfig").build();
+    private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -70,6 +74,8 @@ public class PipelineExecutionMarshaller {
             protocolMarshaller.marshall(pipelineExecution.getPipelineExecutionDisplayName(), PIPELINEEXECUTIONDISPLAYNAME_BINDING);
             protocolMarshaller.marshall(pipelineExecution.getPipelineExecutionStatus(), PIPELINEEXECUTIONSTATUS_BINDING);
             protocolMarshaller.marshall(pipelineExecution.getPipelineExecutionDescription(), PIPELINEEXECUTIONDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(pipelineExecution.getPipelineExperimentConfig(), PIPELINEEXPERIMENTCONFIG_BINDING);
+            protocolMarshaller.marshall(pipelineExecution.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(pipelineExecution.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(pipelineExecution.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(pipelineExecution.getCreatedBy(), CREATEDBY_BINDING);

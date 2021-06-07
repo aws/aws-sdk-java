@@ -1,3 +1,20 @@
+# __1.12.1__ __2021-06-07__
+## __AWS Glue__
+  - ### Features
+    - Add SampleSize variable to S3Target to enable s3-sampling feature through API.
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Added updateConfig option that allows customers to control upgrade velocity in Managed Node Group.
+
+## __Amazon Personalize__
+  - ### Features
+    - Update regex validation in kmsKeyArn and s3 path API parameters for AWS Personalize APIs
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - AWS SageMaker - Releasing new APIs related to Callback steps in model building pipelines. Adds experiment integration to model building pipelines.
+
 # __1.11.1034__ __2021-06-04__
 ## __AWS CloudTrail__
   - ### Features

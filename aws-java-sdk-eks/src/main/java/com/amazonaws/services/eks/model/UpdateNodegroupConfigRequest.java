@@ -55,6 +55,8 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private NodegroupScalingConfig scalingConfig;
+
+    private NodegroupUpdateConfig updateConfig;
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
@@ -263,6 +265,32 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * @param updateConfig
+     */
+
+    public void setUpdateConfig(NodegroupUpdateConfig updateConfig) {
+        this.updateConfig = updateConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public NodegroupUpdateConfig getUpdateConfig() {
+        return this.updateConfig;
+    }
+
+    /**
+     * @param updateConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNodegroupConfigRequest withUpdateConfig(NodegroupUpdateConfig updateConfig) {
+        setUpdateConfig(updateConfig);
+        return this;
+    }
+
+    /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
@@ -324,6 +352,8 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
             sb.append("Taints: ").append(getTaints()).append(",");
         if (getScalingConfig() != null)
             sb.append("ScalingConfig: ").append(getScalingConfig()).append(",");
+        if (getUpdateConfig() != null)
+            sb.append("UpdateConfig: ").append(getUpdateConfig()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
@@ -360,6 +390,10 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getScalingConfig() != null && other.getScalingConfig().equals(this.getScalingConfig()) == false)
             return false;
+        if (other.getUpdateConfig() == null ^ this.getUpdateConfig() == null)
+            return false;
+        if (other.getUpdateConfig() != null && other.getUpdateConfig().equals(this.getUpdateConfig()) == false)
+            return false;
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
@@ -377,6 +411,7 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
         hashCode = prime * hashCode + ((getTaints() == null) ? 0 : getTaints().hashCode());
         hashCode = prime * hashCode + ((getScalingConfig() == null) ? 0 : getScalingConfig().hashCode());
+        hashCode = prime * hashCode + ((getUpdateConfig() == null) ? 0 : getUpdateConfig().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }

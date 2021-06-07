@@ -12295,6 +12295,136 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Notifies the pipeline that the execution of a callback step failed, along with a message describing why. When a
+     * callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon
+     * Simple Queue Service (Amazon SQS).
+     * </p>
+     * 
+     * @param sendPipelineExecutionStepFailureRequest
+     * @return Result of the SendPipelineExecutionStepFailure operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.SendPipelineExecutionStepFailure
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendPipelineExecutionStepFailureResult sendPipelineExecutionStepFailure(SendPipelineExecutionStepFailureRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendPipelineExecutionStepFailure(request);
+    }
+
+    @SdkInternalApi
+    final SendPipelineExecutionStepFailureResult executeSendPipelineExecutionStepFailure(
+            SendPipelineExecutionStepFailureRequest sendPipelineExecutionStepFailureRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendPipelineExecutionStepFailureRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendPipelineExecutionStepFailureRequest> request = null;
+        Response<SendPipelineExecutionStepFailureResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendPipelineExecutionStepFailureRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(sendPipelineExecutionStepFailureRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendPipelineExecutionStepFailure");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendPipelineExecutionStepFailureResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SendPipelineExecutionStepFailureResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Notifies the pipeline that the execution of a callback step succeeded and provides a list of the step's output
+     * parameters. When a callback step is run, the pipeline generates a callback token and includes the token in a
+     * message sent to Amazon Simple Queue Service (Amazon SQS).
+     * </p>
+     * 
+     * @param sendPipelineExecutionStepSuccessRequest
+     * @return Result of the SendPipelineExecutionStepSuccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.SendPipelineExecutionStepSuccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendPipelineExecutionStepSuccessResult sendPipelineExecutionStepSuccess(SendPipelineExecutionStepSuccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendPipelineExecutionStepSuccess(request);
+    }
+
+    @SdkInternalApi
+    final SendPipelineExecutionStepSuccessResult executeSendPipelineExecutionStepSuccess(
+            SendPipelineExecutionStepSuccessRequest sendPipelineExecutionStepSuccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendPipelineExecutionStepSuccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendPipelineExecutionStepSuccessRequest> request = null;
+        Response<SendPipelineExecutionStepSuccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendPipelineExecutionStepSuccessRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(sendPipelineExecutionStepSuccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendPipelineExecutionStepSuccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendPipelineExecutionStepSuccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SendPipelineExecutionStepSuccessResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts a previously stopped monitoring schedule.
      * </p>
      * <note>

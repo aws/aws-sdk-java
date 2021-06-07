@@ -48,6 +48,13 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String connectionName;
+    /**
+     * <p>
+     * Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set,
+     * all the files are crawled. A valid value is an integer between 1 and 249.
+     * </p>
+     */
+    private Integer sampleSize;
 
     /**
      * <p>
@@ -214,6 +221,52 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set,
+     * all the files are crawled. A valid value is an integer between 1 and 249.
+     * </p>
+     * 
+     * @param sampleSize
+     *        Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not
+     *        set, all the files are crawled. A valid value is an integer between 1 and 249.
+     */
+
+    public void setSampleSize(Integer sampleSize) {
+        this.sampleSize = sampleSize;
+    }
+
+    /**
+     * <p>
+     * Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set,
+     * all the files are crawled. A valid value is an integer between 1 and 249.
+     * </p>
+     * 
+     * @return Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If
+     *         not set, all the files are crawled. A valid value is an integer between 1 and 249.
+     */
+
+    public Integer getSampleSize() {
+        return this.sampleSize;
+    }
+
+    /**
+     * <p>
+     * Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set,
+     * all the files are crawled. A valid value is an integer between 1 and 249.
+     * </p>
+     * 
+     * @param sampleSize
+     *        Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not
+     *        set, all the files are crawled. A valid value is an integer between 1 and 249.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Target withSampleSize(Integer sampleSize) {
+        setSampleSize(sampleSize);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -230,7 +283,9 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
         if (getExclusions() != null)
             sb.append("Exclusions: ").append(getExclusions()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: ").append(getConnectionName());
+            sb.append("ConnectionName: ").append(getConnectionName()).append(",");
+        if (getSampleSize() != null)
+            sb.append("SampleSize: ").append(getSampleSize());
         sb.append("}");
         return sb.toString();
     }
@@ -257,6 +312,10 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
             return false;
+        if (other.getSampleSize() == null ^ this.getSampleSize() == null)
+            return false;
+        if (other.getSampleSize() != null && other.getSampleSize().equals(this.getSampleSize()) == false)
+            return false;
         return true;
     }
 
@@ -268,6 +327,7 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getExclusions() == null) ? 0 : getExclusions().hashCode());
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
+        hashCode = prime * hashCode + ((getSampleSize() == null) ? 0 : getSampleSize().hashCode());
         return hashCode;
     }
 

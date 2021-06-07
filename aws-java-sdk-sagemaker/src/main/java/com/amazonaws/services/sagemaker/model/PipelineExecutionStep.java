@@ -66,7 +66,7 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
     private String failureReason;
     /**
      * <p>
-     * The metadata for the step execution.
+     * Metadata for the step execution.
      * </p>
      */
     private PipelineExecutionStepMetadata metadata;
@@ -332,11 +332,11 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The metadata for the step execution.
+     * Metadata for the step execution.
      * </p>
      * 
      * @param metadata
-     *        The metadata for the step execution.
+     *        Metadata for the step execution.
      */
 
     public void setMetadata(PipelineExecutionStepMetadata metadata) {
@@ -345,10 +345,10 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The metadata for the step execution.
+     * Metadata for the step execution.
      * </p>
      * 
-     * @return The metadata for the step execution.
+     * @return Metadata for the step execution.
      */
 
     public PipelineExecutionStepMetadata getMetadata() {
@@ -357,11 +357,11 @@ public class PipelineExecutionStep implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The metadata for the step execution.
+     * Metadata for the step execution.
      * </p>
      * 
      * @param metadata
-     *        The metadata for the step execution.
+     *        Metadata for the step execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

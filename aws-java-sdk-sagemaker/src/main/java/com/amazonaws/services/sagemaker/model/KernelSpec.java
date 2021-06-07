@@ -30,7 +30,7 @@ public class KernelSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the kernel.
+     * The name of the Jupyter kernel in the image. This value is case sensitive.
      * </p>
      */
     private String name;
@@ -43,11 +43,11 @@ public class KernelSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the kernel.
+     * The name of the Jupyter kernel in the image. This value is case sensitive.
      * </p>
      * 
      * @param name
-     *        The name of the kernel.
+     *        The name of the Jupyter kernel in the image. This value is case sensitive.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class KernelSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the kernel.
+     * The name of the Jupyter kernel in the image. This value is case sensitive.
      * </p>
      * 
-     * @return The name of the kernel.
+     * @return The name of the Jupyter kernel in the image. This value is case sensitive.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class KernelSpec implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the kernel.
+     * The name of the Jupyter kernel in the image. This value is case sensitive.
      * </p>
      * 
      * @param name
-     *        The name of the kernel.
+     *        The name of the Jupyter kernel in the image. This value is case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
