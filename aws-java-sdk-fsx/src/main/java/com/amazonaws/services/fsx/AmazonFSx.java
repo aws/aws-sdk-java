@@ -846,6 +846,11 @@ public interface AmazonFSx {
      * <ul>
      * <li>
      * <p>
+     * AuditLogConfiguration
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * AutomaticBackupRetentionDays
      * </p>
      * </li>

@@ -1283,6 +1283,11 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * <ul>
      * <li>
      * <p>
+     * AuditLogConfiguration
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * AutomaticBackupRetentionDays
      * </p>
      * </li>
@@ -1366,6 +1371,11 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * For Amazon FSx for Windows File Server file systems, you can update the following properties:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * AuditLogConfiguration
+     * </p>
+     * </li>
      * <li>
      * <p>
      * AutomaticBackupRetentionDays

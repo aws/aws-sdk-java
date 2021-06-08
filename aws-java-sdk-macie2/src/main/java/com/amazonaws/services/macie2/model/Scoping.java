@@ -31,24 +31,24 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The property- or tag-based conditions that determine which objects to exclude from the analysis.
+     * The property- and tag-based conditions that determine which objects to exclude from the analysis.
      * </p>
      */
     private JobScopingBlock excludes;
     /**
      * <p>
-     * The property- or tag-based conditions that determine which objects to include in the analysis.
+     * The property- and tag-based conditions that determine which objects to include in the analysis.
      * </p>
      */
     private JobScopingBlock includes;
 
     /**
      * <p>
-     * The property- or tag-based conditions that determine which objects to exclude from the analysis.
+     * The property- and tag-based conditions that determine which objects to exclude from the analysis.
      * </p>
      * 
      * @param excludes
-     *        The property- or tag-based conditions that determine which objects to exclude from the analysis.
+     *        The property- and tag-based conditions that determine which objects to exclude from the analysis.
      */
 
     public void setExcludes(JobScopingBlock excludes) {
@@ -57,10 +57,10 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The property- or tag-based conditions that determine which objects to exclude from the analysis.
+     * The property- and tag-based conditions that determine which objects to exclude from the analysis.
      * </p>
      * 
-     * @return The property- or tag-based conditions that determine which objects to exclude from the analysis.
+     * @return The property- and tag-based conditions that determine which objects to exclude from the analysis.
      */
 
     public JobScopingBlock getExcludes() {
@@ -69,11 +69,11 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The property- or tag-based conditions that determine which objects to exclude from the analysis.
+     * The property- and tag-based conditions that determine which objects to exclude from the analysis.
      * </p>
      * 
      * @param excludes
-     *        The property- or tag-based conditions that determine which objects to exclude from the analysis.
+     *        The property- and tag-based conditions that determine which objects to exclude from the analysis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The property- or tag-based conditions that determine which objects to include in the analysis.
+     * The property- and tag-based conditions that determine which objects to include in the analysis.
      * </p>
      * 
      * @param includes
-     *        The property- or tag-based conditions that determine which objects to include in the analysis.
+     *        The property- and tag-based conditions that determine which objects to include in the analysis.
      */
 
     public void setIncludes(JobScopingBlock includes) {
@@ -97,10 +97,10 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The property- or tag-based conditions that determine which objects to include in the analysis.
+     * The property- and tag-based conditions that determine which objects to include in the analysis.
      * </p>
      * 
-     * @return The property- or tag-based conditions that determine which objects to include in the analysis.
+     * @return The property- and tag-based conditions that determine which objects to include in the analysis.
      */
 
     public JobScopingBlock getIncludes() {
@@ -109,11 +109,11 @@ public class Scoping implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The property- or tag-based conditions that determine which objects to include in the analysis.
+     * The property- and tag-based conditions that determine which objects to include in the analysis.
      * </p>
      * 
      * @param includes
-     *        The property- or tag-based conditions that determine which objects to include in the analysis.
+     *        The property- and tag-based conditions that determine which objects to include in the analysis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

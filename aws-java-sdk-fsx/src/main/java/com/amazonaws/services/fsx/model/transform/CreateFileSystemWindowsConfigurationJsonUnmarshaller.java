@@ -91,6 +91,11 @@ public class CreateFileSystemWindowsConfigurationJsonUnmarshaller implements Unm
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("AuditLogConfiguration", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemWindowsConfiguration.setAuditLogConfiguration(WindowsAuditLogCreateConfigurationJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

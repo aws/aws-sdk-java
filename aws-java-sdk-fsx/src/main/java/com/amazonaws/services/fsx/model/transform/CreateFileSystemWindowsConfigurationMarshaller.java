@@ -48,6 +48,8 @@ public class CreateFileSystemWindowsConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTagsToBackups").build();
     private static final MarshallingInfo<List> ALIASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Aliases").build();
+    private static final MarshallingInfo<StructuredPojo> AUDITLOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuditLogConfiguration").build();
 
     private static final CreateFileSystemWindowsConfigurationMarshaller instance = new CreateFileSystemWindowsConfigurationMarshaller();
 
@@ -76,6 +78,7 @@ public class CreateFileSystemWindowsConfigurationMarshaller {
             protocolMarshaller.marshall(createFileSystemWindowsConfiguration.getAutomaticBackupRetentionDays(), AUTOMATICBACKUPRETENTIONDAYS_BINDING);
             protocolMarshaller.marshall(createFileSystemWindowsConfiguration.getCopyTagsToBackups(), COPYTAGSTOBACKUPS_BINDING);
             protocolMarshaller.marshall(createFileSystemWindowsConfiguration.getAliases(), ALIASES_BINDING);
+            protocolMarshaller.marshall(createFileSystemWindowsConfiguration.getAuditLogConfiguration(), AUDITLOGCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

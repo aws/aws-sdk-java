@@ -31,20 +31,21 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
-     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
+     * An array of conditions, one for each property- or tag-based condition that determines which objects to include or
+     * exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      */
     private java.util.List<JobScopeTerm> and;
 
     /**
      * <p>
-     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
-     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
+     * An array of conditions, one for each property- or tag-based condition that determines which objects to include or
+     * exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      * 
-     * @return An array of conditions, one for each condition that determines which objects to include or exclude from
-     *         the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
+     * @return An array of conditions, one for each property- or tag-based condition that determines which objects to
+     *         include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to
+     *         join the conditions.
      */
 
     public java.util.List<JobScopeTerm> getAnd() {
@@ -53,13 +54,14 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
-     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
+     * An array of conditions, one for each property- or tag-based condition that determines which objects to include or
+     * exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      * 
      * @param and
-     *        An array of conditions, one for each condition that determines which objects to include or exclude from
-     *        the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
+     *        An array of conditions, one for each property- or tag-based condition that determines which objects to
+     *        include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to
+     *        join the conditions.
      */
 
     public void setAnd(java.util.Collection<JobScopeTerm> and) {
@@ -73,8 +75,8 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
-     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
+     * An array of conditions, one for each property- or tag-based condition that determines which objects to include or
+     * exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,8 +85,9 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param and
-     *        An array of conditions, one for each condition that determines which objects to include or exclude from
-     *        the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
+     *        An array of conditions, one for each property- or tag-based condition that determines which objects to
+     *        include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to
+     *        join the conditions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +103,14 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
-     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
+     * An array of conditions, one for each property- or tag-based condition that determines which objects to include or
+     * exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      * 
      * @param and
-     *        An array of conditions, one for each condition that determines which objects to include or exclude from
-     *        the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
+     *        An array of conditions, one for each property- or tag-based condition that determines which objects to
+     *        include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to
+     *        join the conditions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

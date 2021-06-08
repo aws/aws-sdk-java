@@ -1,3 +1,20 @@
+# __1.12.2__ __2021-06-08__
+## __AWS Service Catalog__
+  - ### Features
+    - increase max pagesize for List/Search apis
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Documentation updates for cognito-idp
+
+## __Amazon FSx__
+  - ### Features
+    - This release adds support for auditing end-user access to files, folders, and file shares using Windows event logs, enabling customers to meet their security and compliance needs.
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API introduces stricter validation of S3 object criteria for classification jobs.
+
 # __1.12.1__ __2021-06-07__
 ## __AWS Glue__
   - ### Features

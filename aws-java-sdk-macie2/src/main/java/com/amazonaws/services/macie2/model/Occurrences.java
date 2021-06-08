@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the location of 1-15 occurrences of sensitive data that was detected by managed data identifiers or a custom
- * data identifier and produced a sensitive data finding.
+ * Specifies the location of 1-15 occurrences of sensitive data that was detected by managed data identifiers or a
+ * custom data identifier and produced a sensitive data finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Occurrences" target="_top">AWS API
@@ -53,20 +53,14 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Range> lineRanges;
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the beginning of the file.
-     * </p>
-     * <p>
-     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
-     * Page object, depending on the file type.
+     * Reserved for future use.
      * </p>
      */
     private java.util.List<Range> offsetRanges;
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. Each
-     * object specifies the page that contains the data, and the position of the data on that page. This value is null
-     * for all other types of files.
+     * object specifies the page that contains the data. This value is null for all other types of files.
      * </p>
      */
     private java.util.List<Page> pages;
@@ -297,19 +291,12 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the beginning of the file.
-     * </p>
-     * <p>
-     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
-     * Page object, depending on the file type.
+     * Reserved for future use.
      * </p>
      * 
-     * @return An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
-     *         specifies the position of the data relative to the beginning of the file.</p>
-     *         <p>
-     *         This value is typically null. For binary text files, Amazon Macie adds location data to a
-     *         lineRanges.Range or Page object, depending on the file type.
+     * @return <p>
+     *         Reserved for future use.
+     *         </p>
      */
 
     public java.util.List<Range> getOffsetRanges() {
@@ -318,20 +305,13 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the beginning of the file.
-     * </p>
-     * <p>
-     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
-     * Page object, depending on the file type.
+     * Reserved for future use.
      * </p>
      * 
      * @param offsetRanges
-     *        An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
-     *        specifies the position of the data relative to the beginning of the file.</p>
      *        <p>
-     *        This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range
-     *        or Page object, depending on the file type.
+     *        Reserved for future use.
+     *        </p>
      */
 
     public void setOffsetRanges(java.util.Collection<Range> offsetRanges) {
@@ -345,12 +325,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the beginning of the file.
-     * </p>
-     * <p>
-     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
-     * Page object, depending on the file type.
+     * Reserved for future use.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -359,11 +334,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param offsetRanges
-     *        An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
-     *        specifies the position of the data relative to the beginning of the file.</p>
      *        <p>
-     *        This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range
-     *        or Page object, depending on the file type.
+     *        Reserved for future use.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,20 +352,13 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a binary text file. Each object specifies the
-     * position of the data relative to the beginning of the file.
-     * </p>
-     * <p>
-     * This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range or
-     * Page object, depending on the file type.
+     * Reserved for future use.
      * </p>
      * 
      * @param offsetRanges
-     *        An array of objects, one for each occurrence of sensitive data in a binary text file. Each object
-     *        specifies the position of the data relative to the beginning of the file.</p>
      *        <p>
-     *        This value is typically null. For binary text files, Amazon Macie adds location data to a lineRanges.Range
-     *        or Page object, depending on the file type.
+     *        Reserved for future use.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,13 +370,11 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. Each
-     * object specifies the page that contains the data, and the position of the data on that page. This value is null
-     * for all other types of files.
+     * object specifies the page that contains the data. This value is null for all other types of files.
      * </p>
      * 
      * @return An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file.
-     *         Each object specifies the page that contains the data, and the position of the data on that page. This
-     *         value is null for all other types of files.
+     *         Each object specifies the page that contains the data. This value is null for all other types of files.
      */
 
     public java.util.List<Page> getPages() {
@@ -420,14 +384,12 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. Each
-     * object specifies the page that contains the data, and the position of the data on that page. This value is null
-     * for all other types of files.
+     * object specifies the page that contains the data. This value is null for all other types of files.
      * </p>
      * 
      * @param pages
      *        An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file.
-     *        Each object specifies the page that contains the data, and the position of the data on that page. This
-     *        value is null for all other types of files.
+     *        Each object specifies the page that contains the data. This value is null for all other types of files.
      */
 
     public void setPages(java.util.Collection<Page> pages) {
@@ -442,8 +404,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. Each
-     * object specifies the page that contains the data, and the position of the data on that page. This value is null
-     * for all other types of files.
+     * object specifies the page that contains the data. This value is null for all other types of files.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -453,8 +414,7 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param pages
      *        An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file.
-     *        Each object specifies the page that contains the data, and the position of the data on that page. This
-     *        value is null for all other types of files.
+     *        Each object specifies the page that contains the data. This value is null for all other types of files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,14 +431,12 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. Each
-     * object specifies the page that contains the data, and the position of the data on that page. This value is null
-     * for all other types of files.
+     * object specifies the page that contains the data. This value is null for all other types of files.
      * </p>
      * 
      * @param pages
      *        An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file.
-     *        Each object specifies the page that contains the data, and the position of the data on that page. This
-     *        value is null for all other types of files.
+     *        Each object specifies the page that contains the data. This value is null for all other types of files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

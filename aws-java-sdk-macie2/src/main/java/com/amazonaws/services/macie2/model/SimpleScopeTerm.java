@@ -31,7 +31,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition. Valid operators for each supported property (key) are:
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
@@ -54,11 +54,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - Any operator except CONTAINS
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - EQ (equals) or NE (not equals)
-     * </p>
-     * </li>
      * </ul>
      */
     private String comparator;
@@ -71,8 +66,8 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
-     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
-     * Otherwise, this array can specify only one value.
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
      * </p>
      * <p>
      * Valid values for each supported property (key) are:
@@ -100,12 +95,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
-     * of a SimpleScopeTerm object to define a tag-based condition for the job.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
@@ -115,7 +104,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition. Valid operators for each supported property (key) are:
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
@@ -138,15 +127,10 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - Any operator except CONTAINS
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - EQ (equals) or NE (not equals)
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param comparator
-     *        The operator to use in the condition. Valid operators for each supported property (key) are:</p>
+     *        The operator to use in the condition. Valid values for each supported property (key) are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -168,11 +152,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        OBJECT_SIZE - Any operator except CONTAINS
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        TAG - EQ (equals) or NE (not equals)
-     *        </p>
-     *        </li>
      * @see JobComparator
      */
 
@@ -182,7 +161,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition. Valid operators for each supported property (key) are:
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
@@ -205,14 +184,9 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - Any operator except CONTAINS
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - EQ (equals) or NE (not equals)
-     * </p>
-     * </li>
      * </ul>
      * 
-     * @return The operator to use in the condition. Valid operators for each supported property (key) are:</p>
+     * @return The operator to use in the condition. Valid values for each supported property (key) are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -234,11 +208,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *         OBJECT_SIZE - Any operator except CONTAINS
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         TAG - EQ (equals) or NE (not equals)
-     *         </p>
-     *         </li>
      * @see JobComparator
      */
 
@@ -248,7 +217,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition. Valid operators for each supported property (key) are:
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
@@ -271,15 +240,10 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - Any operator except CONTAINS
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - EQ (equals) or NE (not equals)
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param comparator
-     *        The operator to use in the condition. Valid operators for each supported property (key) are:</p>
+     *        The operator to use in the condition. Valid values for each supported property (key) are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -299,11 +263,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_SIZE - Any operator except CONTAINS
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        TAG - EQ (equals) or NE (not equals)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -317,7 +276,7 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition. Valid operators for each supported property (key) are:
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
      * <ul>
      * <li>
@@ -340,15 +299,10 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - Any operator except CONTAINS
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - EQ (equals) or NE (not equals)
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param comparator
-     *        The operator to use in the condition. Valid operators for each supported property (key) are:</p>
+     *        The operator to use in the condition. Valid values for each supported property (key) are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -368,11 +322,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_SIZE - Any operator except CONTAINS
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        TAG - EQ (equals) or NE (not equals)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -446,8 +395,8 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
-     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
-     * Otherwise, this array can specify only one value.
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
      * </p>
      * <p>
      * Valid values for each supported property (key) are:
@@ -475,20 +424,14 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
-     * of a SimpleScopeTerm object to define a tag-based condition for the job.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      * 
      * @return An array that lists the values to use in the condition. If the value for the key property is
-     *         OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR
-     *         operator to join the values. Otherwise, this array can specify only one value.</p>
+     *         OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to
+     *         join the values. Otherwise, this array can specify only one value.</p>
      *         <p>
      *         Valid values for each supported property (key) are:
      *         </p>
@@ -517,12 +460,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *         OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object
-     *         instead of a SimpleScopeTerm object to define a tag-based condition for the job.
-     *         </p>
-     *         </li>
      *         </ul>
      *         <p>
      *         Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
@@ -535,8 +472,8 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
-     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
-     * Otherwise, this array can specify only one value.
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
      * </p>
      * <p>
      * Valid values for each supported property (key) are:
@@ -564,12 +501,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
-     * of a SimpleScopeTerm object to define a tag-based condition for the job.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
@@ -577,8 +508,8 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param values
      *        An array that lists the values to use in the condition. If the value for the key property is
-     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR
-     *        operator to join the values. Otherwise, this array can specify only one value.</p>
+     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to
+     *        join the values. Otherwise, this array can specify only one value.</p>
      *        <p>
      *        Valid values for each supported property (key) are:
      *        </p>
@@ -604,12 +535,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object
-     *        instead of a SimpleScopeTerm object to define a tag-based condition for the job.
      *        </p>
      *        </li>
      *        </ul>
@@ -629,8 +554,8 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
-     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
-     * Otherwise, this array can specify only one value.
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
      * </p>
      * <p>
      * Valid values for each supported property (key) are:
@@ -658,12 +583,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
-     * of a SimpleScopeTerm object to define a tag-based condition for the job.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
@@ -676,8 +595,8 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param values
      *        An array that lists the values to use in the condition. If the value for the key property is
-     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR
-     *        operator to join the values. Otherwise, this array can specify only one value.</p>
+     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to
+     *        join the values. Otherwise, this array can specify only one value.</p>
      *        <p>
      *        Valid values for each supported property (key) are:
      *        </p>
@@ -703,12 +622,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object
-     *        instead of a SimpleScopeTerm object to define a tag-based condition for the job.
      *        </p>
      *        </li>
      *        </ul>
@@ -730,8 +643,8 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
-     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR operator to join the values.
-     * Otherwise, this array can specify only one value.
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
      * </p>
      * <p>
      * Valid values for each supported property (key) are:
@@ -759,12 +672,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
-     * of a SimpleScopeTerm object to define a tag-based condition for the job.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
@@ -772,8 +679,8 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param values
      *        An array that lists the values to use in the condition. If the value for the key property is
-     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses an OR
-     *        operator to join the values. Otherwise, this array can specify only one value.</p>
+     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to
+     *        join the values. Otherwise, this array can specify only one value.</p>
      *        <p>
      *        Valid values for each supported property (key) are:
      *        </p>
@@ -799,12 +706,6 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object
-     *        instead of a SimpleScopeTerm object to define a tag-based condition for the job.
      *        </p>
      *        </li>
      *        </ul>

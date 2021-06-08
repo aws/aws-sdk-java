@@ -29,13 +29,13 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The line that contains the data, and the position of the data on that line.
+     * Reserved for future use.
      * </p>
      */
     private Range lineRange;
     /**
      * <p>
-     * The position of the data on the page, relative to the beginning of the page.
+     * Reserved for future use.
      * </p>
      */
     private Range offsetRange;
@@ -48,11 +48,13 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The line that contains the data, and the position of the data on that line.
+     * Reserved for future use.
      * </p>
      * 
      * @param lineRange
-     *        The line that contains the data, and the position of the data on that line.
+     *        <p>
+     *        Reserved for future use.
+     *        </p>
      */
 
     public void setLineRange(Range lineRange) {
@@ -61,10 +63,12 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The line that contains the data, and the position of the data on that line.
+     * Reserved for future use.
      * </p>
      * 
-     * @return The line that contains the data, and the position of the data on that line.
+     * @return <p>
+     *         Reserved for future use.
+     *         </p>
      */
 
     public Range getLineRange() {
@@ -73,11 +77,13 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The line that contains the data, and the position of the data on that line.
+     * Reserved for future use.
      * </p>
      * 
      * @param lineRange
-     *        The line that contains the data, and the position of the data on that line.
+     *        <p>
+     *        Reserved for future use.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +94,13 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position of the data on the page, relative to the beginning of the page.
+     * Reserved for future use.
      * </p>
      * 
      * @param offsetRange
-     *        The position of the data on the page, relative to the beginning of the page.
+     *        <p>
+     *        Reserved for future use.
+     *        </p>
      */
 
     public void setOffsetRange(Range offsetRange) {
@@ -101,10 +109,12 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position of the data on the page, relative to the beginning of the page.
+     * Reserved for future use.
      * </p>
      * 
-     * @return The position of the data on the page, relative to the beginning of the page.
+     * @return <p>
+     *         Reserved for future use.
+     *         </p>
      */
 
     public Range getOffsetRange() {
@@ -113,11 +123,13 @@ public class Page implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The position of the data on the page, relative to the beginning of the page.
+     * Reserved for future use.
      * </p>
      * 
      * @param offsetRange
-     *        The position of the data on the page, relative to the beginning of the page.
+     *        <p>
+     *        Reserved for future use.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

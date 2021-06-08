@@ -163,6 +163,13 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * </p>
      */
     private java.util.List<String> aliases;
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     */
+    private WindowsAuditLogCreateConfiguration auditLogConfiguration;
 
     /**
      * <p>
@@ -1228,6 +1235,52 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     * 
+     * @param auditLogConfiguration
+     *        The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *        folders, and file shares on the Amazon FSx for Windows File Server file system.
+     */
+
+    public void setAuditLogConfiguration(WindowsAuditLogCreateConfiguration auditLogConfiguration) {
+        this.auditLogConfiguration = auditLogConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     * 
+     * @return The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *         folders, and file shares on the Amazon FSx for Windows File Server file system.
+     */
+
+    public WindowsAuditLogCreateConfiguration getAuditLogConfiguration() {
+        return this.auditLogConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     * 
+     * @param auditLogConfiguration
+     *        The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *        folders, and file shares on the Amazon FSx for Windows File Server file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemWindowsConfiguration withAuditLogConfiguration(WindowsAuditLogCreateConfiguration auditLogConfiguration) {
+        setAuditLogConfiguration(auditLogConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1258,7 +1311,9 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
         if (getCopyTagsToBackups() != null)
             sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups()).append(",");
         if (getAliases() != null)
-            sb.append("Aliases: ").append(getAliases());
+            sb.append("Aliases: ").append(getAliases()).append(",");
+        if (getAuditLogConfiguration() != null)
+            sb.append("AuditLogConfiguration: ").append(getAuditLogConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1315,6 +1370,10 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
             return false;
         if (other.getAliases() != null && other.getAliases().equals(this.getAliases()) == false)
             return false;
+        if (other.getAuditLogConfiguration() == null ^ this.getAuditLogConfiguration() == null)
+            return false;
+        if (other.getAuditLogConfiguration() != null && other.getAuditLogConfiguration().equals(this.getAuditLogConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1333,6 +1392,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
         hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
         hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode());
+        hashCode = prime * hashCode + ((getAuditLogConfiguration() == null) ? 0 : getAuditLogConfiguration().hashCode());
         return hashCode;
     }
 

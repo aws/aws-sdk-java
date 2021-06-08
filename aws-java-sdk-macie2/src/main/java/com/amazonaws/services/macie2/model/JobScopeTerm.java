@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies a property- or tag-based condition that defines criteria for including or excluding S3 objects from a
- * classification job.
+ * classification job. A JobScopeTerm object can contain only one simpleScopeTerm object or one tagScopeTerm object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopeTerm" target="_top">AWS API

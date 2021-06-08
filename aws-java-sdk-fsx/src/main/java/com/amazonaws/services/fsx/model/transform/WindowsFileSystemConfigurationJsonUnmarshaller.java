@@ -105,6 +105,10 @@ public class WindowsFileSystemConfigurationJsonUnmarshaller implements Unmarshal
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("AuditLogConfiguration", targetDepth)) {
+                    context.nextToken();
+                    windowsFileSystemConfiguration.setAuditLogConfiguration(WindowsAuditLogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
